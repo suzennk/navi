@@ -16,13 +16,15 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         let colors: [UIColor] = [.blue, .red, .orange, .purple, .green]
-        colors.forEach { color in
+        let viewControllers = colors.map { color -> UIViewController in
             let vc = ViewController()
             vc.view.backgroundColor = color
-            vc.title = color.accessibilityName
-            self.addChild(vc)
+            let navContr = UINavigationController(rootViewController: vc)
+            navContr.title = color.accessibilityName
+            return navContr
         }
         
+        self.viewControllers = viewControllers
     }
     
 }
