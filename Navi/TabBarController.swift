@@ -16,13 +16,19 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         let colors: [UIColor] = [.blue, .red, .orange, .purple, .green]
-        let viewControllers = colors.map { color -> UIViewController in
+        var viewControllers = colors.map { color -> UIViewController in
             let vc = ViewController()
             vc.view.backgroundColor = color
             let navContr = UINavigationController(rootViewController: vc)
             navContr.title = color.accessibilityName
             return navContr
         }
+        
+        let homeVC = HomeVC()
+        let homeNavController = UINavigationController(rootViewController: homeVC)
+        homeNavController.title = "Home"
+        
+        viewControllers[2] = homeNavController
         
         self.viewControllers = viewControllers
     }
