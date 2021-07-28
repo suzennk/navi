@@ -109,6 +109,7 @@
 				085B085326B136C1003EA5B7 /* LaunchScreen.storyboard */,
 				085B085626B136C1003EA5B7 /* Info.plist */,
 				085B087826B14655003EA5B7 /* TabBarController.swift */,
+				085B087C26B14C9A003EA5B7 /* HomeVC.swift */,
 			);
 			path = Navi;
 			sourceTree = "<group>";
