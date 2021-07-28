@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: ViewController {
+class HomeVC: ViewController, UICollectionViewDelegate {
 
     let verseView: UILabel = {
         let l = UILabel()
@@ -17,7 +17,11 @@ class HomeVC: ViewController {
         return l
     }()
 
-    
+    lazy var verseGroupTV: UITableView = {
+        let tv = VerseGroupTableView(frame: view.frame)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +31,6 @@ class HomeVC: ViewController {
         // Set navigation bar title as large title
         title = "오늘의 말씀"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
     }
 
     override func configureConstraints() {
@@ -36,5 +39,15 @@ class HomeVC: ViewController {
         verseView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
         verseView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         verseView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+
+        view.addSubview(verseGroupTV)
+        verseGroupTV.topAnchor.constraint(equalTo: verseView.bottomAnchor).isActive = true
+        verseGroupTV.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        verseGroupTV.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        verseGroupTV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Selected item at: \(indexPath)")
     }
 }
