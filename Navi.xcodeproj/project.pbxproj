@@ -17,6 +17,7 @@
 		085B087926B14655003EA5B7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087826B14655003EA5B7 /* TabBarController.swift */; };
 		085B087D26B14C9A003EA5B7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087C26B14C9A003EA5B7 /* HomeVC.swift */; };
 		085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087E26B15058003EA5B7 /* QuizVC.swift */; };
+		085B088126B150E1003EA5B7 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088026B150E1003EA5B7 /* MyPageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		085B087826B14655003EA5B7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		085B087C26B14C9A003EA5B7 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		085B087E26B15058003EA5B7 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
+		085B088026B150E1003EA5B7 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +112,9 @@
 				085B085326B136C1003EA5B7 /* LaunchScreen.storyboard */,
 				085B085626B136C1003EA5B7 /* Info.plist */,
 				085B087826B14655003EA5B7 /* TabBarController.swift */,
-				085B087C26B14C9A003EA5B7 /* HomeVC.swift */,
 				085B087E26B15058003EA5B7 /* QuizVC.swift */,
+				085B087C26B14C9A003EA5B7 /* HomeVC.swift */,
+				085B088026B150E1003EA5B7 /* MyPageVC.swift */,
 			);
 			path = Navi;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */,
 				085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */,
+				085B088126B150E1003EA5B7 /* MyPageVC.swift in Sources */,
 				085B087D26B14C9A003EA5B7 /* HomeVC.swift in Sources */,
 				085B087926B14655003EA5B7 /* TabBarController.swift in Sources */,
 				085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */,
