@@ -14,6 +14,7 @@
 		085B085526B136C1003EA5B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 085B085326B136C1003EA5B7 /* LaunchScreen.storyboard */; };
 		085B086026B136C1003EA5B7 /* NaviTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B085F26B136C1003EA5B7 /* NaviTests.swift */; };
 		085B086B26B136C1003EA5B7 /* NaviUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B086A26B136C1003EA5B7 /* NaviUITests.swift */; };
+		085B087926B14655003EA5B7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087826B14655003EA5B7 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		085B086626B136C1003EA5B7 /* NaviUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaviUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		085B086A26B136C1003EA5B7 /* NaviUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviUITests.swift; sourceTree = "<group>"; };
 		085B086C26B136C1003EA5B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		085B087826B14655003EA5B7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				085B085126B136C1003EA5B7 /* Assets.xcassets */,
 				085B085326B136C1003EA5B7 /* LaunchScreen.storyboard */,
 				085B085626B136C1003EA5B7 /* Info.plist */,
+				085B087826B14655003EA5B7 /* TabBarController.swift */,
 			);
 			path = Navi;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */,
+				085B087926B14655003EA5B7 /* TabBarController.swift in Sources */,
 				085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */,
 				085B084B26B136BF003EA5B7 /* SceneDelegate.swift in Sources */,
 			);

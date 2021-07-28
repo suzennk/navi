@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // do nothing we will have code in SceneDelegate for this
         } else {
             window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = ViewController()
+            window?.rootViewController = TabBarController()
             window?.makeKeyAndVisible()
         }
         
