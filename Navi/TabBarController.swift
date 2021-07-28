@@ -28,6 +28,7 @@ class TabBarController: UITabBarController {
         myPageNavController.title = "MyPage"
         
         self.viewControllers = [quizNavController, homeNavController, myPageNavController]
+        self.selectedViewController = viewControllers?[1]
     }
     
 }
