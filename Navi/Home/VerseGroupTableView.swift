@@ -32,7 +32,6 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         tableHeaderView = verseView
         verseView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         verseView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        verseView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         
         // Header View가 바로 나타나지 않는 현상 해결
         if let headerView = self.tableHeaderView {
