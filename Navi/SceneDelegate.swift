@@ -26,6 +26,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         appDelegate?.window = window
+        
+        // Invoke DataBaseService object
+        let _ = DataBaseService.shared
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
