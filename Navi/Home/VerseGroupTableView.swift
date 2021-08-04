@@ -13,6 +13,14 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     let reuseIdentifier = "cellId"
     let headerIdentifier = "headerId"
     
+    let verseView: UILabel = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.text = "오늘날 내게 네게 명하는 이 말씀을 너는 마음에 새기고 (신6:6)"
+        l.numberOfLines = 2
+        return l
+    }()
+    
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         
@@ -21,6 +29,22 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         delegate = self
         dataSource = self
         
+        tableHeaderView = verseView
+        verseView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        verseView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        verseView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        
+        // Header View가 바로 나타나지 않는 현상 해결
+        if let headerView = self.tableHeaderView {
+
+            // Update the size of the header based on its internal content.
+            headerView.layoutIfNeeded()
+
+            // ***Trigger table view to know that header should be updated.
+            let header = self.tableHeaderView
+            self.tableHeaderView = header
+        }
+
         register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: headerIdentifier)
     }
@@ -53,6 +77,9 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         return 80
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected item at section: \(indexPath.section) row: \(indexPath.row)")
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
