@@ -17,7 +17,10 @@ class DataBaseService {
 //        print(verses)
     }
 
-    private func parseCSVAt(url:URL) {
+    /**
+        암송 말씀 데이터파일(.csv)을 읽고 데이터 파싱을 진행한다.
+     */
+    private func parseCSV(at url:URL) {
         do {
             let data = try Data(contentsOf: url)
             let dataEncoded = String(data: data, encoding: .utf8)
@@ -27,7 +30,7 @@ class DataBaseService {
                         continue
                     }
                     
-                    let verse = Verse(id: item[0], bible: item[1], chapter: Int(item[2]) ?? 0, startVerse: Int(item[3]) ?? 0, endVerse: Int(item[5]) ?? 0, theme: item[6], head: item[7], subHead: item[8], title: item[9], contents: item[10])
+                    let verse = Verse(id: item[0], bible: item[1], chapter: Int(item[2]) ?? 0, startVerse: Int(item[3]) ?? 0, endVerse: Int(item[5]), theme: item[6], head: item[7], subHead: item[8], title: item[9], contents: item[10])
                     print(verse)
                     verses.append(verse)
                 }
@@ -40,7 +43,7 @@ class DataBaseService {
     
     private func loadLocationsFromCSV() {
         let path = Bundle.main.path(forResource: "cardset", ofType: "csv")!
-        parseCSVAt(url: URL(fileURLWithPath: path))
+        parseCSV(at: URL(fileURLWithPath: path))
     }
     
 }
@@ -50,7 +53,7 @@ struct Verse {
     let bible: String
     let chapter: Int
     let startVerse: Int
-    let endVerse: Int
+    let endVerse: Int?
     let theme: String
     let head: String
     let subHead: String
