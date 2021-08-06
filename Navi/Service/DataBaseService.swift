@@ -13,7 +13,7 @@ class DataBaseService {
 
     private init() {
         // 첫 실행때!
-        loadLocationsFromCSV()
+        loadVersesFromCSV()
 //        print(verses)
     }
 
@@ -29,8 +29,8 @@ class DataBaseService {
                     if item.count < 10 {
                         continue
                     }
-                    
-                    let verse = Verse(id: item[0], bible: item[1], chapter: Int(item[2]) ?? 0, startVerse: Int(item[3]) ?? 0, endVerse: Int(item[5]), theme: item[6], head: item[7], subHead: item[8], title: item[9], contents: item[10])
+                    let chapter = Int(item[2].replacingOccurrences(of: ":", with: "")) ?? 0
+                    let verse = Verse(id: item[0], bible: item[1], chapter: chapter, startVerse: Int(item[3]) ?? 0, endVerse: Int(item[5]), theme: item[6], head: item[7], subHead: item[8], title: item[9], contents: item[10])
                     print(verse)
                     verses.append(verse)
                 }
@@ -38,14 +38,12 @@ class DataBaseService {
         } catch {
             print("Error reading CSV file")
         }
-        
     }
     
-    private func loadLocationsFromCSV() {
+    private func loadVersesFromCSV() {
         let path = Bundle.main.path(forResource: "cardset", ofType: "csv")!
         parseCSV(at: URL(fileURLWithPath: path))
     }
-    
 }
 
 struct Verse {
