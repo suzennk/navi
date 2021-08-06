@@ -10,7 +10,8 @@ import Foundation
 class DataBaseService {
     static let shared = DataBaseService()
     var verses: [Verse] = []
-
+    var themes: Set<String> = []
+    
     private init() {
         // 첫 실행때!
         loadVersesFromCSV()
@@ -20,38 +21,49 @@ class DataBaseService {
     /**
         암송 말씀 데이터파일(.csv)을 읽고 데이터 파싱을 진행한다.
      */
-    private func parseCSV(at url:URL) {
+    private func parseFile(at url:URL) {
         do {
             let data = try Data(contentsOf: url)
             let dataEncoded = String(data: data, encoding: .utf8)
-            if let dataArr = dataEncoded?.components(separatedBy: "\n").map({$0.components(separatedBy: ",")}) {
+            if let dataArr = dataEncoded?.components(separatedBy: "\n").map({$0.components(separatedBy: "\t")}) {
                 for item in dataArr[1..<dataArr.count] {
                     if item.count < 10 {
                         continue
                     }
-                    let chapter = Int(item[2].replacingOccurrences(of: ":", with: "")) ?? 0
-                    let verse = Verse(id: item[0], bible: item[1], chapter: chapter, startVerse: Int(item[3]) ?? 0, endVerse: Int(item[5]), theme: item[6], head: item[7], subHead: item[8], title: item[9], contents: item[10])
-                    print(verse)
+                    let chapter = item[2].replacingOccurrences(of: ":", with: "")
+                    let theme = item[6]
+                    let verse = Verse(id: item[0], bible: item[1], chapter: chapter, startVerse: item[3], middleSymbol: item[4], endVerse: item[5], theme: theme, head: item[7], subHead: item[8], title: item[9], contents: item[10])
+                    
                     verses.append(verse)
+                    print(verse)
+                    print(verse.theme)
+                    themes.insert(theme)
                 }
             }
         } catch {
-            print("Error reading CSV file")
+            print("Error reading file")
         }
+        
+        print(verses.count)
+        print(themes)
     }
     
     private func loadVersesFromCSV() {
-        let path = Bundle.main.path(forResource: "cardset", ofType: "csv")!
-        parseCSV(at: URL(fileURLWithPath: path))
+        guard let path = Bundle.main.path(forResource: "cardset", ofType: "tsv") else {
+            print("Error locating file")
+            return
+        }
+        parseFile(at: URL(fileURLWithPath: path))
     }
 }
 
 struct Verse {
     let id: String
     let bible: String
-    let chapter: Int
-    let startVerse: Int
-    let endVerse: Int?
+    let chapter: String
+    let startVerse: String
+    let middleSymbol: String
+    let endVerse: String
     let theme: String
     let head: String
     let subHead: String
