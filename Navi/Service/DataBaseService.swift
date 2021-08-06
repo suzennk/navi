@@ -7,10 +7,45 @@
 
 import Foundation
 
+typealias Theme = String
+typealias Head = String
+
 class DataBaseService {
     static let shared = DataBaseService()
-    var verses: [Verse] = []
-    var themes: Set<String> = []
+    private var _verses: [Verse] = []
+    private var _themes: Set<String> = []
+    
+    public var themes: [String] {
+        get {
+            return Array(_themes)
+        }
+    }
+    
+    public var verses: [Verse] {
+        get {
+            return _verses
+        }
+    }
+    
+    /**
+     verses로부터 unique한 theme으로부터 head만 뽑아낸 dictionary 
+     */
+    public var categories: [Theme : [Head]] {
+        get {
+            var cats = [Theme : [Head]]()
+            _themes.forEach { theme in
+                let heads = Set(
+                    _verses.filter {
+                        $0.theme == theme
+                    }.map {
+                        $0.head
+                    }
+                ).sorted(by: <)
+                cats[theme] = heads
+            }
+            return cats
+        }
+    }
     
     private init() {
         // load verses at first launch
@@ -21,6 +56,7 @@ class DataBaseService {
         암송 말씀 데이터파일(.csv)을 읽고 데이터 파싱을 진행한다.
      */
     private func parseFile(at url:URL) {
+        _themes = []
         do {
             let data = try Data(contentsOf: url)
             let dataEncoded = String(data: data, encoding: .utf8)
@@ -33,10 +69,8 @@ class DataBaseService {
                     let theme = item[6]
                     let verse = Verse(id: item[0], bible: item[1], chapter: chapter, startVerse: item[3], middleSymbol: item[4], endVerse: item[5], theme: theme, head: item[7], subHead: item[8], title: item[9], contents: item[10])
                     
-                    verses.append(verse)
-                    print(verse)
-                    print(verse.theme)
-                    themes.insert(theme)
+                    _verses.append(verse)
+                    _themes.insert(theme)
                 }
             }
         } catch {

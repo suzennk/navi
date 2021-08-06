@@ -9,7 +9,9 @@ import UIKit
 
 class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
 
-    let groupNames = ["LOA", "LOC", "60구절", "180구절", "DEP", "OYO"]
+    let themes = DataBaseService.shared.themes
+    let categories = DataBaseService.shared.categories
+    
     let reuseIdentifier = "cellId"
     let headerIdentifier = "headerId"
     
@@ -49,16 +51,18 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return groupNames.count
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        let theme = themes[section]
+        return categories[theme]?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let v = UIView()
+        let v = UILabel()
         v.backgroundColor = .blue
+        v.text = themes[section]
         return v
     }
     
@@ -68,7 +72,12 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .red
+        let theme = themes[indexPath.section]
+        if let head = categories[theme]?[indexPath.row] {
+            cell.textLabel?.text = "\(head)"
+        } else {
+            cell.backgroundColor = .red
+        }
         return cell
     }
 
