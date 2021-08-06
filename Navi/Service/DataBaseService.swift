@@ -13,9 +13,8 @@ class DataBaseService {
     var themes: Set<String> = []
     
     private init() {
-        // 첫 실행때!
+        // load verses at first launch
         loadVersesFromCSV()
-//        print(verses)
     }
 
     /**
@@ -43,9 +42,6 @@ class DataBaseService {
         } catch {
             print("Error reading file")
         }
-        
-        print(verses.count)
-        print(themes)
     }
     
     private func loadVersesFromCSV() {
