@@ -109,13 +109,16 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         
         let indexPaths = (0..<nRows).map { return IndexPath(row: $0, section: section) }
                 
+        
         if folded[section] {
-            deleteRows(at: indexPaths, with: .automatic)
-            
             // update header selected status caused by folding section
              guard let header = headerViews[section] else { return }
              header.isSelected = false
+            
+            // delete rows
+            deleteRows(at: indexPaths, with: .automatic)
         } else {
+            // insert rows
             insertRows(at: indexPaths, with: .automatic)
         }
     }
@@ -129,7 +132,6 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         if let heads = categories[theme] {
             let head = heads[indexPath.row]
             cell.head = head
-            cell.isChecked = false
         }
         
         return cell
@@ -145,12 +147,7 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
             return
         }
         
-        if let cell = cellForRow(at: indexPath) as? HeadCell {
-            cell.isChecked = true
-        }
-        
         if let selectedRows = indexPathsForSelectedRows {
-            print(selectedRows)
             if selectedRows.contains(where: { $0.section == indexPath.section }) {
                 header.isSelected = true
             }
@@ -163,12 +160,7 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
             return
         }
         
-        if let cell = cellForRow(at: indexPath) as? HeadCell {
-            cell.isChecked = false
-        }
-        
         if let selectedRows = indexPathsForSelectedRows {
-            print(selectedRows)
             if !selectedRows.contains(where: { $0.section == indexPath.section }) {
                 header.isSelected = false
             }

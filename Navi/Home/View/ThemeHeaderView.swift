@@ -53,8 +53,6 @@ class ThemeHeaderView: UIControl {
     }
     
     func updateView() {
-        print("update view")
-        
         button.setTitle(theme, for: .normal)
         
         if isSelected {

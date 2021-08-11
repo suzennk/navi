@@ -16,12 +16,6 @@ class HeadCell: UITableViewCell {
     private let selectedImage = UIImage(systemName: "checkmark.square")
     private let unselectedImage = UIImage(systemName: "square")
     
-    var isChecked: Bool = false {
-        didSet {
-            updateView()
-        }
-    }
-    
     let checkBox: UIImageView = {
        let v = UIImageView()
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -60,9 +54,6 @@ class HeadCell: UITableViewCell {
         
         addSubview(stackView)
 
-//        addSubview(headLabel)
-        
-//
         NSLayoutConstraint.activate([
             checkBox.heightAnchor.constraint(equalTo: stackView.heightAnchor),
             checkBox.widthAnchor.constraint(equalTo: heightAnchor),
@@ -76,13 +67,19 @@ class HeadCell: UITableViewCell {
     func updateView() {
         headLabel.text = head
         
-        if isChecked {
+        if isSelected {
             checkBox.tintColor = .selectedBackground
             checkBox.image = selectedImage
         } else {
             checkBox.tintColor = .unselectedBackground
             checkBox.image = unselectedImage
         }
+        
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        updateView()
     }
     
     required init?(coder: NSCoder) {
