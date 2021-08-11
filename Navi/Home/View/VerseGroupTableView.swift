@@ -12,6 +12,8 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     let themes = DataBaseService.shared.themes
     let categories = DataBaseService.shared.categories
     
+    lazy var folded = [Bool](repeating: true, count: themes.count)
+    
     let reuseIdentifier = "cellId"
     let headerIdentifier = "headerId"
     
@@ -24,7 +26,7 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     }()
     
     override init(frame: CGRect, style: UITableView.Style) {
-        super.init(frame: frame, style: style)
+        super.init(frame: frame, style: .grouped)
         
         backgroundColor = .white
         
@@ -47,7 +49,6 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         }
 
         register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
-        register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: headerIdentifier)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,18 +57,50 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let theme = themes[section]
-        return categories[theme]?.count ?? 0
+        let isFolded = folded[section]
+        
+        if isFolded {
+            return 0
+        } else {
+            return categories[theme]?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let v = UILabel()
-        v.backgroundColor = .blue
-        v.text = themes[section]
-        return v
+        let headerView = ThemeHeaderView()
+        headerView.backgroundColor = tableView.backgroundColor
+        
+        let theme = themes[section]
+        
+        headerView.theme = theme
+        
+        headerView.tag = section
+        headerView.addTarget(self, action: #selector(handleFoldUnfold(button:)), for: .touchUpInside)
+        
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 100
+    }
+    
+    @objc func handleFoldUnfold(button: UIButton) {
+        let section = button.tag
+        let theme = themes[section]
+        folded[section] = !folded[section]
+
+        guard let nRows = categories[theme]?.count else {
+            debugPrint("error loading categories")
+            return
+        }
+        
+        let indexPaths = (0..<nRows).map { return IndexPath(row: $0, section: section) }
+                
+        if folded[section] {
+            deleteRows(at: indexPaths, with: .automatic)
+        } else {
+            insertRows(at: indexPaths, with: .automatic)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
