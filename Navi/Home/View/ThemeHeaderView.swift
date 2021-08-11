@@ -12,10 +12,17 @@ import UIKit
  */
 class ThemeHeaderView: UIControl {
     
-    private let buttonHeight: CGFloat = 80
+    private let buttonHeight: CGFloat = 72
+    private let buttonWidth: CGFloat = 330
     private let padding: CGFloat = 20
     
     var isFolded: Bool = true {
+        didSet {
+            updateView()
+        }
+    }
+    
+    override var isSelected: Bool {
         didSet {
             updateView()
         }
@@ -33,14 +40,11 @@ class ThemeHeaderView: UIControl {
     lazy var button: UIButton = {
         let b = UIButton()
         b.translatesAutoresizingMaskIntoConstraints = false
-        b.backgroundColor = unselectedColor
+        b.backgroundColor = .unselectedBackground
         b.layer.cornerRadius = buttonHeight / 2
         b.addTarget(self, action: #selector(handleFoldUnfold), for: .touchUpInside)
         return b
     }()
-    
-    private let unselectedColor: UIColor = .lightGray
-    private let selectedColor: UIColor = .yellow
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,23 +53,26 @@ class ThemeHeaderView: UIControl {
     }
     
     func updateView() {
+        print("update view")
+        
         button.setTitle(theme, for: .normal)
         
-//        if isSelected {
-//            button.backgroundColor = foldedColor
-//        } else {
-//            button.backgroundColor = unfoldedColor
-//        }
+        if isSelected {
+            button.setTitleColor(.selectedText, for: .normal)
+            button.backgroundColor = .selectedBackground
+        } else {
+            button.setTitleColor(.unselectedText, for: .normal)
+            button.backgroundColor = .unselectedBackground
+        }
     }
     
     func configureConstraints() {
         addSubview(button)
         
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
+        button.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
+        button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         button.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        
-        button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding).isActive = true
-        button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding).isActive = true
     }
     
     @objc func handleFoldUnfold() {

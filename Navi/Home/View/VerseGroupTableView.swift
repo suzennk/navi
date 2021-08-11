@@ -12,6 +12,7 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     let themes = DataBaseService.shared.themes
     let categories = DataBaseService.shared.categories
     
+    var headerViews = [Int : ThemeHeaderView]()
     lazy var folded = [Bool](repeating: true, count: themes.count)
     
     let reuseIdentifier = "cellId"
@@ -47,8 +48,15 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
             let header = self.tableHeaderView
             self.tableHeaderView = header
         }
-
-        register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        
+        // register cells
+        register(HeadCell.self, forCellReuseIdentifier: reuseIdentifier)
+        
+        // allow multiple selection
+        allowsMultipleSelection = true
+        
+        // remove separator
+        separatorStyle = .none
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,17 +75,22 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = ThemeHeaderView()
-        headerView.backgroundColor = tableView.backgroundColor
-        
-        let theme = themes[section]
-        
-        headerView.theme = theme
-        
-        headerView.tag = section
-        headerView.addTarget(self, action: #selector(handleFoldUnfold(button:)), for: .touchUpInside)
-        
-        return headerView
+        if let headerView = headerViews[section] {
+            return headerView
+        } else {
+            let headerView = ThemeHeaderView()
+            headerView.backgroundColor = tableView.backgroundColor
+            
+            let theme = themes[section]
+            
+            headerView.theme = theme
+            headerView.tag = section
+            headerView.addTarget(self, action: #selector(handleFoldUnfold(button:)), for: .touchUpInside)
+
+            headerViews[section] = headerView
+
+            return headerView
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -98,29 +111,72 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
                 
         if folded[section] {
             deleteRows(at: indexPaths, with: .automatic)
+            
+            // update header selected status caused by folding section
+             guard let header = headerViews[section] else { return }
+             header.isSelected = false
         } else {
             insertRows(at: indexPaths, with: .automatic)
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        let theme = themes[indexPath.section]
-        if let head = categories[theme]?[indexPath.row] {
-            cell.textLabel?.text = "\(head)"
-        } else {
-            cell.backgroundColor = .red
+        guard let cell = dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? HeadCell else {
+            return UITableViewCell()
         }
+        
+        let theme = themes[indexPath.section]
+        if let heads = categories[theme] {
+            let head = heads[indexPath.row]
+            cell.head = head
+            cell.isChecked = false
+        }
+        
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 44
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected item at section: \(indexPath.section) row: \(indexPath.row)")
+        guard let header = headerViews[indexPath.section] else {
+            debugPrint("Header not found for section: \(indexPath.section)")
+            return
+        }
+        
+        if let cell = cellForRow(at: indexPath) as? HeadCell {
+            cell.isChecked = true
+        }
+        
+        if let selectedRows = indexPathsForSelectedRows {
+            print(selectedRows)
+            if selectedRows.contains(where: { $0.section == indexPath.section }) {
+                header.isSelected = true
+            }
+        }
     }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let header = headerViews[indexPath.section] else {
+            debugPrint("Header not found for section: \(indexPath.section)")
+            return
+        }
+        
+        if let cell = cellForRow(at: indexPath) as? HeadCell {
+            cell.isChecked = false
+        }
+        
+        if let selectedRows = indexPathsForSelectedRows {
+            print(selectedRows)
+            if !selectedRows.contains(where: { $0.section == indexPath.section }) {
+                header.isSelected = false
+            }
+        } else {
+            header.isSelected = false
+        }
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
