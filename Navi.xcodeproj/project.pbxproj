@@ -148,8 +148,8 @@
 		085B088426B15F67003EA5B7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				085B087C26B14C9A003EA5B7 /* HomeVC.swift */,
-				085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */,
+				08AD4D9F26C389E200E14F64 /* Controller */,
+				08AD4D9E26C389DC00E14F64 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -160,6 +160,22 @@
 				08AD4D9826BA784C00E14F64 /* DataBaseService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		08AD4D9E26C389DC00E14F64 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08AD4D9F26C389E200E14F64 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				085B087C26B14C9A003EA5B7 /* HomeVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
