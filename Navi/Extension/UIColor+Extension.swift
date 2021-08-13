@@ -8,6 +8,8 @@
 import UIKit
 
 extension UIColor {
+    static let naviYellow = UIColor(red: 255/255.0, green: 192/255.0, blue: 0/255.0, alpha: 1.0)
+
     static let selectedBackground = UIColor(red: 247/255.0, green: 203/255.0, blue: 34/255.0, alpha: 1.0)
     static let unselectedBackground = UIColor(red: 237/255.0, green: 237/255.0, blue: 237/255.0, alpha: 237/255.0)
     
