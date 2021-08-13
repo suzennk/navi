@@ -9,11 +9,32 @@ import UIKit
 
 class HomeVC: ViewController, UITableViewDelegate {
 
-    lazy var verseGroupTV: UITableView = {
+    lazy var verseGroupTV: VerseGroupTableView = {
         let tv = VerseGroupTableView(frame: view.frame)
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
+    
+    lazy var selectionButton: UIButton = {
+        let b = UIButton()
+        b.translatesAutoresizingMaskIntoConstraints = false
+        b.setTitle("암송하러가기", for: .normal)
+        b.setTitleColor(.darkText, for: .normal)
+        b.titleLabel?.font = .systemFont(ofSize: 20, weight: .semibold)
+        b.backgroundColor = .naviYellow
+        
+        b.layer.cornerRadius = 20
+        b.layer.shadowOpacity = 0.3
+        b.layer.shadowOffset = .init(width: 5, height: 5)
+        b.layer.shadowRadius = 10
+        b.layer.masksToBounds = false
+        
+        b.addTarget(self, action: #selector(handleSelectionButtonoTapped), for: .touchUpInside)
+        return b
+    }()
+    
+    private var enabledConstraint: NSLayoutConstraint?
+    private var disabledConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +46,9 @@ class HomeVC: ViewController, UITableViewDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .automatic
         navigationController?.navigationBar.sizeToFit()
+        
+        // set delegate
+        verseGroupTV.homeDelegate = self
     }
     
     override func configureConstraints() {
@@ -33,7 +57,41 @@ class HomeVC: ViewController, UITableViewDelegate {
         verseGroupTV.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         verseGroupTV.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         verseGroupTV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-
+        
+        view.addSubview(selectionButton)
+        selectionButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32).isActive = true
+        selectionButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        selectionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        enabledConstraint = selectionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+        disabledConstraint = selectionButton.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 16)
+        
+        disabledConstraint?.isActive = true
+        enabledConstraint?.isActive = false
     }
     
+    func updateView() {
+        let selectedHeads = verseGroupTV.selectedHeads
+        
+        if selectedHeads.isEmpty {
+            self.enabledConstraint?.isActive = false
+            self.disabledConstraint?.isActive = true
+            
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            self.disabledConstraint?.isActive = false
+            self.enabledConstraint?.isActive = true
+
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    @objc func handleSelectionButtonoTapped() {
+        let selectedHeads = verseGroupTV.selectedHeads
+        print(selectedHeads)
+    }
 }

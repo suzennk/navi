@@ -9,21 +9,34 @@ import UIKit
 
 class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
 
-    let themes = DataBaseService.shared.themes
-    let categories = DataBaseService.shared.categories
+    var homeDelegate: HomeVC?
+    
+    private let themes = DataBaseService.shared.themes
+    private let categories = DataBaseService.shared.categories
     
     /**
      Headers for each section.
      Since we do not use reusable headers here each section headers are stored in this property.
      Could be inefficient memorywise if number of themes is large ...
      */
-    var headerViews = [Int : ThemeHeaderView]()
-    lazy var folded = [Bool](repeating: true, count: themes.count)
+    private var headerViews = [Int : ThemeHeaderView]()
+    private lazy var folded = [Bool](repeating: true, count: themes.count)
     
-    let reuseIdentifier = "cellId"
-    let headerIdentifier = "headerId"
     
-    let verseView: TodayVerseView = {
+    var selectedHeads: [Head] {
+        get {
+            return indexPathsForSelectedRows?.compactMap({ indexPath -> Head? in
+                let theme = themes[indexPath.section]
+                let head = categories[theme]?[indexPath.row]
+                return head
+            }) ?? [Head]()
+        }
+    }
+    
+    private let reuseIdentifier = "cellId"
+    private let headerIdentifier = "headerId"
+    
+    private let verseView: TodayVerseView = {
         let v = TodayVerseView()
         v.translatesAutoresizingMaskIntoConstraints = false
         let dummyVerse = Verse(id: "999", bible: "신", chapter: "6", startVerse: "6", middleSymbol: "", endVerse: "", theme: "", head: "", subHead: "", title: "", contents: "오늘날 내게 네게 명하는 이 말씀을 너는 마음에 새기고")
@@ -125,6 +138,9 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
             // insert rows
             insertRows(at: indexPaths, with: .automatic)
         }
+        
+        // notify homeVC
+        homeDelegate?.updateView()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -156,6 +172,9 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
                 header.isSelected = true
             }
         }
+
+        // notify homeVC
+        homeDelegate?.updateView()
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -171,6 +190,9 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         } else {
             header.isSelected = false
         }
+        
+        // notify homeVC
+        homeDelegate?.updateView()
     }
     
     required init?(coder: NSCoder) {
