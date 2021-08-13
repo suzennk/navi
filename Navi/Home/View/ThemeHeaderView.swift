@@ -14,7 +14,6 @@ class ThemeHeaderView: UIControl {
     
     private let buttonHeight: CGFloat = 72
     private let buttonWidth: CGFloat = 330
-    private let padding: CGFloat = 20
     
     var isFolded: Bool = true {
         didSet {

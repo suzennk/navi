@@ -93,7 +93,7 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return 80
     }
     
     @objc func handleFoldUnfold(button: UIButton) {
