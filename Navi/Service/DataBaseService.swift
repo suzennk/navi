@@ -13,7 +13,7 @@ typealias Head = String
 class DataBaseService {
     static let shared = DataBaseService()
     private var _verses: [Verse] = []
-    private var _themes: Set<String> = []
+    private let _themes: [Theme] = ["LOA", "LOC", "60구절", "DEP", "180구절", "OYO"]
     
     public var themes: [String] {
         get {
@@ -56,7 +56,6 @@ class DataBaseService {
         암송 말씀 데이터파일(.csv)을 읽고 데이터 파싱을 진행한다.
      */
     private func parseFile(at url:URL) {
-        _themes = []
         do {
             let data = try Data(contentsOf: url)
             let dataEncoded = String(data: data, encoding: .utf8)
@@ -70,7 +69,6 @@ class DataBaseService {
                     let verse = Verse(id: item[0], bible: item[1], chapter: chapter, startVerse: item[3], middleSymbol: item[4], endVerse: item[5], theme: theme, head: item[7], subHead: item[8], title: item[9], contents: item[10])
                     
                     _verses.append(verse)
-                    _themes.insert(theme)
                 }
             }
         } catch {

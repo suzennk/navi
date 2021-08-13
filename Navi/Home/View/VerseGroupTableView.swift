@@ -12,6 +12,11 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     let themes = DataBaseService.shared.themes
     let categories = DataBaseService.shared.categories
     
+    /**
+     Headers for each section.
+     Since we do not use reusable headers here each section headers are stored in this property.
+     Could be inefficient memorywise if number of themes is large ...
+     */
     var headerViews = [Int : ThemeHeaderView]()
     lazy var folded = [Bool](repeating: true, count: themes.count)
     
@@ -74,9 +79,9 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let headerView = headerViews[section] {
+        if let headerView = headerViews[section] {      // reuse custom-stored headers
             return headerView
-        } else {
+        } else {                                        // instantiate new section header
             let headerView = ThemeHeaderView()
             headerView.backgroundColor = tableView.backgroundColor
             
