@@ -21,7 +21,7 @@ class HomeVC: ViewController, UITableViewDelegate {
         view.backgroundColor = .white
 
         // Set navigation bar title as large title
-        title = "Home"
+        title = "오늘의 말씀"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .automatic
         navigationController?.navigationBar.sizeToFit()

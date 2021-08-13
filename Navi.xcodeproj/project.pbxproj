@@ -21,6 +21,8 @@
 		085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */; };
 		089762C926C3A91600AFC555 /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762C826C3A91600AFC555 /* HeadCell.swift */; };
 		089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CB26C3C99900AFC555 /* UIColor+Extension.swift */; };
+		089762CE26C3D65700AFC555 /* TodayVerseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CD26C3D65700AFC555 /* TodayVerseView.swift */; };
+		089762D126C3D69D00AFC555 /* VerseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762D026C3D69D00AFC555 /* VerseViewModel.swift */; };
 		08AD4D9926BA784C00E14F64 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AD4D9826BA784C00E14F64 /* DataBaseService.swift */; };
 		08AD4D9D26BCEE7800E14F64 /* cardset.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 08AD4D9C26BCEE7800E14F64 /* cardset.tsv */; };
 		08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */; };
@@ -64,6 +66,8 @@
 		085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseGroupTableView.swift; sourceTree = "<group>"; };
 		089762C826C3A91600AFC555 /* HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
 		089762CB26C3C99900AFC555 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		089762CD26C3D65700AFC555 /* TodayVerseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVerseView.swift; sourceTree = "<group>"; };
+		089762D026C3D69D00AFC555 /* VerseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewModel.swift; sourceTree = "<group>"; };
 		08AD4D9826BA784C00E14F64 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
 		08AD4D9C26BCEE7800E14F64 /* cardset.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cardset.tsv; sourceTree = "<group>"; };
 		08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHeaderView.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		085B088426B15F67003EA5B7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				089762CF26C3D68C00AFC555 /* ViewModel */,
 				08AD4D9F26C389E200E14F64 /* Controller */,
 				08AD4D9E26C389DC00E14F64 /* View */,
 			);
@@ -167,6 +172,14 @@
 				089762CB26C3C99900AFC555 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		089762CF26C3D68C00AFC555 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				089762D026C3D69D00AFC555 /* VerseViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		08AD4D9726BA780000E14F64 /* Service */ = {
@@ -183,6 +196,7 @@
 				085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */,
 				08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */,
 				089762C826C3A91600AFC555 /* HeadCell.swift */,
+				089762CD26C3D65700AFC555 /* TodayVerseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,11 +343,13 @@
 				085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */,
 				085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */,
 				089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */,
+				089762D126C3D69D00AFC555 /* VerseViewModel.swift in Sources */,
 				085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */,
 				085B088126B150E1003EA5B7 /* MyPageVC.swift in Sources */,
 				08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */,
 				085B087D26B14C9A003EA5B7 /* HomeVC.swift in Sources */,
 				085B087926B14655003EA5B7 /* TabBarController.swift in Sources */,
+				089762CE26C3D65700AFC555 /* TodayVerseView.swift in Sources */,
 				085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */,
 				085B084B26B136BF003EA5B7 /* SceneDelegate.swift in Sources */,
 				089762C926C3A91600AFC555 /* HeadCell.swift in Sources */,

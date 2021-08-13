@@ -18,12 +18,12 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     let reuseIdentifier = "cellId"
     let headerIdentifier = "headerId"
     
-    let verseView: UILabel = {
-        let l = UILabel()
-        l.translatesAutoresizingMaskIntoConstraints = false
-        l.text = "오늘날 내게 네게 명하는 이 말씀을 너는 마음에 새기고 (신6:6)"
-        l.numberOfLines = 2
-        return l
+    let verseView: TodayVerseView = {
+        let v = TodayVerseView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        let dummyVerse = Verse(id: "999", bible: "신", chapter: "6", startVerse: "6", middleSymbol: "", endVerse: "", theme: "", head: "", subHead: "", title: "", contents: "오늘날 내게 네게 명하는 이 말씀을 너는 마음에 새기고")
+        v.verseViewModel = VerseViewModel(dummyVerse)
+        return v
     }()
     
     override init(frame: CGRect, style: UITableView.Style) {
@@ -36,7 +36,6 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         
         tableHeaderView = verseView
         verseView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        verseView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         // Header View가 바로 나타나지 않는 현상 해결
         if let headerView = self.tableHeaderView {
