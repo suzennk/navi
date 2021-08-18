@@ -14,10 +14,21 @@ typealias Head = String
 
 class DataBaseService {
     static let shared = DataBaseService()
-    private var _verses: [Verse] = []
+    
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private lazy var context = appDelegate.persistentContainer.viewContext
+
+    private var _verses: [Verse] {
+        get {
+            if let verses = try? context.fetch(Verse.fetchRequest()) as? [Verse]  {
+                return verses
+            }
+            return []
+        }
+    }
     private let _themes: [Theme] = ["LOA", "LOC", "60구절", "DEP", "180구절", "OYO"]
     
-    public var themes: [String] {
+    public var themes: [Theme] {
         get {
             return Array(_themes)
         }
@@ -50,30 +61,12 @@ class DataBaseService {
     }
     
     private init() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
         if let number = try? context.count(for: Verse.fetchRequest()), number == 0  {
             // load verses at first launch
             print("Load verses from data file")
             loadVersesFromTSV()
         }
-
-        fetchVerse()
-        // _verses is loaded
     }
-    
-    func fetchVerse() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        do {
-            let verses = try context.fetch(Verse.fetchRequest()) as! [Verse]
-            _verses = verses
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-
     /**
         암송 말씀 데이터파일(.csv)을 읽고 데이터 파싱을 진행한다.
      */
@@ -90,9 +83,6 @@ class DataBaseService {
     }
     
     private func loadAndSaveEntities(from dataArr: [[String]]) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-
         dataArr[1..<dataArr.count].forEach { item in
             
             // skip invalid lines

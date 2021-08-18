@@ -166,8 +166,8 @@
 		085B088426B15F67003EA5B7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				089762CF26C3D68C00AFC555 /* ViewModel */,
 				08AD4D9F26C389E200E14F64 /* Controller */,
+				089762CF26C3D68C00AFC555 /* ViewModel */,
 				08AD4D9E26C389DC00E14F64 /* View */,
 			);
 			path = Home;
@@ -194,7 +194,6 @@
 			children = (
 				08AB0A3926CCFDAE00066D6F /* Model.xcdatamodeld */,
 				08AB0A3E26CD0AA200066D6F /* Verse.swift */,
-				08A7820026CCD88D00338E97 /* PersistentContainer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				08AD4D9826BA784C00E14F64 /* DataBaseService.swift */,
+				08A7820026CCD88D00338E97 /* PersistentContainer.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
