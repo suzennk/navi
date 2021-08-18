@@ -39,7 +39,7 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     private let verseView: TodayVerseView = {
         let v = TodayVerseView()
         v.translatesAutoresizingMaskIntoConstraints = false
-        let dummyVerse = Verse(id: "999", bible: "신", chapter: "6", startVerse: "6", middleSymbol: "", endVerse: "", theme: "", head: "", subHead: "", title: "", contents: "오늘날 내게 네게 명하는 이 말씀을 너는 마음에 새기고")
+        let dummyVerse = DataBaseService.shared.verses.randomElement()!
         v.verseViewModel = VerseViewModel(dummyVerse)
         return v
     }()

@@ -11,7 +11,15 @@ struct VerseViewModel {
     let text: String
     
     init(_ verse: Verse) {
-        text = "\(verse.contents) (\(verse.bible) \(verse.chapter):\(verse.startVerse)\(verse.middleSymbol)\(verse.endVerse))"
+        var text = ""
+//        text += "@@@@@@\(verse.id)@@@@@@ "
+        text += "\(verse.contents) (\(verse.bible) \(verse.chapter):\(verse.startVerse)"
+        if let sym = verse.middleSymbol {
+            text += "\(sym)\(verse.endVerse)"
+        }
+        text += ")"
+        
+        self.text = text
     }
 }
 

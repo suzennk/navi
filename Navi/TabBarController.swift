@@ -8,7 +8,7 @@
 import UIKit
 
 /**
- Custom Tab Bar Controller for Navi App
+ Custom Tab Bar Controller for Navi App. Also a root view controller of this app.
  */
 class TabBarController: UITabBarController {
 
