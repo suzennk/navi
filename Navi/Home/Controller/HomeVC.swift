@@ -33,6 +33,8 @@ class HomeVC: ViewController, UITableViewDelegate {
         return b
     }()
     
+    private var disabledTVContraints: NSLayoutConstraint?
+    private var enabledTVContraints: NSLayoutConstraint?
     private var enabledConstraint: NSLayoutConstraint?
     private var disabledConstraint: NSLayoutConstraint?
     
@@ -53,12 +55,18 @@ class HomeVC: ViewController, UITableViewDelegate {
     
     override func configureConstraints() {
         view.addSubview(verseGroupTV)
+        view.addSubview(selectionButton)
+
         verseGroupTV.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         verseGroupTV.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         verseGroupTV.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        verseGroupTV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        view.addSubview(selectionButton)
+        disabledTVContraints = verseGroupTV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        enabledTVContraints = verseGroupTV.bottomAnchor.constraint(equalTo: selectionButton.topAnchor)
+        
+        disabledTVContraints?.isActive = true
+        enabledTVContraints?.isActive = false
+        
         selectionButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32).isActive = true
         selectionButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         selectionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -74,6 +82,8 @@ class HomeVC: ViewController, UITableViewDelegate {
         let selectedHeads = verseGroupTV.selectedHeads
         
         if selectedHeads.isEmpty {
+            self.enabledTVContraints?.isActive = false
+            self.disabledTVContraints?.isActive = true
             self.enabledConstraint?.isActive = false
             self.disabledConstraint?.isActive = true
             
@@ -81,6 +91,8 @@ class HomeVC: ViewController, UITableViewDelegate {
                 self.view.layoutIfNeeded()
             }
         } else {
+            self.disabledTVContraints?.isActive = false
+            self.enabledTVContraints?.isActive = true
             self.disabledConstraint?.isActive = false
             self.enabledConstraint?.isActive = true
 

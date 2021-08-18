@@ -192,9 +192,9 @@
 		08A781FF26CCD1DC00338E97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				08AB0A3926CCFDAE00066D6F /* Model.xcdatamodeld */,
 				08AB0A3E26CD0AA200066D6F /* Verse.swift */,
 				08A7820026CCD88D00338E97 /* PersistentContainer.swift */,
-				08AB0A3926CCFDAE00066D6F /* Model.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
