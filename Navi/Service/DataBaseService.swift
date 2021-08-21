@@ -21,10 +21,7 @@ class DataBaseService {
     private let _themes: [Theme] = ["LOA", "LOC", "60구절", "DEP", "180구절", "OYO"]
     private var _verses: [Verse] {
         get {
-            if let verses = try? context.fetch(Verse.fetchRequest()) as? [Verse]  {
-                return verses
-            }
-            return []
+            return fetch(request: Verse.fetchRequest())
         }
     }
     
@@ -66,6 +63,13 @@ class DataBaseService {
             print("Load verses from data file")
             loadVersesFromTSV()
         }
+    }
+    // MARK: - Fetch
+    public func fetch(request: NSFetchRequest<Verse>) -> [Verse] {
+        if let verses = try? context.fetch(request) {
+            return verses
+        }
+        return []
     }
     
     // MARK: - Load at first launch

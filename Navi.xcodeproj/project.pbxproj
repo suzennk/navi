@@ -26,6 +26,11 @@
 		08A7820126CCD88D00338E97 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A7820026CCD88D00338E97 /* PersistentContainer.swift */; };
 		08AB0A3B26CCFDAE00066D6F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A3926CCFDAE00066D6F /* Model.xcdatamodeld */; };
 		08AB0A4026CD0AA200066D6F /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A3E26CD0AA200066D6F /* Verse.swift */; };
+		08AB0A4726D0DD2100066D6F /* CardTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A4626D0DD2100066D6F /* CardTableVC.swift */; };
+		08AB0A4926D0DFE100066D6F /* CardTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A4826D0DFE100066D6F /* CardTableViewModel.swift */; };
+		08AB0A4B26D0E15800066D6F /* CardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A4A26D0E15800066D6F /* CardTableView.swift */; };
+		08AB0A4D26D0E41C00066D6F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A4C26D0E41C00066D6F /* CardCell.swift */; };
+		08AB0A4F26D0E4AA00066D6F /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A4E26D0E4AA00066D6F /* CardViewModel.swift */; };
 		08AD4D9926BA784C00E14F64 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AD4D9826BA784C00E14F64 /* DataBaseService.swift */; };
 		08AD4D9D26BCEE7800E14F64 /* cardset.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 08AD4D9C26BCEE7800E14F64 /* cardset.tsv */; };
 		08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */; };
@@ -74,6 +79,11 @@
 		08A7820026CCD88D00338E97 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		08AB0A3A26CCFDAE00066D6F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		08AB0A3E26CD0AA200066D6F /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Verse.swift; path = ../../Verse.swift; sourceTree = "<group>"; };
+		08AB0A4626D0DD2100066D6F /* CardTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableVC.swift; sourceTree = "<group>"; };
+		08AB0A4826D0DFE100066D6F /* CardTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewModel.swift; sourceTree = "<group>"; };
+		08AB0A4A26D0E15800066D6F /* CardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableView.swift; sourceTree = "<group>"; };
+		08AB0A4C26D0E41C00066D6F /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		08AB0A4E26D0E4AA00066D6F /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		08AD4D9826BA784C00E14F64 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
 		08AD4D9C26BCEE7800E14F64 /* cardset.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cardset.tsv; sourceTree = "<group>"; };
 		08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHeaderView.swift; sourceTree = "<group>"; };
@@ -185,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				089762D026C3D69D00AFC555 /* VerseViewModel.swift */,
+				08AB0A4826D0DFE100066D6F /* CardTableViewModel.swift */,
+				08AB0A4E26D0E4AA00066D6F /* CardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -214,6 +226,8 @@
 				08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */,
 				089762C826C3A91600AFC555 /* HeadCell.swift */,
 				089762CD26C3D65700AFC555 /* TodayVerseView.swift */,
+				08AB0A4A26D0E15800066D6F /* CardTableView.swift */,
+				08AB0A4C26D0E41C00066D6F /* CardCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				085B087C26B14C9A003EA5B7 /* HomeVC.swift */,
+				08AB0A4626D0DD2100066D6F /* CardTableVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -356,17 +371,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08AB0A4F26D0E4AA00066D6F /* CardViewModel.swift in Sources */,
 				08AD4D9926BA784C00E14F64 /* DataBaseService.swift in Sources */,
 				085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */,
 				08AB0A4026CD0AA200066D6F /* Verse.swift in Sources */,
+				08AB0A4726D0DD2100066D6F /* CardTableVC.swift in Sources */,
 				085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */,
 				089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */,
 				089762D126C3D69D00AFC555 /* VerseViewModel.swift in Sources */,
+				08AB0A4B26D0E15800066D6F /* CardTableView.swift in Sources */,
 				085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */,
 				085B088126B150E1003EA5B7 /* MyPageVC.swift in Sources */,
 				08A7820126CCD88D00338E97 /* PersistentContainer.swift in Sources */,
 				08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */,
 				085B087D26B14C9A003EA5B7 /* HomeVC.swift in Sources */,
+				08AB0A4926D0DFE100066D6F /* CardTableViewModel.swift in Sources */,
+				08AB0A4D26D0E41C00066D6F /* CardCell.swift in Sources */,
 				085B087926B14655003EA5B7 /* TabBarController.swift in Sources */,
 				08AB0A3B26CCFDAE00066D6F /* Model.xcdatamodeld in Sources */,
 				089762CE26C3D65700AFC555 /* TodayVerseView.swift in Sources */,

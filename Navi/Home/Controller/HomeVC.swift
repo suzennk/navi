@@ -104,7 +104,8 @@ class HomeVC: ViewController, UITableViewDelegate {
     
     @objc func handleMemorizeButtonTapped() {
         let selectedHeads = verseGroupTV.selectedHeads
-        
-        print(selectedHeads)
+        let cardVC = CardTableVC()
+        cardVC.heads = selectedHeads
+        navigationController?.pushViewController(cardVC, animated: true)
     }
 }

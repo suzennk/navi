@@ -27,6 +27,13 @@ class TabBarController: UITabBarController {
         let myPageNavController = UINavigationController(rootViewController: myPageVC)
         myPageNavController.title = "MyPage"
         
+//        let tv = CardTableVC()
+//        let navcontr = UINavigationController(rootViewController: tv)
+//        tv.title = "암송하기"
+//        tv.heads = ["A - 새로운 삶", "B - 그리스도를 전파함"]
+        
+//        self.viewControllers = [quizNavController, homeNavController, myPageNavController, navcontr]
+    
         self.viewControllers = [quizNavController, homeNavController, myPageNavController]
         self.selectedViewController = viewControllers?[1]
     }
