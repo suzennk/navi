@@ -15,6 +15,13 @@ public class Verse: NSManagedObject {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Verse> {
         return NSFetchRequest<Verse>(entityName: "Verse")
     }
+    
+    @nonobjc public class func fetchReqest(of heads: [String]) -> NSFetchRequest<Verse> {
+        let request = NSFetchRequest<Verse>(entityName: "Verse")
+        let subpredicates = heads.map { NSPredicate(format: "head = %@", "\($0)") }
+        request.predicate = NSCompoundPredicate(type: .or, subpredicates: subpredicates)
+        return request
+    }
 
     @NSManaged public var id: Int64
     @NSManaged public var subHead: String

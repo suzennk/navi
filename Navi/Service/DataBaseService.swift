@@ -18,6 +18,7 @@ class DataBaseService {
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private lazy var context = appDelegate.persistentContainer.viewContext
 
+    private let _themes: [Theme] = ["LOA", "LOC", "60구절", "DEP", "180구절", "OYO"]
     private var _verses: [Verse] {
         get {
             if let verses = try? context.fetch(Verse.fetchRequest()) as? [Verse]  {
@@ -26,7 +27,6 @@ class DataBaseService {
             return []
         }
     }
-    private let _themes: [Theme] = ["LOA", "LOC", "60구절", "DEP", "180구절", "OYO"]
     
     public var themes: [Theme] {
         get {
@@ -67,6 +67,8 @@ class DataBaseService {
             loadVersesFromTSV()
         }
     }
+    
+    // MARK: - Load at first launch
     /**
         암송 말씀 데이터파일(.csv)을 읽고 데이터 파싱을 진행한다.
      */

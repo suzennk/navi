@@ -29,7 +29,7 @@ class HomeVC: ViewController, UITableViewDelegate {
         b.layer.shadowRadius = 10
         b.layer.masksToBounds = false
         
-        b.addTarget(self, action: #selector(handleSelectionButtonoTapped), for: .touchUpInside)
+        b.addTarget(self, action: #selector(handleMemorizeButtonTapped), for: .touchUpInside)
         return b
     }()
     
@@ -102,8 +102,9 @@ class HomeVC: ViewController, UITableViewDelegate {
         }
     }
     
-    @objc func handleSelectionButtonoTapped() {
+    @objc func handleMemorizeButtonTapped() {
         let selectedHeads = verseGroupTV.selectedHeads
+        
         print(selectedHeads)
     }
 }
