@@ -6,12 +6,23 @@
 //
 
 import UIKit
+import CoreData
 
 class CardTableView: UITableView {
    
     private let cellId = "cardCellId"
     
-    var verses: [Verse] = []
+    var verses: [Verse] = [] {
+        didSet {
+            verses.enumerated().filter {
+                $0.element.memorized == true
+            }.forEach { (idx, _) in
+                let indexPath = IndexPath(row: idx, section: 0)
+                selectRow(at: indexPath, animated: false, scrollPosition: .none)
+            }
+            
+        }
+    }
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -32,9 +43,17 @@ class CardTableView: UITableView {
 }
 
 extension CardTableView: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        250
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let verse = verses[indexPath.row]
+        verse.setValue(true, forKey: "memorized")
+        DataBaseService.shared.save()
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let verse = verses[indexPath.row]
+        verse.setValue(false, forKey: "memorized")
+        DataBaseService.shared.save()
+    }
 }
 
 extension CardTableView: UITableViewDataSource {

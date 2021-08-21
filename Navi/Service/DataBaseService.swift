@@ -72,6 +72,14 @@ class DataBaseService {
         return []
     }
     
+    public func save() {
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     // MARK: - Load at first launch
     /**
         암송 말씀 데이터파일(.csv)을 읽고 데이터 파싱을 진행한다.
