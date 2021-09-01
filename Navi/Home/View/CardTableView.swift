@@ -14,12 +14,24 @@ class CardTableView: UITableView {
     
     var verses: [Verse] = [] {
         didSet {
+            // Update UI for memorized verses
             verses.enumerated().filter {
                 $0.element.memorized == true
             }.forEach { (idx, _) in
                 let indexPath = IndexPath(row: idx, section: 0)
                 selectRow(at: indexPath, animated: false, scrollPosition: .none)
             }
+            reloadData()
+        }
+    }
+    
+    var hidesVerseRange: Bool = false {
+        didSet {
+            reloadData()
+        }
+    }
+    var hidesContent: Bool = false {
+        didSet {
             reloadData()
         }
     }
@@ -66,6 +78,9 @@ extension CardTableView: UITableViewDataSource {
         
         let verse = verses[indexPath.row]
         cell.viewModel = CardViewModel(verse)
+        
+        cell.contentLabel.alpha = hidesContent ? 0 : 1
+        cell.verseRangeLabel.alpha = hidesVerseRange ? 0 : 1
         
         return cell
     }

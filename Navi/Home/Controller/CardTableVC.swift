@@ -32,6 +32,17 @@ class CardTableVC: ViewController {
         return tv
     }()
     
+    private var hidesVerseRange: Bool = false {
+        didSet {
+            updateView()
+        }
+    }
+    private var hidesContent: Bool = false {
+        didSet {
+            updateView()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,21 +55,32 @@ class CardTableVC: ViewController {
         // Set up actions for sorting verses
         let defaultAction       = UIAction(title: "기본순",
                                            image: UIImage(systemName: ""),
+                                           state: sortMethod == .original ? .on : .off,
                                            handler: { _ in self.sortMethod = .original })
         let alphabeticalAction  = UIAction(title: "가나다순",
                                            image: UIImage(systemName: "abc"),
+                                           state: sortMethod == .alphabetical ? .on : .off,
                                            handler: { _ in self.sortMethod = .alphabetical })
         let shuffleAction       = UIAction(title: "랜덤",
                                            image: UIImage(systemName: "shuffle"),
+                                           state: sortMethod == .shuffle ? .on : .off,
                                            handler: { _ in self.sortMethod = .shuffle })
-
-        let menu = UIMenu(title: "정렬", image: nil, identifier: nil, options: .displayInline, children: [defaultAction, alphabeticalAction, shuffleAction])
         
-        let filterButton = UIBarButtonItem(image: UIImage(systemName: "slider.horizontal.3"), style: .plain, target: self, action: nil)
+        let hideVerseRangeAction   = UIAction(title: "장절 숨기기",
+                                           image: UIImage(systemName: "number"),
+                                           state: hidesVerseRange ? .on : .off,
+                                           handler: { _ in self.hidesVerseRange.toggle() })
+        let hideContentAction   = UIAction(title: "내용 숨기기",
+                                           image: UIImage(systemName: "text.alignleft"),
+                                           state: hidesContent ? .on : .off,
+                                           handler: { _ in self.hidesContent.toggle() })
+        let hideMenu = UIMenu(title: "보기", image: nil, identifier: nil, options: .displayInline, children: [hideVerseRangeAction, hideContentAction])
         
-        filterButton.menu = menu
+        let menu = UIMenu(title: "정렬", image: nil, identifier: nil, options: .displayInline, children: [defaultAction, alphabeticalAction, shuffleAction, hideMenu])
+        let barButtonItem = UIBarButtonItem(image: UIImage(systemName: "slider.horizontal.3"), style: .plain, target: self, action: nil)
+        barButtonItem.menu = menu
         
-        self.navigationItem.rightBarButtonItem = filterButton
+        self.navigationItem.rightBarButtonItem = barButtonItem
     }
     
     override func configureConstraints() {
@@ -87,5 +109,10 @@ class CardTableVC: ViewController {
         default:
             cardTV.verses = res
         }
+        
+        cardTV.hidesVerseRange = self.hidesVerseRange
+        cardTV.hidesContent = self.hidesContent
+        
+        setupBarButtonItems()
     }
 }
