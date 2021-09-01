@@ -105,7 +105,7 @@ class HomeVC: ViewController, UITableViewDelegate {
     @objc func handleMemorizeButtonTapped() {
         let selectedHeads = verseGroupTV.selectedHeads
         let cardVC = CardTableVC()
-        cardVC.viewModel = CardTableViewModel(["A - 새로운 삶", "B - 그리스도를 전파함"])
+        cardVC.viewModel = CardTableViewModel(selectedHeads)
         navigationController?.pushViewController(cardVC, animated: true)
     }
 }

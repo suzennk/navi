@@ -27,14 +27,11 @@ class CardTableView: UITableView {
                 let indexPath = IndexPath(row: idx, section: 0)
                 selectRow(at: indexPath, animated: false, scrollPosition: .none)
             }
-            reloadData()
         }
     }
     
     var sortMethod: SortMethod = .original {
         didSet {
-            guard oldValue != sortMethod else { return }
-            
             switch sortMethod {
             case .alphabetical:
                 filteredVerses = verses.sorted(by: { $0.bible < $1.bible })
