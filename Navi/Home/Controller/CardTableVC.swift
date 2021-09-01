@@ -8,15 +8,14 @@
 import UIKit
 
 class CardTableVC: ViewController {
-    var heads: [Head] = [] {
-        didSet {
-            viewModel = CardTableViewModel(heads)
-        }
-    }
     
     var viewModel: CardTableViewModel? {
         didSet {
-            updateView()
+            guard let vm = viewModel else { return }
+            
+            self.title = vm.title
+            let res = DataBaseService.shared.fetch(request: Verse.fetchReqest(of: vm.heads))
+            cardTV.verses = res
         }
     }
     
@@ -92,24 +91,7 @@ class CardTableVC: ViewController {
     }
     
     func updateView() {
-        guard let vm = viewModel else {
-            debugPrint("No view model available")
-            return
-        }
-        
-        self.title = vm.title
-        
-        let res = DataBaseService.shared.fetch(request: Verse.fetchReqest(of: vm.heads))
-        
-        switch sortMethod {
-        case .alphabetical:
-            cardTV.verses = res.sorted(by: { $0.bible < $1.bible })
-        case .shuffle:
-            cardTV.verses = res.shuffled()
-        default:
-            cardTV.verses = res
-        }
-        
+        cardTV.sortMethod = self.sortMethod
         cardTV.hidesVerseRange = self.hidesVerseRange
         cardTV.hidesContent = self.hidesContent
         

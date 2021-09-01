@@ -14,14 +14,35 @@ class CardTableView: UITableView {
     
     var verses: [Verse] = [] {
         didSet {
+            filteredVerses = verses
+        }
+    }
+    
+    var filteredVerses: [Verse] = [] {
+        didSet {
             // Update UI for memorized verses
-            verses.enumerated().filter {
+            filteredVerses.enumerated().filter {
                 $0.element.memorized == true
             }.forEach { (idx, _) in
                 let indexPath = IndexPath(row: idx, section: 0)
                 selectRow(at: indexPath, animated: false, scrollPosition: .none)
             }
             reloadData()
+        }
+    }
+    
+    var sortMethod: SortMethod = .original {
+        didSet {
+            guard oldValue != sortMethod else { return }
+            
+            switch sortMethod {
+            case .alphabetical:
+                filteredVerses = verses.sorted(by: { $0.bible < $1.bible })
+            case .shuffle:
+                filteredVerses = verses.shuffled()
+            default:
+                filteredVerses = verses
+            }
         }
     }
     
@@ -56,13 +77,13 @@ class CardTableView: UITableView {
 
 extension CardTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let verse = verses[indexPath.row]
+        let verse = filteredVerses[indexPath.row]
         verse.setValue(true, forKey: "memorized")
         DataBaseService.shared.save()
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let verse = verses[indexPath.row]
+        let verse = filteredVerses[indexPath.row]
         verse.setValue(false, forKey: "memorized")
         DataBaseService.shared.save()
     }
@@ -70,13 +91,13 @@ extension CardTableView: UITableViewDelegate {
 
 extension CardTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return verses.count
+        return filteredVerses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? CardCell else { return UITableViewCell() }
         
-        let verse = verses[indexPath.row]
+        let verse = filteredVerses[indexPath.row]
         cell.viewModel = CardViewModel(verse)
         
         cell.contentLabel.alpha = hidesContent ? 0 : 1
