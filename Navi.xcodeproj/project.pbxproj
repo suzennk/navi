@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,6 +34,7 @@
 		08AD4D9926BA784C00E14F64 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AD4D9826BA784C00E14F64 /* DataBaseService.swift */; };
 		08AD4D9D26BCEE7800E14F64 /* cardset.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 08AD4D9C26BCEE7800E14F64 /* cardset.tsv */; };
 		08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */; };
+		08B6162626DF64E2009BE636 /* SortMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B6162526DF64E1009BE636 /* SortMethod.swift */; };
 		1735D5F0F357685ACF82DB86 /* Pods_Navi_NaviUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E725CCFB8FD4D1CBEB745E9 /* Pods_Navi_NaviUITests.framework */; };
 		1C951D9316E6E2D78C3ECFAA /* Pods_NaviTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17ADC61355E79CC441E8C5D /* Pods_NaviTests.framework */; };
 		4FE6FAC31C6E766FE0D8AEAD /* Pods_Navi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492033842D5652D4110970C4 /* Pods_Navi.framework */; };
@@ -90,6 +91,7 @@
 		08AD4D9826BA784C00E14F64 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
 		08AD4D9C26BCEE7800E14F64 /* cardset.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cardset.tsv; sourceTree = "<group>"; };
 		08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHeaderView.swift; sourceTree = "<group>"; };
+		08B6162526DF64E1009BE636 /* SortMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMethod.swift; sourceTree = "<group>"; };
 		2FDFD6777C8E4357F3282A3C /* Pods-Navi-NaviUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-NaviUITests.debug.xcconfig"; path = "Target Support Files/Pods-Navi-NaviUITests/Pods-Navi-NaviUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E725CCFB8FD4D1CBEB745E9 /* Pods_Navi_NaviUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navi_NaviUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		492033842D5652D4110970C4 /* Pods_Navi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 		085B084726B136BF003EA5B7 /* Navi */ = {
 			isa = PBXGroup;
 			children = (
+				08B6162426DF6456009BE636 /* Enumerations */,
 				08A781FF26CCD1DC00338E97 /* Model */,
 				089762CA26C3C98800AFC555 /* Extension */,
 				08AD4D9726BA780000E14F64 /* Service */,
@@ -258,6 +261,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		08B6162426DF6456009BE636 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				08B6162526DF64E1009BE636 /* SortMethod.swift */,
+			);
+			path = Enumerations;
+			sourceTree = "<group>";
+		};
 		540E501F15B1CD7CE5A28433 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,7 +279,6 @@
 				6735B6F62D9C36E478074E74 /* Pods-NaviTests.debug.xcconfig */,
 				4FB1FBCBB5093198C7962162 /* Pods-NaviTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -522,6 +532,7 @@
 			files = (
 				08AB0A4F26D0E4AA00066D6F /* CardViewModel.swift in Sources */,
 				08AD4D9926BA784C00E14F64 /* DataBaseService.swift in Sources */,
+				08B6162626DF64E2009BE636 /* SortMethod.swift in Sources */,
 				085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */,
 				08AB0A4026CD0AA200066D6F /* Verse.swift in Sources */,
 				08AB0A4726D0DD2100066D6F /* CardTableVC.swift in Sources */,

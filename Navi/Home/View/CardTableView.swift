@@ -20,7 +20,7 @@ class CardTableView: UITableView {
                 let indexPath = IndexPath(row: idx, section: 0)
                 selectRow(at: indexPath, animated: false, scrollPosition: .none)
             }
-            
+            reloadData()
         }
     }
     
