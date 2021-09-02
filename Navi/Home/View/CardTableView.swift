@@ -32,6 +32,7 @@ class CardTableView: UITableView {
     
     var sortMethod: SortMethod = .original {
         didSet {
+            if oldValue == sortMethod { return }
             switch sortMethod {
             case .alphabetical:
                 filteredVerses = verses.sorted(by: { $0.bible < $1.bible })
