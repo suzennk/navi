@@ -98,9 +98,6 @@ class DataBaseService {
     
     private func loadAndSaveEntities(from dataArr: [[String]]) {
         dataArr[1..<dataArr.count].forEach { item in
-            
-            print(item, item.count)
-            
             // skip invalid lines
             if item.count < 10 {
                 return
@@ -120,10 +117,6 @@ class DataBaseService {
             verse.setValue(item[8], forKey: "subHead")
             verse.setValue(item[9], forKey: "title")
             verse.setValue(item[10], forKey: "contents")
-            
-            if item[6] == "OYO" {
-                print(VerseViewModel(verse).text)
-            }
         }
         
         do {
@@ -131,8 +124,6 @@ class DataBaseService {
         } catch {
             print(error.localizedDescription)
         }
-        
-        print(try! context.count(for: Verse.fetchRequest()))
     }
         
     private func loadVersesFromTSV() {

@@ -32,7 +32,7 @@ class OnYourOwnTableVC: UITableViewController {
         oyoVerses = res
     }
     
-    //: Mark - UITableViewDelegate
+    // MARK: - UITableViewDelegate
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
