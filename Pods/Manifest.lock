@@ -1,16 +1,20 @@
 PODS:
+  - PanModal (1.2.4)
   - SnapKit (5.0.0)
 
 DEPENDENCIES:
+  - PanModal
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - PanModal
     - SnapKit
 
 SPEC CHECKSUMS:
+  PanModal: 275f6d4d07565ddf4ed16d7be5d9cd275682d80d
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: 128246a9b5af22b4a7d6ae44e5349c42fc2194fb
+PODFILE CHECKSUM: fc6db08fb08ea5e5c692b5f63cea11feadda91fc
 
-COCOAPODS: 1.9.0.beta.3
+COCOAPODS: 1.10.2
