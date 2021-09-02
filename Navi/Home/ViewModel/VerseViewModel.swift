@@ -8,17 +8,22 @@
 import Foundation
 
 struct VerseViewModel {
+    let rangeText: String
     let text: String
     
     init(_ verse: Verse) {
-        var text = ""
-//        text += "@@@@@@\(verse.id)@@@@@@ "
-        text += "\(verse.contents) (\(verse.bible) \(verse.chapter):\(verse.startVerse)"
-        if let sym = verse.middleSymbol {
-            text += "\(sym)\(verse.endVerse)"
+        var rangeText = ""
+        rangeText += "\(verse.bible) \(verse.chapter):\(verse.startVerse)"
+        if let _ = verse.middleSymbol {
+            // use "-" instead of original
+            rangeText += "-\(verse.endVerse)"
         }
-        text += ")"
         
+        var text = ""
+        text += "\(verse.contents)"
+        text += "(\(rangeText))"
+        
+        self.rangeText = rangeText
         self.text = text
     }
 }

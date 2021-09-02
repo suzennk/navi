@@ -19,6 +19,8 @@
 		085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087E26B15058003EA5B7 /* QuizVC.swift */; };
 		085B088126B150E1003EA5B7 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088026B150E1003EA5B7 /* MyPageVC.swift */; };
 		085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */; };
+		08941B2F26E0986400E5CA97 /* OnYourOwnTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08941B2E26E0986400E5CA97 /* OnYourOwnTableVC.swift */; };
+		08941B3326E0A46500E5CA97 /* OnYourOwnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08941B3226E0A46500E5CA97 /* OnYourOwnCell.swift */; };
 		089762C926C3A91600AFC555 /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762C826C3A91600AFC555 /* HeadCell.swift */; };
 		089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CB26C3C99900AFC555 /* UIColor+Extension.swift */; };
 		089762CE26C3D65700AFC555 /* TodayVerseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CD26C3D65700AFC555 /* TodayVerseView.swift */; };
@@ -76,6 +78,8 @@
 		085B087E26B15058003EA5B7 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		085B088026B150E1003EA5B7 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
 		085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseGroupTableView.swift; sourceTree = "<group>"; };
+		08941B2E26E0986400E5CA97 /* OnYourOwnTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnYourOwnTableVC.swift; sourceTree = "<group>"; };
+		08941B3226E0A46500E5CA97 /* OnYourOwnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnYourOwnCell.swift; sourceTree = "<group>"; };
 		089762C826C3A91600AFC555 /* HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
 		089762CB26C3C99900AFC555 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		089762CD26C3D65700AFC555 /* TodayVerseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVerseView.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				085B087826B14655003EA5B7 /* TabBarController.swift */,
 				085B087E26B15058003EA5B7 /* QuizVC.swift */,
 				085B088426B15F67003EA5B7 /* Home */,
+				08941B2D26E097C500E5CA97 /* OYO */,
 				085B088026B150E1003EA5B7 /* MyPageVC.swift */,
 				08AD4D9C26BCEE7800E14F64 /* cardset.tsv */,
 			);
@@ -201,6 +206,39 @@
 				08AD4D9E26C389DC00E14F64 /* View */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		08941B2D26E097C500E5CA97 /* OYO */ = {
+			isa = PBXGroup;
+			children = (
+				08941B3426E0A69F00E5CA97 /* ViewModel */,
+				08941B3126E0A45100E5CA97 /* View */,
+				08941B3026E0A44A00E5CA97 /* Controller */,
+			);
+			path = OYO;
+			sourceTree = "<group>";
+		};
+		08941B3026E0A44A00E5CA97 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				08941B2E26E0986400E5CA97 /* OnYourOwnTableVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		08941B3126E0A45100E5CA97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08941B3226E0A46500E5CA97 /* OnYourOwnCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08941B3426E0A69F00E5CA97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		089762CA26C3C98800AFC555 /* Extension */ = {
@@ -543,6 +581,7 @@
 				085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */,
 				085B088126B150E1003EA5B7 /* MyPageVC.swift in Sources */,
 				08A7820126CCD88D00338E97 /* PersistentContainer.swift in Sources */,
+				08941B3326E0A46500E5CA97 /* OnYourOwnCell.swift in Sources */,
 				08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */,
 				085B087D26B14C9A003EA5B7 /* HomeVC.swift in Sources */,
 				08AB0A4926D0DFE100066D6F /* CardTableViewModel.swift in Sources */,
@@ -551,6 +590,7 @@
 				08AB0A3B26CCFDAE00066D6F /* Model.xcdatamodeld in Sources */,
 				089762CE26C3D65700AFC555 /* TodayVerseView.swift in Sources */,
 				085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */,
+				08941B2F26E0986400E5CA97 /* OnYourOwnTableVC.swift in Sources */,
 				085B084B26B136BF003EA5B7 /* SceneDelegate.swift in Sources */,
 				089762C926C3A91600AFC555 /* HeadCell.swift in Sources */,
 			);

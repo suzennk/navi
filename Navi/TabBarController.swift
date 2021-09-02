@@ -23,9 +23,11 @@ class TabBarController: UITabBarController {
         let homeNavController = UINavigationController(rootViewController: homeVC)
         homeNavController.title = "Home"
         
+        /*
         let myPageVC = MyPageVC()
         let myPageNavController = UINavigationController(rootViewController: myPageVC)
         myPageNavController.title = "MyPage"
+        */
         
         /*
         let tv = CardTableVC()
@@ -37,8 +39,12 @@ class TabBarController: UITabBarController {
         self.selectedViewController = viewControllers?[3]
         */
         
-        self.viewControllers = [quizNavController, homeNavController, myPageNavController]
-        self.selectedViewController = viewControllers?[1]
+        let oyoVC = OnYourOwnTableVC()
+        let oyoNavContr = UINavigationController(rootViewController: oyoVC)
+        oyoNavContr.title = "OYO"
+        
+        self.viewControllers = [quizNavController, homeNavController, oyoNavContr]
+        self.selectedViewController = viewControllers?[2]
     }
     
 }

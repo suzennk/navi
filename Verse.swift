@@ -22,6 +22,13 @@ public class Verse: NSManagedObject {
         request.predicate = NSCompoundPredicate(type: .or, subpredicates: subpredicates)
         return request
     }
+    
+    @nonobjc public class func fetchRequestOfOYO() -> NSFetchRequest<Verse> {
+        let request = NSFetchRequest<Verse>(entityName: "Verse")
+        let predicate = NSPredicate(format: "theme = %@", "OYO")
+        request.predicate = predicate
+        return request
+    }
 
     @NSManaged public var id: Int64
     @NSManaged public var subHead: String
