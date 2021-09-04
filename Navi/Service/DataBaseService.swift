@@ -63,6 +63,13 @@ class DataBaseService {
             print("Load verses from data file")
             loadVersesFromTSV()
         }
+        
+        // MARK: - MUST DELETE: for testing
+//        fetch(request: Verse.fetchRequest()).forEach {
+//            context.delete($0)
+//        }
+//        print(try? context.count(for: Verse.fetchRequest()))
+//        loadVersesFromTSV()
     }
     // MARK: - Fetch
     public func fetch(request: NSFetchRequest<Verse>) -> [Verse] {
@@ -117,6 +124,11 @@ class DataBaseService {
             verse.setValue(item[8], forKey: "subHead")
             verse.setValue(item[9], forKey: "title")
             verse.setValue(item[10], forKey: "contents")
+            
+            // MARK: - MUST DELETE
+            if verse.id > 490 {
+                verse.setValue(true, forKey: "isOYO")
+            }
         }
         
         do {

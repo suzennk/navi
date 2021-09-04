@@ -25,7 +25,7 @@ public class Verse: NSManagedObject {
     
     @nonobjc public class func fetchRequestOfOYO() -> NSFetchRequest<Verse> {
         let request = NSFetchRequest<Verse>(entityName: "Verse")
-        let predicate = NSPredicate(format: "theme = %@", "OYO")
+        let predicate = NSPredicate(format: "isOYO = YES")
         request.predicate = predicate
         return request
     }
@@ -42,4 +42,5 @@ public class Verse: NSManagedObject {
     @NSManaged public var contents: String
     @NSManaged public var title: String
     @NSManaged public var memorized: Bool
+    @NSManaged public var isOYO: Bool
 }
