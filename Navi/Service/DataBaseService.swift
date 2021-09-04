@@ -17,10 +17,24 @@ class DataBaseService {
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private lazy var context = appDelegate.persistentContainer.viewContext
 
+    // MARK: - All
     private let _themes: [String] = ["LOA", "LOC", "60구절", "DEP", "180구절", "OYO"]
     private var _verses: [Verse] {
         get {
             return fetch(request: Verse.fetchRequest())
+        }
+    }
+    
+    // MARK: - OYO
+    private var _oyoThemes: [Theme] {
+        get {
+            return fetch(request: Theme.fetchRequest())
+        }
+    }
+    
+    private var _oyoVerses: [Verse] {
+        get {
+            return fetch(request: Verse.fetchRequestOfOYO())
         }
     }
     
@@ -56,6 +70,19 @@ class DataBaseService {
         }
     }
     
+    public var categorizedOyoVerses: [Theme: [Verse]] {
+        get {
+            var catVerses = [Theme: [Verse]]()
+            _oyoThemes.forEach { theme in
+                let verses = _oyoVerses.filter {
+                    $0.theme == theme.name
+                }
+                catVerses[theme] = verses
+            }
+            return catVerses
+        }
+    }
+    
     private init() {
         if let number = try? context.count(for: Verse.fetchRequest()), number == 0  {
             // load verses at first launch
@@ -65,22 +92,16 @@ class DataBaseService {
         
         // MARK: - MUST DELETE: for testing
         
-        if let themeCount = try? context.count(for: Theme.fetchRequest()), themeCount == 0 {
-            let theme = Theme(context: context)
-            theme.setValue("내가 넣었지롱", forKey: "name")
-
-//            let theme2 = Theme(context: context)
-//            theme2.setValue("내가 넣었지롱", forKey: "name")
+//        if let themeCount = try? context.count(for: Theme.fetchRequest()), themeCount == 0 {
+//            let theme = Theme(context: context)
+//            theme.setValue("180구절", forKey: "name")
 //
-//            let theme3 = Theme(context: context)
-//            theme3.setValue("ㅋㅋㅋㅋ", forKey: "name")
-            
-            do {
-                try context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
+//            do {
+//                try context.save()
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
         
 //        fetch(request: Verse.fetchRequest()).forEach {
 //            context.delete($0)
@@ -88,6 +109,7 @@ class DataBaseService {
 //        print(try? context.count(for: Verse.fetchRequest()))
 //        loadVersesFromTSV()
     }
+    
     // MARK: - Fetch
     public func fetch(request: NSFetchRequest<Verse>) -> [Verse] {
         if let verses = try? context.fetch(request) {
