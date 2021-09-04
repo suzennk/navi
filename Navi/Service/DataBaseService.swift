@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 import CoreData
 
-typealias Theme = String
 typealias Head = String
 
 class DataBaseService {
@@ -18,14 +17,14 @@ class DataBaseService {
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private lazy var context = appDelegate.persistentContainer.viewContext
 
-    private let _themes: [Theme] = ["LOA", "LOC", "60구절", "DEP", "180구절", "OYO"]
+    private let _themes: [String] = ["LOA", "LOC", "60구절", "DEP", "180구절", "OYO"]
     private var _verses: [Verse] {
         get {
             return fetch(request: Verse.fetchRequest())
         }
     }
     
-    public var themes: [Theme] {
+    public var themes: [String] {
         get {
             return Array(_themes)
         }
@@ -40,9 +39,9 @@ class DataBaseService {
     /**
      verses로부터 unique한 theme으로부터 head만 뽑아낸 dictionary 
      */
-    public var categories: [Theme : [Head]] {
+    public var categories: [String : [Head]] {
         get {
-            var cats = [Theme : [Head]]()
+            var cats = [String : [Head]]()
             _themes.forEach { theme in
                 let heads = Set(
                     _verses.filter {
