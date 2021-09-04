@@ -25,19 +25,6 @@ class DataBaseService {
         }
     }
     
-    // MARK: - OYO
-    private var _oyoThemes: [Theme] {
-        get {
-            return fetch(request: Theme.fetchRequest())
-        }
-    }
-    
-    private var _oyoVerses: [Verse] {
-        get {
-            return fetch(request: Verse.fetchRequestOfOYO())
-        }
-    }
-    
     public var themes: [String] {
         get {
             return Array(_themes)
@@ -70,6 +57,24 @@ class DataBaseService {
         }
     }
     
+    // MARK: - OYO
+    private var _oyoThemes: [Theme] {
+        get {
+            return fetch(request: Theme.fetchRequest())
+        }
+    }
+    
+    private var _oyoVerses: [Verse] {
+        get {
+            return fetch(request: Verse.fetchRequestOfOYO())
+        }
+    }
+    
+    public var oyoThemes: [Theme] {
+        get {
+            return _oyoThemes
+        }
+    }
     public var categorizedOyoVerses: [Theme: [Verse]] {
         get {
             var catVerses = [Theme: [Verse]]()
@@ -110,8 +115,12 @@ class DataBaseService {
 //        loadVersesFromTSV()
     }
     
-    // MARK: - Fetch
-    public func fetch(request: NSFetchRequest<Verse>) -> [Verse] {
+    // MARK: - Fetch: Verse
+    public func fetchVerse(of heads: [Head]) -> [Verse] {
+        return fetch(request: Verse.fetchReqest(of: heads))
+    }
+    
+    private func fetch(request: NSFetchRequest<Verse>) -> [Verse] {
         if let verses = try? context.fetch(request) {
             return verses
         }
@@ -191,7 +200,7 @@ class DataBaseService {
     }
     
     // MARK: - Theme
-    public func fetch(request: NSFetchRequest<Theme>) -> [Theme] {
+    private func fetch(request: NSFetchRequest<Theme>) -> [Theme] {
         if let verses = try? context.fetch(request) {
             return verses
         }

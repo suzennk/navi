@@ -13,7 +13,7 @@ private let cellId = "cellId"
 class OnYourOwnTableVC: UITableViewController {
     
     
-    var themes: [Theme] = DataBaseService.shared.fetch(request: Theme.fetchRequest())
+    var themes: [Theme] = DataBaseService.shared.oyoThemes
     
     var oyoVerses: [Theme : [Verse]] = DataBaseService.shared.categorizedOyoVerses {
         didSet {

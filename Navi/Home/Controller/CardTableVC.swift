@@ -14,7 +14,7 @@ class CardTableVC: ViewController {
             guard let vm = viewModel else { return }
             
             self.title = vm.title
-            let res = DataBaseService.shared.fetch(request: Verse.fetchReqest(of: vm.heads))
+            let res = DataBaseService.shared.fetchVerse(of: vm.heads)
             cardTV.verses = res
         }
     }
