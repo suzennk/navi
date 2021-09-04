@@ -61,7 +61,17 @@ private class AddOnYourOwnVC: ViewController {
     }
     
     func setupNavigationBar() {
-        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancelTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleDoneTapped))
+    }
+    
+    @objc private func handleCancelTapped() {
+        self.dismiss(animated: true)
+    }
+    
+    // MARK: - TODO: implementation incomplete
+    @objc private func handleDoneTapped() {
+        self.dismiss(animated: true)
     }
 }
 
