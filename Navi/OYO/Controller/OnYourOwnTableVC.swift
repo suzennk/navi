@@ -30,6 +30,9 @@ class OnYourOwnTableVC: UITableViewController {
         
         let res = DataBaseService.shared.fetch(request: Verse.fetchRequestOfOYO())
         oyoVerses = res
+        
+        let themes = DataBaseService.shared.fetch(request: Theme.fetchRequest())
+        print(themes.map { $0.name })
     }
     
     // MARK: - UITableViewDelegate

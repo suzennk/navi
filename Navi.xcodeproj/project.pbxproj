@@ -33,6 +33,7 @@
 		08AB0A4B26D0E15800066D6F /* CardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A4A26D0E15800066D6F /* CardTableView.swift */; };
 		08AB0A4D26D0E41C00066D6F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A4C26D0E41C00066D6F /* CardCell.swift */; };
 		08AB0A4F26D0E4AA00066D6F /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A4E26D0E4AA00066D6F /* CardViewModel.swift */; };
+		08AC129B26E354690066750F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AC129926E354690066750F /* Theme.swift */; };
 		08AD4D9926BA784C00E14F64 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AD4D9826BA784C00E14F64 /* DataBaseService.swift */; };
 		08AD4D9D26BCEE7800E14F64 /* cardset.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 08AD4D9C26BCEE7800E14F64 /* cardset.tsv */; };
 		08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */; };
@@ -92,6 +93,7 @@
 		08AB0A4A26D0E15800066D6F /* CardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableView.swift; sourceTree = "<group>"; };
 		08AB0A4C26D0E41C00066D6F /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		08AB0A4E26D0E4AA00066D6F /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		08AC129926E354690066750F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = /Users/susan/Documents/Navi/Navi/Model/Theme.swift; sourceTree = "<absolute>"; };
 		08AD4D9826BA784C00E14F64 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
 		08AD4D9C26BCEE7800E14F64 /* cardset.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cardset.tsv; sourceTree = "<group>"; };
 		08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHeaderView.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				08AB0A3926CCFDAE00066D6F /* Model.xcdatamodeld */,
+				08AC129926E354690066750F /* Theme.swift */,
 				08AB0A3E26CD0AA200066D6F /* Verse.swift */,
 			);
 			path = Model;
@@ -585,6 +588,7 @@
 				08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */,
 				085B087D26B14C9A003EA5B7 /* HomeVC.swift in Sources */,
 				08AB0A4926D0DFE100066D6F /* CardTableViewModel.swift in Sources */,
+				08AC129B26E354690066750F /* Theme.swift in Sources */,
 				08AB0A4D26D0E41C00066D6F /* CardCell.swift in Sources */,
 				085B087926B14655003EA5B7 /* TabBarController.swift in Sources */,
 				08AB0A3B26CCFDAE00066D6F /* Model.xcdatamodeld in Sources */,

@@ -64,6 +64,24 @@ class DataBaseService {
         }
         
         // MARK: - MUST DELETE: for testing
+        
+        if let themeCount = try? context.count(for: Theme.fetchRequest()), themeCount == 0 {
+            let theme = Theme(context: context)
+            theme.setValue("내가 넣었지롱", forKey: "name")
+
+//            let theme2 = Theme(context: context)
+//            theme2.setValue("내가 넣었지롱", forKey: "name")
+//
+//            let theme3 = Theme(context: context)
+//            theme3.setValue("ㅋㅋㅋㅋ", forKey: "name")
+            
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
 //        fetch(request: Verse.fetchRequest()).forEach {
 //            context.delete($0)
 //        }
@@ -148,5 +166,13 @@ class DataBaseService {
         }
         
         loadAndSaveEntities(from: dataArr)
+    }
+    
+    // MARK: - Theme
+    public func fetch(request: NSFetchRequest<Theme>) -> [Theme] {
+        if let verses = try? context.fetch(request) {
+            return verses
+        }
+        return []
     }
 }
