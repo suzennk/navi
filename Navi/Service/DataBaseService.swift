@@ -96,18 +96,18 @@ class DataBaseService {
         }
         
         // MARK: - MUST DELETE: for testing
-        
-//        if let themeCount = try? context.count(for: Theme.fetchRequest()), themeCount == 0 {
-//            let theme = Theme(context: context)
-//            theme.setValue("180구절", forKey: "name")
-//
-//            do {
-//                try context.save()
-//            } catch {
-//                print(error.localizedDescription)
-//            }
+//        fetch(request: Theme.fetchRequest()).forEach {
+//            context.delete($0)
 //        }
-        
+//        let theme = Theme(context: context)
+//        theme.setValue("180구절", forKey: "name")
+//
+//        do {
+//            try context.save()
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+
 //        fetch(request: Verse.fetchRequest()).forEach {
 //            context.delete($0)
 //        }
