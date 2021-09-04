@@ -7,11 +7,11 @@
 
 import UIKit
 import SnapKit
+import PanModal
 
 private let cellId = "cellId"
 
 class OnYourOwnTableVC: UITableViewController {
-    
     
     var themes: [Theme] = DataBaseService.shared.oyoThemes
     
@@ -43,6 +43,7 @@ class OnYourOwnTableVC: UITableViewController {
         tableView.register(OnYourOwnCell.self, forCellReuseIdentifier: cellId)
         
         configurConstraints()
+        setupBarButtonItems()
     }
     
     func configurConstraints() {
@@ -56,6 +57,17 @@ class OnYourOwnTableVC: UITableViewController {
         }
         
         view.layoutIfNeeded()
+    }
+    
+    func setupBarButtonItems() {
+        let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAddTapped))
+        
+        navigationItem.rightBarButtonItem = addBarButtonItem
+    }
+    
+    @objc func handleAddTapped() {
+        let addVC = AddNavigationController()
+        presentPanModal(addVC)
     }
     
     // MARK: - UITableViewDelegate
