@@ -78,19 +78,6 @@ class OnYourOwnTableVC: UITableViewController {
         40
     }
     
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let theme = themes[section]
-//
-//        let view = UIView()
-//        let label = UILabel()
-//        label.text = "\(theme.name ?? "기타")"
-//        view.addSubview(label)
-//        label.snp.makeConstraints { make in
-//            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0))
-//        }
-//        return view
-//    }
-
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let theme = themes[section]
         return theme.name ?? "기타"
