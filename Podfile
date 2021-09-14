@@ -11,6 +11,7 @@ target 'Navi' do
   # Pods for Navi
   pod 'SnapKit', '~> 5.0.0'
   pod 'PanModal'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
 
   target 'NaviTests' do
     inherit! :search_paths

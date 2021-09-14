@@ -21,6 +21,8 @@ class OnYourOwnTableVC: UITableViewController {
         }
     }
     
+    let addVC = AddOnYourOwnVC()
+    
     lazy var headerView: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .bold)
@@ -66,7 +68,6 @@ class OnYourOwnTableVC: UITableViewController {
     }
     
     @objc func handleAddTapped() {
-        let addVC = AddNavigationController()
         presentPanModal(addVC)
     }
     

@@ -1,20 +1,24 @@
 PODS:
   - PanModal (1.2.4)
+  - SkyFloatingLabelTextField (3.7.0)
   - SnapKit (5.0.0)
 
 DEPENDENCIES:
   - PanModal
+  - SkyFloatingLabelTextField (~> 3.0)
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - PanModal
+    - SkyFloatingLabelTextField
     - SnapKit
 
 SPEC CHECKSUMS:
   PanModal: 275f6d4d07565ddf4ed16d7be5d9cd275682d80d
+  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: fc6db08fb08ea5e5c692b5f63cea11feadda91fc
+PODFILE CHECKSUM: 049bc31fd1943fb1826004fd239c0904353c6542
 
 COCOAPODS: 1.10.2
