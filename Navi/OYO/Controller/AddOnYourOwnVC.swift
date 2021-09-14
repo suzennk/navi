@@ -89,6 +89,8 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
         view.backgroundColor = .systemBackground
         
         setupTableView()
+        
+        addObversers()
     }
     
      override func configureConstraints() {
@@ -119,12 +121,43 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
+    deinit {
+        removeObservers()
+    }
+    
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+    }
+    
+    func addObversers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func removeObservers()
+    {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification:NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+
+        var contentInset:UIEdgeInsets = self.tableView.contentInset
+        contentInset.bottom = keyboardFrame.size.height + 20
+        tableView.contentInset = contentInset
+    }
+
+    @objc func keyboardWillHide(notification:NSNotification) {
+
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        tableView.contentInset = contentInset
     }
     
     @objc private func handleCancelTapped() {
