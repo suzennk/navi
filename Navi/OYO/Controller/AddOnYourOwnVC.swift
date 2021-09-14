@@ -60,7 +60,7 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
         b.setImage(UIImage(systemName: "xmark"), for: .normal)
         b.setTitleColor(.naviYellow, for: .normal)
         b.addTarget(self, action: #selector(handleCancelTapped), for: .touchUpInside)
-        b.backgroundColor = .systemGray6
+        b.backgroundColor = .systemGray5
         b.layer.cornerRadius = 22
         b.snp.makeConstraints { make in
             make.width.equalTo(b.snp.height)
@@ -73,7 +73,7 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
         b.setImage(UIImage(systemName: "checkmark"), for: .normal)
         b.titleLabel?.font = .boldSystemFont(ofSize: 18)
         b.addTarget(self, action: #selector(handleDoneTapped), for: .touchUpInside)
-        b.backgroundColor = .systemGray6
+        b.backgroundColor = .systemGray5
         b.layer.cornerRadius = 22
         b.snp.makeConstraints { make in
             make.width.equalTo(b.snp.height)

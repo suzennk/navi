@@ -41,7 +41,7 @@ class HomeVC: ViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
 
         // Set navigation bar title as large title
         title = "오늘의 말씀"

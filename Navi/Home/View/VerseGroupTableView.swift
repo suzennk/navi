@@ -47,7 +47,7 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: .grouped)
         
-        backgroundColor = .white
+        backgroundColor = .systemBackground
         
         delegate = self
         dataSource = self
@@ -147,6 +147,8 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         guard let cell = dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? HeadCell else {
             return UITableViewCell()
         }
+        
+        cell.backgroundColor = tableView.backgroundColor
         
         let theme = themes[indexPath.section]
         if let heads = categories[theme] {
