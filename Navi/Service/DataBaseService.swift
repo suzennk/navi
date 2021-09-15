@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 typealias Head = String
+typealias Theme = String
 
 class DataBaseService {
     static let shared = DataBaseService()
@@ -58,9 +59,9 @@ class DataBaseService {
     }
     
     // MARK: - OYO
-    private var _oyoThemes: [Theme] {
+    private var _oyoHeads: [Head] {
         get {
-            return fetch(request: Theme.fetchRequest())
+            return Array(Set(_oyoVerses.map { $0.head }))
         }
     }
     
@@ -70,19 +71,19 @@ class DataBaseService {
         }
     }
     
-    public var oyoThemes: [Theme] {
+    public var oyoHeads: [Head] {
         get {
-            return _oyoThemes
+            return _oyoHeads
         }
     }
-    public var categorizedOyoVerses: [Theme: [Verse]] {
+    public var categorizedOyoVerses: [Head: [Verse]] {
         get {
-            var catVerses = [Theme: [Verse]]()
-            _oyoThemes.forEach { theme in
+            var catVerses = [Head: [Verse]]()
+            _oyoHeads.forEach { head in
                 let verses = _oyoVerses.filter {
-                    $0.theme == theme.name
+                    $0.head == head
                 }
-                catVerses[theme] = verses
+                catVerses[head] = verses
             }
             return catVerses
         }
@@ -172,11 +173,6 @@ class DataBaseService {
             verse.setValue(item[8], forKey: "subHead")
             verse.setValue(item[9], forKey: "title")
             verse.setValue(item[10], forKey: "contents")
-            
-            // MARK: - MUST DELETE
-            if verse.id > 490 {
-                verse.setValue(true, forKey: "isOYO")
-            }
         }
         
         do {
@@ -197,13 +193,5 @@ class DataBaseService {
         }
         
         loadAndSaveEntities(from: dataArr)
-    }
-    
-    // MARK: - Theme
-    private func fetch(request: NSFetchRequest<Theme>) -> [Theme] {
-        if let verses = try? context.fetch(request) {
-            return verses
-        }
-        return []
     }
 }

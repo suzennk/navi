@@ -13,9 +13,9 @@ private let cellId = "cellId"
 
 class OnYourOwnTableVC: UITableViewController {
     
-    var themes: [Theme] = DataBaseService.shared.oyoThemes
+    var heads: [Head] = DataBaseService.shared.oyoHeads
     
-    var oyoVerses: [Theme : [Verse]] = DataBaseService.shared.categorizedOyoVerses {
+    var oyoVerses: [Head : [Verse]] = DataBaseService.shared.categorizedOyoVerses {
         didSet {
             headerView.text = "전체 OYO - \(oyoVerses.count)개"
         }
@@ -73,19 +73,19 @@ class OnYourOwnTableVC: UITableViewController {
     
     // MARK: - UITableViewDelegate
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return themes.count
+        return heads.count
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         40
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let theme = themes[section]
-        return theme.name ?? "기타"
+        let theme = heads[section]
+        return theme
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let theme = themes[section]
+        let theme = heads[section]
         return oyoVerses[theme]?.count ?? 0
     }
     
@@ -96,7 +96,7 @@ class OnYourOwnTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? OnYourOwnCell else { return UITableViewCell() }
         
-        let theme = themes[indexPath.section]
+        let theme = heads[indexPath.section]
         if let verse = oyoVerses[theme]?[indexPath.row] {
             cell.viewModel = VerseViewModel(verse)
         }
