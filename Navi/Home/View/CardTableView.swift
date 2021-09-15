@@ -34,12 +34,12 @@ class CardTableView: UITableView {
         didSet {
             if oldValue == sortMethod { return }
             switch sortMethod {
+            case .original:
+                filteredVerses = verses.sorted(by: { $0.id < $1.id })
             case .alphabetical:
                 filteredVerses = verses.sorted(by: { $0.bible < $1.bible })
             case .shuffle:
                 filteredVerses = verses.shuffled()
-            default:
-                filteredVerses = verses
             }
         }
     }

@@ -14,11 +14,17 @@ typealias Theme = String
 
 class DataBaseService {
     static let shared = DataBaseService()
+    static let fileName = "cardset"
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private lazy var context = appDelegate.persistentContainer.viewContext
 
     // MARK: - All
+    public var count: Int {
+        let number = try? context.count(for: Verse.fetchRequest())
+        return number ?? 0
+    }
+    
     private let _themes: [String] = ["LOA", "LOC", "60구절", "DEP", "180구절", "OYO"]
     private var _verses: [Verse] {
         get {
@@ -128,12 +134,39 @@ class DataBaseService {
         return []
     }
     
-    public func save() {
+    public func addOYOVerse(bible: String, chapter: Int, startVerse: Int, middleSymbol: String?, endVerse: Int?, head: String, contents: String) -> Result<Verse, Error> {
+        let verse = Verse(context: context)
+        verse.setValue(Date().timeIntervalSince1970, forKey: "id")
+        verse.setValue(bible, forKey: "bible")
+        verse.setValue(chapter, forKey: "chapter")
+        verse.setValue(startVerse, forKey: "startVerse")
+        verse.setValue(middleSymbol, forKey: "middleSymbol")
+        verse.setValue(endVerse ?? startVerse, forKey: "endVerse")
+        verse.setValue("OYO", forKey: "theme")
+        verse.setValue(head, forKey: "head")
+        verse.setValue("", forKey: "subHead")
+        verse.setValue("", forKey: "title")
+        verse.setValue(contents, forKey: "contents")
+        
         do {
             try context.save()
         } catch {
-            print(error.localizedDescription)
+            return .failure(error)
         }
+        return .success(verse)
+    }
+    
+    public func remove(_ verse: Verse) {
+        context.delete(verse)
+    }
+    
+    public func save() -> Result<Void, Error> {
+        do {
+            try context.save()
+        } catch {
+            return .failure(error)
+        }
+        return .success(Void())
     }
     
     // MARK: - Load at first launch
@@ -183,7 +216,7 @@ class DataBaseService {
     }
         
     private func loadVersesFromTSV() {
-        guard let path = Bundle.main.path(forResource: "cardset", ofType: "tsv") else {
+        guard let path = Bundle.main.path(forResource: "\(DataBaseService.fileName)", ofType: "tsv") else {
             print("Error locating file")
             return
         }

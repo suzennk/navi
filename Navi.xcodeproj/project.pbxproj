@@ -40,6 +40,7 @@
 		08AD4D9D26BCEE7800E14F64 /* cardset.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 08AD4D9C26BCEE7800E14F64 /* cardset.tsv */; };
 		08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */; };
 		08B6162626DF64E2009BE636 /* SortMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B6162526DF64E1009BE636 /* SortMethod.swift */; };
+		08EEB18926F1C07B00A29818 /* test_verses.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 08EEB18826F1C07B00A29818 /* test_verses.tsv */; };
 		1735D5F0F357685ACF82DB86 /* Pods_Navi_NaviUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E725CCFB8FD4D1CBEB745E9 /* Pods_Navi_NaviUITests.framework */; };
 		1C951D9316E6E2D78C3ECFAA /* Pods_NaviTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17ADC61355E79CC441E8C5D /* Pods_NaviTests.framework */; };
 		4FE6FAC31C6E766FE0D8AEAD /* Pods_Navi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492033842D5652D4110970C4 /* Pods_Navi.framework */; };
@@ -102,6 +103,7 @@
 		08AD4D9C26BCEE7800E14F64 /* cardset.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cardset.tsv; sourceTree = "<group>"; };
 		08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHeaderView.swift; sourceTree = "<group>"; };
 		08B6162526DF64E1009BE636 /* SortMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMethod.swift; sourceTree = "<group>"; };
+		08EEB18826F1C07B00A29818 /* test_verses.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_verses.tsv; sourceTree = "<group>"; };
 		2FDFD6777C8E4357F3282A3C /* Pods-Navi-NaviUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-NaviUITests.debug.xcconfig"; path = "Target Support Files/Pods-Navi-NaviUITests/Pods-Navi-NaviUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E725CCFB8FD4D1CBEB745E9 /* Pods_Navi_NaviUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navi_NaviUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		492033842D5652D4110970C4 /* Pods_Navi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 			children = (
 				085B085F26B136C1003EA5B7 /* NaviTests.swift */,
 				085B086126B136C1003EA5B7 /* Info.plist */,
+				08EEB18826F1C07B00A29818 /* test_verses.tsv */,
 			);
 			path = NaviTests;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				089762C826C3A91600AFC555 /* HeadCell.swift */,
 				089762CD26C3D65700AFC555 /* TodayVerseView.swift */,
 				08AB0A4A26D0E15800066D6F /* CardTableView.swift */,
+				08EEB18A26F1D80E00A29818 /* New Group */,
 				08AB0A4C26D0E41C00066D6F /* CardCell.swift */,
 			);
 			path = View;
@@ -314,6 +318,13 @@
 				08B6162526DF64E1009BE636 /* SortMethod.swift */,
 			);
 			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		08EEB18A26F1D80E00A29818 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		540E501F15B1CD7CE5A28433 /* Pods */ = {
@@ -457,6 +468,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EEB18926F1C07B00A29818 /* test_verses.tsv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
