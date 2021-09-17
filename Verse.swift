@@ -16,10 +16,11 @@ public class Verse: NSManagedObject {
         return NSFetchRequest<Verse>(entityName: "Verse")
     }
     
-    @nonobjc public class func fetchReqest(of heads: [String]) -> NSFetchRequest<Verse> {
+    @nonobjc public class func fetchReqest(of categories: [(theme: String, head: String)]) -> NSFetchRequest<Verse> {
         let request = NSFetchRequest<Verse>(entityName: "Verse")
         let sort = NSSortDescriptor(key: #keyPath(Verse.id), ascending: true)
-        let subpredicates = heads.map { NSPredicate(format: "head = %@", "\($0)") }
+        let subpredicates = categories.map {
+            NSPredicate(format: "theme = %@ AND head = %@", "\($0.theme)", "\($0.head)") }
         request.sortDescriptors = [sort]
         request.predicate = NSCompoundPredicate(type: .or, subpredicates: subpredicates)
         return request

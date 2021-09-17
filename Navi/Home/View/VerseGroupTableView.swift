@@ -23,13 +23,16 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     private lazy var folded = [Bool](repeating: true, count: themes.count)
     
     
-    var selectedHeads: [Head] {
+    var selectedHeads: [(Theme, Head)] {
         get {
-            return indexPathsForSelectedRows?.compactMap({ indexPath -> Head? in
+            return indexPathsForSelectedRows?.compactMap({ indexPath -> (Theme, Head)? in
                 let theme = themes[indexPath.section]
-                let head = categories[theme]?[indexPath.row]
-                return head
-            }) ?? [Head]()
+                if let head = categories[theme]?[indexPath.row] {
+                    return (theme, head)
+                } else {
+                    return nil
+                }
+            }) ?? [(Theme, Head)]()
         }
     }
     

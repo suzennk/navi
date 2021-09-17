@@ -6,15 +6,15 @@
 //
 
 struct CardTableViewModel {
-    let heads: [String]
+    let categories: [(Theme, Head)]
     let title: String
     
-    init(_ heads: [String]) {
-        self.heads = heads
+    init(_ categories: [(Theme, Head)]) {
+        self.categories = categories
         
         var title = "암송하기"
-        if heads.count == 1 {
-            title = heads.first ?? title
+        if categories.count == 1 {
+            title = categories.first?.1 ?? title
         }
         self.title = title
     }

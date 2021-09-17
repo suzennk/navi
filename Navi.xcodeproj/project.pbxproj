@@ -297,7 +297,6 @@
 				089762C826C3A91600AFC555 /* HeadCell.swift */,
 				089762CD26C3D65700AFC555 /* TodayVerseView.swift */,
 				08AB0A4A26D0E15800066D6F /* CardTableView.swift */,
-				08EEB18A26F1D80E00A29818 /* New Group */,
 				08AB0A4C26D0E41C00066D6F /* CardCell.swift */,
 			);
 			path = View;
@@ -318,13 +317,6 @@
 				08B6162526DF64E1009BE636 /* SortMethod.swift */,
 			);
 			path = Enumerations;
-			sourceTree = "<group>";
-		};
-		08EEB18A26F1D80E00A29818 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
 			sourceTree = "<group>";
 		};
 		540E501F15B1CD7CE5A28433 /* Pods */ = {
