@@ -127,7 +127,7 @@ class DataBaseService {
         return fetch(request: Verse.fetchReqest(of: heads))
     }
     
-    private func fetch(request: NSFetchRequest<Verse>) -> [Verse] {
+    public func fetch(request: NSFetchRequest<Verse>) -> [Verse] {
         if let verses = try? context.fetch(request) {
             return verses
         }
@@ -156,8 +156,9 @@ class DataBaseService {
         return .success(verse)
     }
     
-    public func remove(_ verse: Verse) {
+    public func remove(_ verse: Verse) -> Result<Void, Error> {
         context.delete(verse)
+        return save()
     }
     
     public func save() -> Result<Void, Error> {

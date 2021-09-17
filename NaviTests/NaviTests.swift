@@ -10,33 +10,43 @@ import XCTest
 
 class NaviTests: XCTestCase {
     let db: DataBaseService = DataBaseService.shared
-        
+    var originalCount: Int = 0
+    var verse: Verse?
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        originalCount = db.count
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testAddRemoveOYO() throws {
+    func testAddOYO() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let originalCount = db.count
-    
         let res = db.addOYOVerse(bible: "마태복음", chapter: 11, startVerse: 12, middleSymbol: nil, endVerse: nil, head: "내가 추가함", contents: "세례 요한의 때부터 지금까지 천국은 침노를 당하나니 침노하는 자는 빼앗느니라")
         
         switch res {
-        case .success(let v):
-            let newCount = db.count
-            XCTAssert(newCount == originalCount + 1)
-            db.remove(v)
+        case .success(_):
+            XCTAssert(db.count == originalCount + 1)
         case .failure(_):
-            let newCount = db.count
-            XCTAssert(newCount == originalCount)
+            XCTAssert(db.count == originalCount)
         }
         
-        XCTAssert(db.count == originalCount)
+    }
+    
+    func testRemoveOYO() throws {
+        let v = db.fetch(request: Verse.fetchRequestOfOYO()).last!
+        
+        let res = db.remove(v)
+        
+        switch res {
+        case .success():
+            XCTAssert(db.count == originalCount - 1, "dd")
+        case .failure(let err):
+            print(err.localizedDescription)
+        }
     }
     
     func testSorting() throws {
