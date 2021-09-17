@@ -21,7 +21,7 @@ class OnYourOwnTableVC: UITableViewController {
         }
     }
     
-    let addVC = AddOnYourOwnVC()
+    var addVC = AddOnYourOwnVC()
     
     lazy var headerView: UILabel = {
         let label = UILabel()
@@ -68,6 +68,7 @@ class OnYourOwnTableVC: UITableViewController {
     }
     
     @objc func handleAddTapped() {
+        addVC.delegate = self
         presentPanModal(addVC)
     }
     
@@ -75,6 +76,7 @@ class OnYourOwnTableVC: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return heads.count
     }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         40
     }
@@ -100,7 +102,6 @@ class OnYourOwnTableVC: UITableViewController {
         if let verse = oyoVerses[theme]?[indexPath.row] {
             cell.viewModel = VerseViewModel(verse)
         }
-        
         
         return cell
     }

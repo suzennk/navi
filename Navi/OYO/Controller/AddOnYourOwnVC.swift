@@ -9,19 +9,35 @@ import UIKit
 import PanModal
 import SkyFloatingLabelTextField
 
-enum VerseContents: String, CaseIterable, RawRepresentable {
-    case theme = "테마"
-    case bible = "성경"
-    case startChapter = "장(시작)"
-    case startVerse = "절(시작)"
-    case endChapter = "장(끝)"
-    case endVerse = "절(끝)"
-    case content = "내용"
+enum VerseContents: Int, CaseIterable, RawRepresentable {
+    case head
+    case bible
+    case chapter
+    case startVerse
+    case endVerse
+    case content
 
+    var text: String {
+        switch self {
+        case .head:
+            return "카테고리"
+        case .bible:
+            return "성경"
+        case .chapter:
+            return "장"
+        case .startVerse:
+            return "절(시작)"
+        case .endVerse:
+            return "절(끝)"
+        case .content:
+            return "내용"
+        }
+    }
+    
     var textField: SkyFloatingLabelTextField {
         let tf = SkyFloatingLabelTextField()
-        tf.title = self.rawValue
-        tf.placeholder = self.rawValue
+        tf.title = self.text
+        tf.placeholder = self.text
         tf.disabledColor = .systemGray6
         tf.selectedLineColor = .naviYellow
         tf.selectedTitleColor = .naviYellow
@@ -47,11 +63,13 @@ enum VerseContents: String, CaseIterable, RawRepresentable {
 class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let cellId = "cellId"
+    public var delegate: OnYourOwnTableVC? = nil
     
     let cases = VerseContents.allCases
     lazy var textFields: [SkyFloatingLabelTextField] = VerseContents.allCases.map {
         let tf = $0.textField
         tf.delegate = self
+        tf.tag = $0.rawValue
         return tf
     }
     
@@ -184,9 +202,41 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    // MARK: - TODO: implementation incomplete
     @objc private func handleDoneTapped() {
-        self.dismiss(animated: true)
+        if textFields.filter({ $0.hasErrorMessage }).count > 0 {
+            print("안 돼 돌아가")
+            return
+        } else if textFields.filter({ $0.text == "" }).count > 0 {
+            print("안 돼 채워와")
+            return
+        }
+        
+        let texts = textFields.map { $0.text ?? "" }
+        
+        let chapter = Int(texts[VerseContents.chapter.rawValue]) ?? 0
+        let startVerse = Int(texts[VerseContents.startVerse.rawValue]) ?? 0
+        let endVerse = Int(texts[VerseContents.chapter.rawValue])
+        
+        let res = DataBaseService.shared.addOYOVerse(
+            bible: texts[VerseContents.bible.rawValue],
+            chapter: chapter,
+            startVerse: startVerse,
+            middleSymbol: endVerse == nil ? nil : "-",
+            endVerse: endVerse ?? 0,
+            head: texts[VerseContents.head.rawValue],
+            contents: texts[VerseContents.content.rawValue]
+        )
+        
+        switch res {
+        case .success(_):
+            self.dismiss(animated: true) {
+                // MARK: Reload Data 안됨 
+                self.delegate?.tableView.reloadData()
+                self.delegate?.addVC = AddOnYourOwnVC()
+            }
+        case .failure(let err):
+            print(err.localizedDescription)
+        }
     }
 }
 
@@ -207,16 +257,41 @@ extension AddOnYourOwnVC: PanModalPresentable {
 
 // MARK: - UITextFieldDelegate
 extension AddOnYourOwnVC: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        print("\((textField as? SkyFloatingLabelTextField)?.title)")
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        guard let text = textField.text else { return }
+        if let tf = textField as? SkyFloatingLabelTextField, let contentType = VerseContents(rawValue: tf.tag) {
+            
+            if text == "" {
+                tf.errorMessage = "\(contentType.text)을 입력해주세요."
+                return
+            }
+            
+            switch contentType {
+            case .chapter:
+                fallthrough
+            case .startVerse:
+                fallthrough
+            case .endVerse:
+                guard let _ = Int(text) else {
+                    tf.errorMessage = "숫자를 올바르게 입력해주세요."
+                    return
+                }
+            default:
+                break
+            }
+            
+            tf.errorMessage = ""
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        let tag = textField.tag
+        if tag < textFields.count - 1 {
+            textFields[tag+1].becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
         return true
     }
-}
-
-extension AddOnYourOwnVC: UITextViewDelegate {
-    
 }
