@@ -50,11 +50,16 @@ class NaviTests: XCTestCase {
     }
     
     func testSorting() throws {
-        let res = db.fetchVerse(of: ["5확신"])
+        let res = db.fetchVerse(of: [("LOA", "5확신")])
+        XCTAssertGreaterThan(res.count, 0)
+        
         let fetchedIds = res.map { $0.id }
         let expectedIds = res.map { $0.id }.sorted(by: <)
         
         XCTAssert(fetchedIds == expectedIds)
+    }
+    
+    func testDuplicateHeads() throws {
     }
 
     func testPerformanceExample() throws {
