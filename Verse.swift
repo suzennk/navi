@@ -18,14 +18,18 @@ public class Verse: NSManagedObject {
     
     @nonobjc public class func fetchReqest(of heads: [String]) -> NSFetchRequest<Verse> {
         let request = NSFetchRequest<Verse>(entityName: "Verse")
+        let sort = NSSortDescriptor(key: #keyPath(Verse.id), ascending: true)
         let subpredicates = heads.map { NSPredicate(format: "head = %@", "\($0)") }
+        request.sortDescriptors = [sort]
         request.predicate = NSCompoundPredicate(type: .or, subpredicates: subpredicates)
         return request
     }
     
     @nonobjc public class func fetchRequestOfOYO() -> NSFetchRequest<Verse> {
         let request = NSFetchRequest<Verse>(entityName: "Verse")
+        let sort = NSSortDescriptor(key: #keyPath(Verse.id), ascending: true)
         let predicate = NSPredicate(format: "theme = %@", "OYO")
+        request.sortDescriptors = [sort]
         request.predicate = predicate
         return request
     }

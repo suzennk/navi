@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7D811034-BE5A-4E5B-A7BE-B0980547358F"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Navi/Home/View/CardTableView.swift"
@@ -32,7 +32,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "122">
+                  offsetFromSymbolStart = "108">
                </Location>
                <Location
                   uuid = "7D811034-BE5A-4E5B-A7BE-B0980547358F - cfed6116adfc1cd6"
@@ -47,7 +47,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "159">
+                  offsetFromSymbolStart = "140">
                </Location>
                <Location
                   uuid = "7D811034-BE5A-4E5B-A7BE-B0980547358F - b562f9030823c1c0"
@@ -62,7 +62,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "18">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   uuid = "7D811034-BE5A-4E5B-A7BE-B0980547358F - b07d162443d7ebce"
@@ -77,7 +77,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "10">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -92,8 +92,8 @@
             filePath = "Navi/Home/View/CardTableView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -102,7 +102,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F372DA4D-4A20-41C9-ABBD-138993458A7B"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Navi/Home/View/CardTableView.swift"
@@ -205,6 +205,22 @@
             startingLineNumber = "20"
             endingLineNumber = "20"
             landmarkName = "oyoVerses"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "898D2A3B-07A3-40BE-BB8D-7BFAD2848861"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Navi/Home/Controller/CardTableVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "viewModel"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>

@@ -19,7 +19,7 @@ class NaviTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testExample() throws {
+    func testAddRemoveOYO() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let originalCount = db.count
@@ -37,6 +37,14 @@ class NaviTests: XCTestCase {
         }
         
         XCTAssert(db.count == originalCount)
+    }
+    
+    func testSorting() throws {
+        let res = db.fetchVerse(of: ["5확신"])
+        let fetchedIds = res.map { $0.id }
+        let expectedIds = res.map { $0.id }.sorted(by: <)
+        
+        XCTAssert(fetchedIds == expectedIds)
     }
 
     func testPerformanceExample() throws {
