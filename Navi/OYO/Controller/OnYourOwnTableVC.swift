@@ -12,11 +12,10 @@ import PanModal
 private let cellId = "cellId"
 
 class OnYourOwnTableVC: UITableViewController {
-    
-    var heads: [Head] = DataBaseService.shared.oyoHeads
-    
-    var oyoVerses: [Head : [Verse]] = DataBaseService.shared.categorizedOyoVerses {
+    var heads: [Head] = []
+    var oyoVerses: [Head : [Verse]] = [:] {
         didSet {
+            heads = Array(Set(oyoVerses.map { $0.key }))
             headerView.text = "전체 OYO - \(oyoVerses.count)개"
         }
     }
@@ -46,6 +45,13 @@ class OnYourOwnTableVC: UITableViewController {
         
         configurConstraints()
         setupBarButtonItems()
+        
+        oyoVerses = DataBaseService.shared.categorizedOyoVerses
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("View will appear")
     }
     
     func configurConstraints() {
@@ -98,11 +104,28 @@ class OnYourOwnTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? OnYourOwnCell else { return UITableViewCell() }
         
-        let theme = heads[indexPath.section]
-        if let verse = oyoVerses[theme]?[indexPath.row] {
+        let head = heads[indexPath.section]
+        if let verse = oyoVerses[head]?[indexPath.row] {
             cell.viewModel = VerseViewModel(verse)
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let head = heads[indexPath.section]
+            if let verse = oyoVerses[head]?[indexPath.row] {
+                let res = DataBaseService.shared.remove(verse)
+                switch res {
+                case .success(_):
+                    oyoVerses[head]?.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                    oyoVerses = DataBaseService.shared.categorizedOyoVerses
+                default:
+                    break
+                }
+            }
+        }
     }
 }

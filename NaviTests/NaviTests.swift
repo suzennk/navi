@@ -36,6 +36,16 @@ class NaviTests: XCTestCase {
         
     }
     
+    func testAddOYO2() throws {
+        let res = db.addOYOVerse(bible: "역대하", chapter: 7, startVerse: 14, middleSymbol: nil, endVerse: nil, head: "솔로몬에게 주의를 준 말씀", contents: "내 이름으로 일컫는 내 백성이 그 악한 길에서 떠나 스스로 겸비하고 기도하여 내 얼굴을 구하면 내가 하늘에서 듣고 그 죄를 사하고 그 땅을 고칠찌라")
+        switch res {
+        case .success(_):
+            XCTAssert(db.count == originalCount + 1)
+        case .failure(_):
+            XCTAssert(db.count == originalCount)
+        }
+    }
+    
     func testRemoveOYO() throws {
         let v = db.fetch(request: Verse.fetchRequestOfOYO()).last!
         

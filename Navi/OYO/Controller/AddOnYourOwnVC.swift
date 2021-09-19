@@ -19,18 +19,45 @@ enum VerseContents: Int, CaseIterable, RawRepresentable {
 
     var text: String {
         switch self {
-        case .head:
-            return "카테고리"
-        case .bible:
-            return "성경"
-        case .chapter:
-            return "장"
-        case .startVerse:
-            return "절(시작)"
-        case .endVerse:
-            return "절(끝)"
+        case .head:         return "카테고리"
+        case .bible:        return "성경"
+        case .chapter:      return "장"
+        case .startVerse:   return "절(시작)"
+        case .endVerse:     return "절(끝)"
+        case .content:      return "내용"
+        }
+    }
+    
+    var isValid: (_ text: String)->(Bool) {
+        switch self {
+        case .head:         fallthrough
+        case .bible:        fallthrough
         case .content:
-            return "내용"
+            return { text in
+                return text != ""
+            }
+        case .chapter:      fallthrough
+        case .startVerse:
+            return { text in
+                return Int(text) != nil
+            }
+        case .endVerse:
+            return { text in
+                return text == "" || Int(text) != nil
+            }
+        }
+    }
+    
+    var errorMessage: String {
+        switch self {
+        case .head:         fallthrough
+        case .bible:        fallthrough
+        case .content:
+            return "\(self.text) 항목을 입력해주세요."
+        case .chapter:      fallthrough
+        case .startVerse:   fallthrough
+        case .endVerse:
+            return "숫자를 올바르게 입력해주세요."
         }
     }
     
@@ -42,16 +69,12 @@ enum VerseContents: Int, CaseIterable, RawRepresentable {
         tf.selectedLineColor = .naviYellow
         tf.selectedTitleColor = .naviYellow
 //        switch self {
-//        case .startChapter:
-//            fallthrough
-//        case .startVerse:
-//            fallthrough
-//        case .endChapter:
-//            fallthrough
+//        case .startChapter:   fallthrough
+//        case .startVerse:     fallthrough
+//        case .endChapter:     fallthrough
 //        case .endVerse:
 //            tf.keyboardType = .numberPad
-//        case .theme:
-//            fallthrough
+//        case .theme:          fallthrough
 //        case .bible:
 //            tf.inputView = UIPickerView()
 //        case .content: break
@@ -203,11 +226,14 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     @objc private func handleDoneTapped() {
-        if textFields.filter({ $0.hasErrorMessage }).count > 0 {
-            print("안 돼 돌아가")
-            return
-        } else if textFields.filter({ $0.text == "" }).count > 0 {
-            print("안 돼 채워와")
+        if textFields.enumerated().filter({ offset, tf in
+            guard let text = tf.text, let type = VerseContents(rawValue: offset) else { return true }
+            if type.isValid(text) { return false }
+            else {
+                tf.errorMessage = type.errorMessage
+                return true
+            }
+        }).count > 0 {
             return
         }
         
@@ -230,7 +256,8 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
         switch res {
         case .success(_):
             self.dismiss(animated: true) {
-                // MARK: Reload Data 안됨 
+                // MARK: Reload Data 안됨
+                self.delegate?.oyoVerses = DataBaseService.shared.categorizedOyoVerses
                 self.delegate?.tableView.reloadData()
                 self.delegate?.addVC = AddOnYourOwnVC()
             }
@@ -262,26 +289,11 @@ extension AddOnYourOwnVC: UITextFieldDelegate {
         guard let text = textField.text else { return }
         if let tf = textField as? SkyFloatingLabelTextField, let contentType = VerseContents(rawValue: tf.tag) {
             
-            if text == "" {
-                tf.errorMessage = "\(contentType.text)을 입력해주세요."
-                return
+            if contentType.isValid(text) {
+                tf.errorMessage = ""
+            } else {
+                tf.errorMessage = contentType.errorMessage
             }
-            
-            switch contentType {
-            case .chapter:
-                fallthrough
-            case .startVerse:
-                fallthrough
-            case .endVerse:
-                guard let _ = Int(text) else {
-                    tf.errorMessage = "숫자를 올바르게 입력해주세요."
-                    return
-                }
-            default:
-                break
-            }
-            
-            tf.errorMessage = ""
         }
     }
     
