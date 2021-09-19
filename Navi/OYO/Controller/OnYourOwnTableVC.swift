@@ -49,11 +49,6 @@ class OnYourOwnTableVC: UITableViewController {
         oyoVerses = DataBaseService.shared.categorizedOyoVerses
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("View will appear")
-    }
-    
     func configurConstraints() {
         tableView.tableHeaderView = headerView
         
@@ -122,6 +117,7 @@ class OnYourOwnTableVC: UITableViewController {
                     oyoVerses[head]?.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .automatic)
                     oyoVerses = DataBaseService.shared.categorizedOyoVerses
+                    tableView.reloadData()
                 default:
                     break
                 }
