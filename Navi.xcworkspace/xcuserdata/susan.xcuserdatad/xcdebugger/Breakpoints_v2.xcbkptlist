@@ -92,8 +92,8 @@
             filePath = "Navi/Home/View/CardTableView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -165,17 +165,79 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7FB746D2-C306-42E2-AF12-939EC4995D90"
-            shouldBeEnabled = "Yes"
+            uuid = "25128200-EAF5-45DB-BA69-6A82F7159949"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Navi/SceneDelegate.swift"
+            filePath = "Navi/Home/View/CardTableView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "scene(_:willConnectTo:options:)"
-            landmarkType = "7">
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "sortMethod"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "25128200-EAF5-45DB-BA69-6A82F7159949 - 7c2fe60d7489dc50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.sortMethod.getter : Navi.SortMethod"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "107">
+               </Location>
+               <Location
+                  uuid = "25128200-EAF5-45DB-BA69-6A82F7159949 - 415474bd59aaa024"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.sortMethod.setter : Navi.SortMethod"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "251">
+               </Location>
+               <Location
+                  uuid = "25128200-EAF5-45DB-BA69-6A82F7159949 - eb27f5498fcdef12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.sortMethod.modify : Navi.SortMethod"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "25128200-EAF5-45DB-BA69-6A82F7159949 - fd5f0bc7cd9dfd24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.sortMethod.modify : Navi.SortMethod with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
