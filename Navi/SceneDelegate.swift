@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootVC = TabBarController()
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
+        window?.tintColor = .naviYellow
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         appDelegate?.window = window
         

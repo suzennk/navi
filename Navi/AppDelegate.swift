@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.rootViewController = TabBarController()
+            window?.tintColor = .naviYellow
             window?.makeKeyAndVisible()
         }
         
