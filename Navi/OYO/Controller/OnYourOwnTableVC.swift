@@ -16,8 +16,11 @@ class OnYourOwnTableVC: UITableViewController {
     var oyoVerses: [Head : [Verse]] = [:] {
         didSet {
             heads = Array(Set(oyoVerses.map { $0.key }))
-            headerView.text = "전체 OYO - \(oyoVerses.count)개"
+            headerView.text = "전체 OYO - \(verseCount)개"
         }
+    }
+    var verseCount: Int {
+        return oyoVerses.reduce(0) { $0 + $1.value.count }
     }
     
     var addVC = AddOnYourOwnVC()

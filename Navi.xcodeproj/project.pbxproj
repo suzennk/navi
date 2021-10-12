@@ -220,9 +220,9 @@
 		08941B2D26E097C500E5CA97 /* OYO */ = {
 			isa = PBXGroup;
 			children = (
+				08941B3026E0A44A00E5CA97 /* Controller */,
 				08941B3426E0A69F00E5CA97 /* ViewModel */,
 				08941B3126E0A45100E5CA97 /* View */,
-				08941B3026E0A44A00E5CA97 /* Controller */,
 			);
 			path = OYO;
 			sourceTree = "<group>";
