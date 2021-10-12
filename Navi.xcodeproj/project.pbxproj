@@ -26,6 +26,8 @@
 		089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CB26C3C99900AFC555 /* UIColor+Extension.swift */; };
 		089762CE26C3D65700AFC555 /* TodayVerseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CD26C3D65700AFC555 /* TodayVerseView.swift */; };
 		089762D126C3D69D00AFC555 /* VerseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762D026C3D69D00AFC555 /* VerseViewModel.swift */; };
+		089AB191271596D000EA7941 /* OYODetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB190271596D000EA7941 /* OYODetailVC.swift */; };
+		089AB1932715970200EA7941 /* OYODetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB1922715970200EA7941 /* OYODetailViewModel.swift */; };
 		08A7820126CCD88D00338E97 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A7820026CCD88D00338E97 /* PersistentContainer.swift */; };
 		08AB0A3B26CCFDAE00066D6F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A3926CCFDAE00066D6F /* Model.xcdatamodeld */; };
 		08AB0A4026CD0AA200066D6F /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A3E26CD0AA200066D6F /* Verse.swift */; };
@@ -89,6 +91,8 @@
 		089762CB26C3C99900AFC555 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		089762CD26C3D65700AFC555 /* TodayVerseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVerseView.swift; sourceTree = "<group>"; };
 		089762D026C3D69D00AFC555 /* VerseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewModel.swift; sourceTree = "<group>"; };
+		089AB190271596D000EA7941 /* OYODetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailVC.swift; sourceTree = "<group>"; };
+		089AB1922715970200EA7941 /* OYODetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailViewModel.swift; sourceTree = "<group>"; };
 		08A7820026CCD88D00338E97 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		08AB0A3A26CCFDAE00066D6F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		08AB0A3E26CD0AA200066D6F /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Verse.swift; path = ../../Verse.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 			children = (
 				08941B2E26E0986400E5CA97 /* OnYourOwnTableVC.swift */,
 				08AC129D26E368CE0066750F /* AddOnYourOwnVC.swift */,
+				089AB190271596D000EA7941 /* OYODetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 		08941B3426E0A69F00E5CA97 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				089AB1922715970200EA7941 /* OYODetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -595,6 +601,7 @@
 				08AB0A4B26D0E15800066D6F /* CardTableView.swift in Sources */,
 				085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */,
 				085B088126B150E1003EA5B7 /* MyPageVC.swift in Sources */,
+				089AB191271596D000EA7941 /* OYODetailVC.swift in Sources */,
 				08A7820126CCD88D00338E97 /* PersistentContainer.swift in Sources */,
 				08941B3326E0A46500E5CA97 /* OnYourOwnCell.swift in Sources */,
 				08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */,
@@ -607,6 +614,7 @@
 				089762CE26C3D65700AFC555 /* TodayVerseView.swift in Sources */,
 				085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */,
 				08941B2F26E0986400E5CA97 /* OnYourOwnTableVC.swift in Sources */,
+				089AB1932715970200EA7941 /* OYODetailViewModel.swift in Sources */,
 				085B084B26B136BF003EA5B7 /* SceneDelegate.swift in Sources */,
 				089762C926C3A91600AFC555 /* HeadCell.swift in Sources */,
 			);

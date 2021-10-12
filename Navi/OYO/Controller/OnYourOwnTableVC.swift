@@ -110,6 +110,15 @@ class OnYourOwnTableVC: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let head = heads[indexPath.section]
+        if let verse = oyoVerses[head]?[indexPath.row] {
+            let oyoDetailVC = OYODetailVC()
+            oyoDetailVC.viewModel = OYODetailViewModel(verse: verse)
+            self.navigationController?.pushViewController(oyoDetailVC, animated: true)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let head = heads[indexPath.section]
