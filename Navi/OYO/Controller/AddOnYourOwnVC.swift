@@ -99,9 +99,9 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
     lazy var cancelButton: UIButton = {
         let b = UIButton()
         b.setImage(UIImage(systemName: "xmark"), for: .normal)
-        b.setTitleColor(.naviYellow, for: .normal)
+        b.tintColor = .systemGray
         b.addTarget(self, action: #selector(handleCancelTapped), for: .touchUpInside)
-        b.backgroundColor = .systemGray5
+        b.backgroundColor = .systemGray5.withAlphaComponent(0.3)
         b.layer.cornerRadius = 22
         b.snp.makeConstraints { make in
             make.width.equalTo(b.snp.height)
@@ -114,7 +114,7 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
         b.setImage(UIImage(systemName: "checkmark"), for: .normal)
         b.titleLabel?.font = .boldSystemFont(ofSize: 18)
         b.addTarget(self, action: #selector(handleDoneTapped), for: .touchUpInside)
-        b.backgroundColor = .systemGray5
+        b.backgroundColor = .systemGray5.withAlphaComponent(0.3)
         b.layer.cornerRadius = 22
         b.snp.makeConstraints { make in
             make.width.equalTo(b.snp.height)
