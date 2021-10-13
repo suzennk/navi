@@ -14,35 +14,51 @@ class NaviTests: XCTestCase {
     var verse: Verse?
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         originalCount = db.count
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        do {
+            sleep(1)
+        }    }
     
     func testAddOYO() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         let res = db.addOYOVerse(bible: "마태복음", chapter: 11, startVerse: 12, middleSymbol: nil, endVerse: nil, head: "내가 추가함", contents: "세례 요한의 때부터 지금까지 천국은 침노를 당하나니 침노하는 자는 빼앗느니라")
         
         switch res {
         case .success(_):
-            XCTAssert(db.count == originalCount + 1)
+            XCTAssertEqual(db.count, originalCount + 1)
         case .failure(_):
-            XCTAssert(db.count == originalCount)
+            XCTAssertEqual(db.count, originalCount)
         }
+    }
+    
+    func testGenerateId() throws {
+        let res = db.addOYOVerse(bible: "이사야", chapter: 35, startVerse: 4, middleSymbol: nil, endVerse: nil, head: "최애 구절", contents: "겁내는 자들에게 이르기를 굳세어라, 두려워하지 말라, 보라 너희 하나님이 오사 보복하시며 갚아 주실 것이라 하나님이 오사 너희를 구하시리라 하라")
         
+        switch res {
+        case .success(let verse):
+            XCTAssertLessThan(Date(timeIntervalSinceReferenceDate: TimeInterval(verse.id)).distance(to: Date()), 2)
+        case .failure(_):
+            XCTAssertEqual(db.count, originalCount)
+        }
+    }
+    
+    /// Verse ID's should be unique
+    func testIDUniqueness() throws {
+        let verses = db.fetch(request: Verse.fetchRequest())
+        print(verses.map{$0.id}.sorted(by: <))
+        print(Set(verses.map{$0.id}).sorted(by: <))
+        XCTAssertEqual(verses.count, Set(verses.map{ $0.id }).count)
     }
     
     func testAddOYO2() throws {
         let res = db.addOYOVerse(bible: "역대하", chapter: 7, startVerse: 14, middleSymbol: nil, endVerse: nil, head: "솔로몬에게 주의를 준 말씀", contents: "내 이름으로 일컫는 내 백성이 그 악한 길에서 떠나 스스로 겸비하고 기도하여 내 얼굴을 구하면 내가 하늘에서 듣고 그 죄를 사하고 그 땅을 고칠찌라")
         switch res {
         case .success(_):
-            XCTAssert(db.count == originalCount + 1)
+            XCTAssertEqual(db.count, originalCount + 1)
         case .failure(_):
-            XCTAssert(db.count == originalCount)
+            XCTAssertEqual(db.count, originalCount)
         }
     }
     
@@ -53,7 +69,7 @@ class NaviTests: XCTestCase {
         
         switch res {
         case .success():
-            XCTAssert(db.count == originalCount - 1, "dd")
+            XCTAssertEqual(db.count, originalCount - 1)
         case .failure(let err):
             print(err.localizedDescription)
         }
@@ -66,7 +82,7 @@ class NaviTests: XCTestCase {
         let fetchedIds = res.map { $0.id }
         let expectedIds = res.map { $0.id }.sorted(by: <)
         
-        XCTAssert(fetchedIds == expectedIds)
+        XCTAssertEqual(fetchedIds, expectedIds)
     }
     
     func testDuplicateHeads() throws {

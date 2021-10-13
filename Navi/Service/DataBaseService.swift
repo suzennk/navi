@@ -136,7 +136,7 @@ class DataBaseService {
     
     public func addOYOVerse(bible: String, chapter: Int, startVerse: Int, middleSymbol: String?, endVerse: Int?, head: String, contents: String) -> Result<Verse, Error> {
         let verse = Verse(context: context)
-        verse.setValue(Date().timeIntervalSince1970, forKey: "id")
+        verse.setValue(Date().timeIntervalSinceReferenceDate, forKey: "id")
         verse.setValue(bible, forKey: "bible")
         verse.setValue(chapter, forKey: "chapter")
         verse.setValue(startVerse, forKey: "startVerse")
