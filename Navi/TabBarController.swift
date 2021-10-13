@@ -15,9 +15,9 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let quizVC = QuizVC()
-        let quizNavController = UINavigationController(rootViewController: quizVC)
-        quizNavController.title = "Quiz"
+//        let quizVC = QuizVC()
+//        let quizNavController = UINavigationController(rootViewController: quizVC)
+//        quizNavController.title = "Quiz"
         
         let homeVC = HomeVC()
         let homeNavController = UINavigationController(rootViewController: homeVC)
@@ -43,8 +43,12 @@ class TabBarController: UITabBarController {
         let oyoNavContr = UINavigationController(rootViewController: oyoVC)
         oyoNavContr.title = "OYO"
         
-        self.viewControllers = [quizNavController, homeNavController, oyoNavContr]
-        self.selectedViewController = viewControllers?[2]
+        let myPageVC = MyPageVC()
+        let myNavContr = UINavigationController(rootViewController: myPageVC)
+        myNavContr.title = "MY"
+        
+        self.viewControllers = [oyoNavContr, homeNavController, myNavContr]
+        self.selectedViewController = viewControllers?[1]
     }
     
 }

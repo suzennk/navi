@@ -17,7 +17,6 @@
 		085B087926B14655003EA5B7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087826B14655003EA5B7 /* TabBarController.swift */; };
 		085B087D26B14C9A003EA5B7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087C26B14C9A003EA5B7 /* HomeVC.swift */; };
 		085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087E26B15058003EA5B7 /* QuizVC.swift */; };
-		085B088126B150E1003EA5B7 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088026B150E1003EA5B7 /* MyPageVC.swift */; };
 		085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */; };
 		0883EB7326E88BCE00FEBF6E /* Bible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0883EB7226E88BCE00FEBF6E /* Bible.swift */; };
 		08941B2F26E0986400E5CA97 /* OnYourOwnTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08941B2E26E0986400E5CA97 /* OnYourOwnTableVC.swift */; };
@@ -28,6 +27,9 @@
 		089762D126C3D69D00AFC555 /* VerseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762D026C3D69D00AFC555 /* VerseViewModel.swift */; };
 		089AB191271596D000EA7941 /* OYODetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB190271596D000EA7941 /* OYODetailVC.swift */; };
 		089AB1932715970200EA7941 /* OYODetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB1922715970200EA7941 /* OYODetailViewModel.swift */; };
+		089AB1992716AEF900EA7941 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB1982716AEF900EA7941 /* MyPageVC.swift */; };
+		089AB19B2716B76C00EA7941 /* MemorizeStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB19A2716B76C00EA7941 /* MemorizeStatusView.swift */; };
+		089AB19D2716C53800EA7941 /* MemorizeStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB19C2716C53800EA7941 /* MemorizeStatusViewModel.swift */; };
 		08A7820126CCD88D00338E97 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A7820026CCD88D00338E97 /* PersistentContainer.swift */; };
 		08AB0A3B26CCFDAE00066D6F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A3926CCFDAE00066D6F /* Model.xcdatamodeld */; };
 		08AB0A4026CD0AA200066D6F /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A3E26CD0AA200066D6F /* Verse.swift */; };
@@ -82,7 +84,6 @@
 		085B087826B14655003EA5B7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		085B087C26B14C9A003EA5B7 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		085B087E26B15058003EA5B7 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
-		085B088026B150E1003EA5B7 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
 		085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseGroupTableView.swift; sourceTree = "<group>"; };
 		0883EB7226E88BCE00FEBF6E /* Bible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible.swift; sourceTree = "<group>"; };
 		08941B2E26E0986400E5CA97 /* OnYourOwnTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnYourOwnTableVC.swift; sourceTree = "<group>"; };
@@ -93,6 +94,9 @@
 		089762D026C3D69D00AFC555 /* VerseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewModel.swift; sourceTree = "<group>"; };
 		089AB190271596D000EA7941 /* OYODetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailVC.swift; sourceTree = "<group>"; };
 		089AB1922715970200EA7941 /* OYODetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailViewModel.swift; sourceTree = "<group>"; };
+		089AB1982716AEF900EA7941 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
+		089AB19A2716B76C00EA7941 /* MemorizeStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeStatusView.swift; sourceTree = "<group>"; };
+		089AB19C2716C53800EA7941 /* MemorizeStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeStatusViewModel.swift; sourceTree = "<group>"; };
 		08A7820026CCD88D00338E97 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		08AB0A3A26CCFDAE00066D6F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		08AB0A3E26CD0AA200066D6F /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Verse.swift; path = ../../Verse.swift; sourceTree = "<group>"; };
@@ -185,8 +189,8 @@
 				085B087826B14655003EA5B7 /* TabBarController.swift */,
 				085B087E26B15058003EA5B7 /* QuizVC.swift */,
 				085B088426B15F67003EA5B7 /* Home */,
+				089AB1942716AEB100EA7941 /* MyPage */,
 				08941B2D26E097C500E5CA97 /* OYO */,
-				085B088026B150E1003EA5B7 /* MyPageVC.swift */,
 				08AD4D9C26BCEE7800E14F64 /* cardset.tsv */,
 			);
 			path = Navi;
@@ -272,6 +276,40 @@
 				089762D026C3D69D00AFC555 /* VerseViewModel.swift */,
 				08AB0A4826D0DFE100066D6F /* CardTableViewModel.swift */,
 				08AB0A4E26D0E4AA00066D6F /* CardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		089AB1942716AEB100EA7941 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				089AB1952716AEBF00EA7941 /* Controller */,
+				089AB1972716AEC900EA7941 /* ViewModel */,
+				089AB1962716AEC300EA7941 /* View */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		089AB1952716AEBF00EA7941 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				089AB1982716AEF900EA7941 /* MyPageVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		089AB1962716AEC300EA7941 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				089AB19A2716B76C00EA7941 /* MemorizeStatusView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		089AB1972716AEC900EA7941 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				089AB19C2716C53800EA7941 /* MemorizeStatusViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -591,7 +629,9 @@
 				08AD4D9926BA784C00E14F64 /* DataBaseService.swift in Sources */,
 				0883EB7326E88BCE00FEBF6E /* Bible.swift in Sources */,
 				08AC12A026E36B2D0066750F /* NaviInputTextField.swift in Sources */,
+				089AB1992716AEF900EA7941 /* MyPageVC.swift in Sources */,
 				08B6162626DF64E2009BE636 /* SortMethod.swift in Sources */,
+				089AB19B2716B76C00EA7941 /* MemorizeStatusView.swift in Sources */,
 				085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */,
 				08AB0A4026CD0AA200066D6F /* Verse.swift in Sources */,
 				08AB0A4726D0DD2100066D6F /* CardTableVC.swift in Sources */,
@@ -600,8 +640,8 @@
 				089762D126C3D69D00AFC555 /* VerseViewModel.swift in Sources */,
 				08AB0A4B26D0E15800066D6F /* CardTableView.swift in Sources */,
 				085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */,
-				085B088126B150E1003EA5B7 /* MyPageVC.swift in Sources */,
 				089AB191271596D000EA7941 /* OYODetailVC.swift in Sources */,
+				089AB19D2716C53800EA7941 /* MemorizeStatusViewModel.swift in Sources */,
 				08A7820126CCD88D00338E97 /* PersistentContainer.swift in Sources */,
 				08941B3326E0A46500E5CA97 /* OnYourOwnCell.swift in Sources */,
 				08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */,
