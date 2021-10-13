@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "quiz.png",
+      "filename" : "oyo-u.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "quiz@2x.png",
+      "filename" : "oyo-u@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "quiz@3x.png",
+      "filename" : "oyo-u@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

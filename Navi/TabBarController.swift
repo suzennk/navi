@@ -46,12 +46,12 @@ class TabBarController: UITabBarController {
         
         self.viewControllers = [oyoNavContr, homeNavController, myNavContr]
         
-        tabBar.items?[0].image = UIImage(named: "oyo")?.withTintColor(.darkText, renderingMode: .alwaysTemplate)
+        tabBar.items?[0].image = UIImage(named: "oyo-u")?.withRenderingMode(.alwaysOriginal)
         tabBar.items?[0].selectedImage = UIImage(named: "oyo")?.withRenderingMode(.alwaysOriginal)
-        tabBar.items?[1].image = UIImage(named: "home")?.withTintColor(.darkText, renderingMode: .alwaysTemplate)
+        tabBar.items?[1].image = UIImage(named: "home-u")?.withRenderingMode(.alwaysOriginal)
         tabBar.items?[1].selectedImage = UIImage(named: "home")?.withRenderingMode(.alwaysOriginal)
-        tabBar.items?[2].image = UIImage(named: "my-page")?.withTintColor(.darkText, renderingMode: .alwaysTemplate)
-        tabBar.items?[2].selectedImage = UIImage(named: "my-page")?.withRenderingMode(.alwaysOriginal)
+        tabBar.items?[2].image = UIImage(named: "my-u")?.withRenderingMode(.alwaysOriginal)
+        tabBar.items?[2].selectedImage = UIImage(named: "my")?.withRenderingMode(.alwaysOriginal)
         
         tabBar.items?.forEach({
             $0.imageInsets = .init(top: 9, left: 0, bottom: -9, right: 0)
