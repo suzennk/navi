@@ -17,8 +17,8 @@ struct MemorizeStatusViewModel {
         let oyoMemCount = oyoVerses.filter { $0.memorized == true }.count
         
         statuses = [
-            ("외운 카드 수 / 총 카드 수", "\(memCount) / \(verses.count)개 "),
-            ("외운 카드 수 / 총 OYO 수", "\(oyoMemCount) / \(oyoVerses.count)개 ")
+            ("외운 카드 수 / 모든 카드 수", "\(memCount) / \(verses.count)개 "),
+            ("외운 카드 수 / OYO 카드 수", "\(oyoMemCount) / \(oyoVerses.count)개 ")
         ]
     }
 }
