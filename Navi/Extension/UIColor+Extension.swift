@@ -15,8 +15,7 @@ extension UIColor {
     static let unselectedBackground = UIColor.systemGray5
     
     static let selectedText = UIColor.black
-    static let unselectedText = UIColor.placeholderText
-        //(red: 162/255.0, green: 162/255.0, blue: 162/255.0, alpha: 1.0)
+    static let unselectedText = UIColor.systemGray
     
     static let borderColor = UIColor(red: 112/255.0, green: 112/255.0, blue: 112/255.0, alpha: 1.0)
     
