@@ -37,7 +37,7 @@ class OnYourOwnTableVC: UITableViewController {
         
         view.backgroundColor = .systemBackground
         
-        title = "OYO"
+        navigationItem.title = "OYO"
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .automatic

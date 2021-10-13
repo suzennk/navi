@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "my-page.png",
+      "filename" : "oyo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "my-page@2x.png",
+      "filename" : "oyo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "my-page@3x.png",
+      "filename" : "oyo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

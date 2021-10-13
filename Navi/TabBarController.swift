@@ -21,7 +21,6 @@ class TabBarController: UITabBarController {
         
         let homeVC = HomeVC()
         let homeNavController = UINavigationController(rootViewController: homeVC)
-        homeNavController.title = "Home"
         
         /*
         let myPageVC = MyPageVC()
@@ -41,14 +40,28 @@ class TabBarController: UITabBarController {
         
         let oyoVC = OnYourOwnTableVC()
         let oyoNavContr = UINavigationController(rootViewController: oyoVC)
-        oyoNavContr.title = "OYO"
         
         let myPageVC = MyPageVC()
         let myNavContr = UINavigationController(rootViewController: myPageVC)
-        myNavContr.title = "MY"
         
         self.viewControllers = [oyoNavContr, homeNavController, myNavContr]
+        
+        tabBar.items?[0].image = UIImage(named: "oyo")?.withTintColor(.darkText, renderingMode: .alwaysTemplate)
+        tabBar.items?[0].selectedImage = UIImage(named: "oyo")?.withRenderingMode(.alwaysOriginal)
+        tabBar.items?[1].image = UIImage(named: "home")?.withTintColor(.darkText, renderingMode: .alwaysTemplate)
+        tabBar.items?[1].selectedImage = UIImage(named: "home")?.withRenderingMode(.alwaysOriginal)
+        tabBar.items?[2].image = UIImage(named: "my-page")?.withTintColor(.darkText, renderingMode: .alwaysTemplate)
+        tabBar.items?[2].selectedImage = UIImage(named: "my-page")?.withRenderingMode(.alwaysOriginal)
+        
+        tabBar.items?.forEach({
+            $0.imageInsets = .init(top: 9, left: 0, bottom: -9, right: 0)
+        })
+        
         self.selectedViewController = viewControllers?[1]
+        
+        tabBar.layer.borderWidth = 0
+        tabBar.layer.borderColor = UIColor.clear.cgColor
+        tabBar.clipsToBounds = true
     }
     
 }

@@ -56,7 +56,7 @@ class HomeVC: ViewController, UITableViewDelegate {
         view.backgroundColor = .systemBackground
 
         // Set navigation bar title as large title
-        title = "오늘의 말씀"
+        navigationItem.title = "오늘의 말씀"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .automatic
         navigationController?.navigationBar.sizeToFit()

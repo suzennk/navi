@@ -20,7 +20,7 @@ class MyPageVC: ViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
-        title = "🔖 마이페이지"
+        navigationItem.title = "🔖 마이페이지"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
         
