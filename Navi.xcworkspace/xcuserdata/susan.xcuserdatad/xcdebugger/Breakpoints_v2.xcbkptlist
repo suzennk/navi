@@ -140,10 +140,10 @@
             filePath = "Navi/OYO/Controller/AddOnYourOwnVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "textFieldShouldReturn(_:)"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -156,9 +156,9 @@
             filePath = "Navi/OYO/Controller/AddOnYourOwnVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "handleDoneTapped()"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
+            landmarkName = "handleCancelTapped()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

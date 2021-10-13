@@ -202,7 +202,9 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     @objc private func handleCancelTapped() {
-        self.dismiss(animated: true)
+        self.dismiss(animated: true) {
+            self.delegate?.addVC = AddOnYourOwnVC()
+        }
     }
     
     // MARK: - TableViewDelegate
