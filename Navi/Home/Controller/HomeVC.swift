@@ -38,18 +38,6 @@ class HomeVC: ViewController, UITableViewDelegate {
     private var enabledConstraint: NSLayoutConstraint?
     private var disabledConstraint: NSLayoutConstraint?
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        showYellowHeader()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-            
-        restoreHeaderColor()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -119,21 +107,5 @@ class HomeVC: ViewController, UITableViewDelegate {
         let cardVC = CardTableVC()
         cardVC.viewModel = CardTableViewModel(categories)
         navigationController?.pushViewController(cardVC, animated: true)
-    }
-    
-    func showYellowHeader() {
-        let standard = UINavigationBarAppearance()
-        standard.backgroundColor = .headerYellow
-        
-        let scrollEdge = UINavigationBarAppearance()
-        scrollEdge.backgroundColor = .headerYellow
-        
-        navigationController?.navigationBar.standardAppearance = standard
-        navigationController?.navigationBar.scrollEdgeAppearance = scrollEdge
-    }
-    
-    func restoreHeaderColor() {
-        navigationController?.navigationBar.standardAppearance = UINavigationBarAppearance()
-        navigationController?.navigationBar.scrollEdgeAppearance = UINavigationBarAppearance()
     }
 }
