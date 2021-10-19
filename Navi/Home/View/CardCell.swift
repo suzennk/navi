@@ -21,7 +21,7 @@ class CardCell: UITableViewCell {
     let titleLabel: UILabel = {
         let l = UILabel()
         l.font = .preferredFont(forTextStyle: .title3, weight: .bold)
-        l.textColor = .navyText
+        l.textColor = UIColor(named: "card-title")
         return l
     }()
     
@@ -29,7 +29,6 @@ class CardCell: UITableViewCell {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.widthAnchor.constraint(equalTo: iv.heightAnchor).isActive = true
-//        iv.heightAnchor.constraint(equalTo: iv.widthAnchor).isActive = true
         iv.image = unselectedImage
         iv.tintColor = .naviYellow
         iv.contentMode = .scaleAspectFit
@@ -83,11 +82,16 @@ class CardCell: UITableViewCell {
         subviews.forEach { $0.removeFromSuperview() }
         
         let view = UIView()
+        view.backgroundColor = UIColor(named: "card-bg")
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 30
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.borderColor.cgColor
-        view.layer.cornerRadius = 5
-        view.clipsToBounds = true
+        view.layer.borderColor = UIColor.clear.cgColor
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.1
+        view.layer.shadowRadius = 8.0
+        view.layer.shadowOffset = .init(width: 5, height: 5)
+        view.layer.masksToBounds = false
         
         let titleSV = UIStackView(arrangedSubviews: [titleLabel, checkImageView])
         let bottomSV = UIStackView(arrangedSubviews: [headLabel, UIView(), littleVerseRangeLabel])
