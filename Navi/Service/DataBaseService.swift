@@ -88,7 +88,7 @@ class DataBaseService {
             _oyoHeads.forEach { head in
                 let verses = _oyoVerses.filter {
                     $0.head == head
-                }
+                }.sorted(by: { $0.id < $1.id })
                 catVerses[head] = verses
             }
             return catVerses
