@@ -15,7 +15,7 @@ class OnYourOwnTableVC: UITableViewController {
     var heads: [Head] = []
     var oyoVerses: [Head : [Verse]] = [:] {
         didSet {
-            heads = Array(Set(oyoVerses.map { $0.key }))
+            heads = Set(oyoVerses.map { $0.key }).sorted(by: { $0 < $1 })
             headerView.text = "전체 OYO - \(verseCount)개"
         }
     }
