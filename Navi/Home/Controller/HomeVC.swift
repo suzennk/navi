@@ -20,7 +20,7 @@ class HomeVC: ViewController, UITableViewDelegate {
         b.translatesAutoresizingMaskIntoConstraints = false
         b.setTitle("암송하러가기", for: .normal)
         b.setTitleColor(.darkText, for: .normal)
-        b.titleLabel?.font = .systemFont(ofSize: 20, weight: .semibold)
+        b.titleLabel?.font = .preferredFont(forTextStyle: .headline)
         b.backgroundColor = .naviYellow
         
         b.layer.cornerRadius = 20

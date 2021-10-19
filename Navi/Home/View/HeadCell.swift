@@ -34,6 +34,7 @@ class HeadCell: UITableViewCell {
     lazy var headLabel: UILabel = {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = .preferredFont(forTextStyle: .body)
         l.text = head
         return l
     }()

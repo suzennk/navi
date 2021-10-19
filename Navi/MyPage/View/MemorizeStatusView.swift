@@ -39,13 +39,13 @@ class MemorizeStatusView: UIView {
         vm.statuses.map { (title, content) in
             let titleLabel = UILabel()
             titleLabel.text = title
-            titleLabel.font = .systemFont(ofSize: 18)
+            titleLabel.font = .preferredFont(forTextStyle: .body)
             titleLabel.textColor = .tertiarySystemBackground
             titleLabel.sizeToFit()
             
             let contentLabel = UILabel()
             contentLabel.text = content
-            contentLabel.font = .systemFont(ofSize: 30, weight: .light)
+            contentLabel.font = .preferredFont(forTextStyle: .title1, weight: .light)
             contentLabel.textAlignment = .right
             let spacer = UIView()
             spacer.snp.makeConstraints { make in

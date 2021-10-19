@@ -20,7 +20,7 @@ class TodayVerseView: UIView {
     let contentLabel: UILabel = {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
-        l.font = .systemFont(ofSize: 20, weight: .regular)
+        l.font = .preferredFont(forTextStyle: .body)
         l.numberOfLines = 0
         return l
     }()

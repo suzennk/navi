@@ -20,7 +20,7 @@ class CardCell: UITableViewCell {
     
     let titleLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 20, weight: .bold)
+        l.font = .preferredFont(forTextStyle: .title3, weight: .bold)
         l.textColor = .navyText
         return l
     }()
@@ -38,26 +38,26 @@ class CardCell: UITableViewCell {
     
     let verseRangeLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 20, weight: .bold)
+        l.font = .preferredFont(forTextStyle: .title3, weight: .semibold)
         return l
     }()
     
     let contentLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 18)
+        l.font = .preferredFont(forTextStyle: .body)
         l.numberOfLines = 0
         return l
     }()
     
     let headLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 18, weight: .light)
+        l.font = .preferredFont(forTextStyle: .body, weight: .light)
         return l
     }()
     
     let littleVerseRangeLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 18, weight: .light)
+        l.font = .preferredFont(forTextStyle: .body, weight: .light)
         return l
     }()
     

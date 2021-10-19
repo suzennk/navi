@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08129E0A271E94BC00DDE22B /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08129E09271E94BC00DDE22B /* UIFont+Extension.swift */; };
 		085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B084826B136BF003EA5B7 /* AppDelegate.swift */; };
 		085B084B26B136BF003EA5B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B084A26B136BF003EA5B7 /* SceneDelegate.swift */; };
 		085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B084C26B136BF003EA5B7 /* ViewController.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08129E09271E94BC00DDE22B /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		085B084526B136BF003EA5B7 /* Navi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		085B084826B136BF003EA5B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		085B084A26B136BF003EA5B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				089762CB26C3C99900AFC555 /* UIColor+Extension.swift */,
+				08129E09271E94BC00DDE22B /* UIFont+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -336,10 +339,10 @@
 		08AD4D9E26C389DC00E14F64 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				089762CD26C3D65700AFC555 /* TodayVerseView.swift */,
 				085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */,
 				08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */,
 				089762C826C3A91600AFC555 /* HeadCell.swift */,
-				089762CD26C3D65700AFC555 /* TodayVerseView.swift */,
 				08AB0A4A26D0E15800066D6F /* CardTableView.swift */,
 				08AB0A4C26D0E41C00066D6F /* CardCell.swift */,
 			);
@@ -646,6 +649,7 @@
 				08941B3326E0A46500E5CA97 /* OnYourOwnCell.swift in Sources */,
 				08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */,
 				085B087D26B14C9A003EA5B7 /* HomeVC.swift in Sources */,
+				08129E0A271E94BC00DDE22B /* UIFont+Extension.swift in Sources */,
 				08AC129E26E368CE0066750F /* AddOnYourOwnVC.swift in Sources */,
 				08AB0A4926D0DFE100066D6F /* CardTableViewModel.swift in Sources */,
 				08AB0A4D26D0E41C00066D6F /* CardCell.swift in Sources */,

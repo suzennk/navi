@@ -17,7 +17,7 @@ class OnYourOwnCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        textLabel?.font = .systemFont(ofSize: 20)
+        textLabel?.font = .preferredFont(forTextStyle: .body)
         
         accessoryType = .disclosureIndicator
     }

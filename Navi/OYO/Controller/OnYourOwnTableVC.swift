@@ -27,7 +27,7 @@ class OnYourOwnTableVC: UITableViewController {
     
     lazy var headerView: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.font = .preferredFont(forTextStyle: .title2)
         label.sizeToFit()
         return label
     }()

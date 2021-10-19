@@ -14,13 +14,13 @@ class OYODetailVC: ViewController {
         let tv = UITextView()
         tv.isScrollEnabled = false
         tv.isEditable = false
-        tv.font = .systemFont(ofSize: 20)
+        tv.font = .preferredFont(forTextStyle: .body)
         return tv
     }()
     
     let verseRangeLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 18)
+        l.font = .preferredFont(forTextStyle: .body)
         l.textColor = .systemGray
         l.textAlignment = .right
         return l

@@ -138,7 +138,7 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
         let titleLabel = UILabel()
         titleLabel.text = "On Your Own"
         titleLabel.textAlignment = .center
-        titleLabel.font = .systemFont(ofSize: 24, weight: .bold)
+        titleLabel.font = .preferredFont(forTextStyle: .title2, weight: .bold)
         
         let stackView = UIStackView(arrangedSubviews: [cancelButton, titleLabel, doneButton])
         stackView.axis = .horizontal
