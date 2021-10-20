@@ -18,9 +18,14 @@ class MyPageVC: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         
-        navigationItem.title = "🔖 마이페이지"
+        if let gradientImage = UIImage(named: "mypage-bg") {
+            view.backgroundColor = UIColor(patternImage: gradientImage)
+        } else {
+            view.backgroundColor = .systemBackground
+        }
+        
+        navigationItem.title = "마이페이지"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
         
@@ -37,6 +42,8 @@ class MyPageVC: ViewController {
 extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
 
     func setupTableview() {
+        tableView.backgroundColor = .clear
+        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
@@ -57,6 +64,7 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         let view = MemorizeStatusView()
+        cell.backgroundColor = .clear
         cell.addSubview(view)
 
         view.snp.makeConstraints { make in
