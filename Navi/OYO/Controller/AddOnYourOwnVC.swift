@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import PanModal
 import SkyFloatingLabelTextField
 
 enum VerseContents: Int, CaseIterable, RawRepresentable {
@@ -266,21 +265,6 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
         case .failure(let err):
             print(err.localizedDescription)
         }
-    }
-}
-
-// MARK: - PanModalPresentable
-extension AddOnYourOwnVC: PanModalPresentable {
-    var panScrollable: UIScrollView? {
-        return tableView
-    }
-    
-    var longFormHeight: PanModalHeight {
-        return .maxHeight
-    }
-    
-    var shortFormHeight: PanModalHeight {
-        return .contentHeight(500)
     }
 }
 

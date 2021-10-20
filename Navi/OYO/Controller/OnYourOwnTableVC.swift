@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import PanModal
 
 private let cellId = "cellId"
 
@@ -73,7 +72,7 @@ class OnYourOwnTableVC: UITableViewController {
     
     @objc func handleAddTapped() {
         addVC.delegate = self
-        presentPanModal(addVC)
+        self.present(addVC, animated: true)
     }
     
     // MARK: - UITableViewDelegate
