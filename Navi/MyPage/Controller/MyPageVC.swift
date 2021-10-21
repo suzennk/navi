@@ -21,6 +21,14 @@ class MyPageVC: ViewController {
         
         if let gradientImage = UIImage(named: "mypage-bg") {
             view.backgroundColor = UIColor(patternImage: gradientImage)
+            
+            // dark overlay view for dark mode support
+            let overlayView = UIView()
+            overlayView.backgroundColor = UIColor(named: "overlay")
+            view.addSubview(overlayView)
+            overlayView.snp.makeConstraints { make in
+                make.edges.equalTo(self.view.snp.edges)
+            }
         } else {
             view.backgroundColor = .systemBackground
         }
