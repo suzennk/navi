@@ -63,13 +63,15 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        let view = MemorizeStatusView()
+        let view = BlurredView()
         cell.backgroundColor = .clear
         cell.addSubview(view)
 
         view.snp.makeConstraints { make in
             make.edges.equalTo(cell.snp.edges).inset(UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16))
+            make.height.greaterThanOrEqualTo(200)
         }
+        
         return cell
     }
 }

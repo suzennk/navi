@@ -29,7 +29,7 @@
 		089AB191271596D000EA7941 /* OYODetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB190271596D000EA7941 /* OYODetailVC.swift */; };
 		089AB1932715970200EA7941 /* OYODetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB1922715970200EA7941 /* OYODetailViewModel.swift */; };
 		089AB1992716AEF900EA7941 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB1982716AEF900EA7941 /* MyPageVC.swift */; };
-		089AB19B2716B76C00EA7941 /* MemorizeStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB19A2716B76C00EA7941 /* MemorizeStatusView.swift */; };
+		089AB19B2716B76C00EA7941 /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB19A2716B76C00EA7941 /* BlurredView.swift */; };
 		089AB19D2716C53800EA7941 /* MemorizeStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB19C2716C53800EA7941 /* MemorizeStatusViewModel.swift */; };
 		08A7820126CCD88D00338E97 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A7820026CCD88D00338E97 /* PersistentContainer.swift */; };
 		08AB0A3B26CCFDAE00066D6F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A3926CCFDAE00066D6F /* Model.xcdatamodeld */; };
@@ -97,7 +97,7 @@
 		089AB190271596D000EA7941 /* OYODetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailVC.swift; sourceTree = "<group>"; };
 		089AB1922715970200EA7941 /* OYODetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailViewModel.swift; sourceTree = "<group>"; };
 		089AB1982716AEF900EA7941 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
-		089AB19A2716B76C00EA7941 /* MemorizeStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeStatusView.swift; sourceTree = "<group>"; };
+		089AB19A2716B76C00EA7941 /* BlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
 		089AB19C2716C53800EA7941 /* MemorizeStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeStatusViewModel.swift; sourceTree = "<group>"; };
 		08A7820026CCD88D00338E97 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		08AB0A3A26CCFDAE00066D6F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -304,7 +304,7 @@
 		089AB1962716AEC300EA7941 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				089AB19A2716B76C00EA7941 /* MemorizeStatusView.swift */,
+				089AB19A2716B76C00EA7941 /* BlurredView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -634,7 +634,7 @@
 				08AC12A026E36B2D0066750F /* NaviInputTextField.swift in Sources */,
 				089AB1992716AEF900EA7941 /* MyPageVC.swift in Sources */,
 				08B6162626DF64E2009BE636 /* SortMethod.swift in Sources */,
-				089AB19B2716B76C00EA7941 /* MemorizeStatusView.swift in Sources */,
+				089AB19B2716B76C00EA7941 /* BlurredView.swift in Sources */,
 				085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */,
 				08AB0A4026CD0AA200066D6F /* Verse.swift in Sources */,
 				08AB0A4726D0DD2100066D6F /* CardTableVC.swift in Sources */,
