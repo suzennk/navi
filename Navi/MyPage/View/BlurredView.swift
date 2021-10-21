@@ -9,20 +9,22 @@ import UIKit
 import SnapKit
 
 class BlurredView: UIView {
-    let view: UIView = {
+    let cornerRadius: CGFloat = 20
+    
+    lazy var view: UIView = {
         let blurEffect = UIBlurEffect(style: .prominent)
         let v = UIVisualEffectView(effect: blurEffect)
         v.clipsToBounds = true
-        v.layer.borderWidth = 1.0
-        v.layer.borderColor = UIColor.white.cgColor
-        v.layer.cornerRadius = 20
+        v.layer.borderWidth = 0.5
+        v.layer.borderColor = UIColor.systemBackground.cgColor
+        v.layer.cornerRadius = cornerRadius
         return v
     }()
     
-    let shadowView: UIView = {
+    lazy var shadowView: UIView = {
         let v = UIView()
         v.backgroundColor = .clear
-        v.layer.cornerRadius = 20
+        v.layer.cornerRadius = cornerRadius
         v.layer.masksToBounds = false
         v.layer.shadowColor = UIColor.black.cgColor
         v.layer.shadowOpacity = 0.1
