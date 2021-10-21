@@ -73,6 +73,8 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         let view = BlurredView()
         cell.backgroundColor = .clear
+        
+        cell.subviews.forEach { $0.removeFromSuperview() }
         cell.addSubview(view)
 
         view.snp.makeConstraints { make in
