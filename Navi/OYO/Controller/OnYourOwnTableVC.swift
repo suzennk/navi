@@ -24,6 +24,12 @@ class OnYourOwnTableVC: UITableViewController {
     
     var addVC = AddOnYourOwnVC()
     
+    lazy var addButton: UIButton = {
+        let b = AddButton()
+        b.addTarget(self, action: #selector(handleAddTapped), for: .touchUpInside)
+        return b
+    }()
+    
     lazy var headerView: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .title2)
@@ -45,13 +51,19 @@ class OnYourOwnTableVC: UITableViewController {
         tableView.dataSource = self
         tableView.register(OnYourOwnCell.self, forCellReuseIdentifier: cellId)
         
-        configurConstraints()
-        setupBarButtonItems()
+        configureConstraints()
         
         oyoVerses = DataBaseService.shared.categorizedOyoVerses
     }
     
-    func configurConstraints() {
+    func configureConstraints() {
+        // Add add button
+        view.addSubview(addButton)
+        addButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-20)
+        }
+        
         tableView.tableHeaderView = headerView
         
         let total = oyoVerses.reduce(0) { $0 + $1.value.count }
@@ -62,12 +74,6 @@ class OnYourOwnTableVC: UITableViewController {
         }
         
         view.layoutIfNeeded()
-    }
-    
-    func setupBarButtonItems() {
-        let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAddTapped))
-        
-        navigationItem.rightBarButtonItem = addBarButtonItem
     }
     
     @objc func handleAddTapped() {

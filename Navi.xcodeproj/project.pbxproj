@@ -46,6 +46,7 @@
 		08AD4D9D26BCEE7800E14F64 /* cardset.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 08AD4D9C26BCEE7800E14F64 /* cardset.tsv */; };
 		08AD4DA126C38C0400E14F64 /* ThemeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */; };
 		08B6162626DF64E2009BE636 /* SortMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B6162526DF64E1009BE636 /* SortMethod.swift */; };
+		08BE9E3E27229B6F00470AB3 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE9E3D27229B6F00470AB3 /* AddButton.swift */; };
 		08EEB18926F1C07B00A29818 /* test_verses.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 08EEB18826F1C07B00A29818 /* test_verses.tsv */; };
 		1735D5F0F357685ACF82DB86 /* Pods_Navi_NaviUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E725CCFB8FD4D1CBEB745E9 /* Pods_Navi_NaviUITests.framework */; };
 		1C951D9316E6E2D78C3ECFAA /* Pods_NaviTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17ADC61355E79CC441E8C5D /* Pods_NaviTests.framework */; };
@@ -115,6 +116,7 @@
 		08AD4D9C26BCEE7800E14F64 /* cardset.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cardset.tsv; sourceTree = "<group>"; };
 		08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHeaderView.swift; sourceTree = "<group>"; };
 		08B6162526DF64E1009BE636 /* SortMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMethod.swift; sourceTree = "<group>"; };
+		08BE9E3D27229B6F00470AB3 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		08EEB18826F1C07B00A29818 /* test_verses.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_verses.tsv; sourceTree = "<group>"; };
 		2FDFD6777C8E4357F3282A3C /* Pods-Navi-NaviUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-NaviUITests.debug.xcconfig"; path = "Target Support Files/Pods-Navi-NaviUITests/Pods-Navi-NaviUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E725CCFB8FD4D1CBEB745E9 /* Pods_Navi_NaviUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navi_NaviUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +256,7 @@
 			children = (
 				08941B3226E0A46500E5CA97 /* OnYourOwnCell.swift */,
 				08AC129F26E36B2D0066750F /* NaviInputTextField.swift */,
+				08BE9E3D27229B6F00470AB3 /* AddButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				08B6162626DF64E2009BE636 /* SortMethod.swift in Sources */,
 				089AB19B2716B76C00EA7941 /* BlurredView.swift in Sources */,
 				085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */,
+				08BE9E3E27229B6F00470AB3 /* AddButton.swift in Sources */,
 				08AB0A4026CD0AA200066D6F /* Verse.swift in Sources */,
 				08AB0A4726D0DD2100066D6F /* CardTableVC.swift in Sources */,
 				085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */,
