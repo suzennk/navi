@@ -231,7 +231,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dzC-cN-Nid">
                                                                     <rect key="frame" x="0.0" y="0.0" width="115.5" height="44"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJ5-Gm-FbN">
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJ5-Gm-FbN">
                                                                             <rect key="frame" x="0.0" y="0.0" width="95" height="44"/>
                                                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -248,7 +248,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bga-zl-0eo">
                                                                     <rect key="frame" x="123.5" y="0.0" width="115" height="44"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GhU-PE-oKI">
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GhU-PE-oKI">
                                                                             <rect key="frame" x="0.0" y="0.0" width="100.5" height="44"/>
                                                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -265,7 +265,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aPq-7F-ITi">
                                                                     <rect key="frame" x="246.5" y="0.0" width="115.5" height="44"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21X-dP-CwI">
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21X-dP-CwI">
                                                                             <rect key="frame" x="0.0" y="0.0" width="95" height="44"/>
                                                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                             <constraints>
