@@ -22,7 +22,7 @@ class OnYourOwnTableVC: UITableViewController {
         return oyoVerses.reduce(0) { $0 + $1.value.count }
     }
     
-    var addVC = AddOnYourOwnVC()
+    var addVC = AddOnYourOwnVC(nibName: "AddOnYourOwnVC", bundle: nil)
     
     lazy var addButton: UIButton = {
         let b = AddButton()
@@ -78,9 +78,12 @@ class OnYourOwnTableVC: UITableViewController {
     }
     
     @objc func handleAddTapped() {
-        addVC.delegate = self
         addVC.modalPresentationStyle = .fullScreen
-        self.present(addVC, animated: true)
+        addVC.delegate = self
+        self.present(addVC, animated: true, completion: nil)
+//        addVC.delegate = self
+//        addVC.modalPresentationStyle = .fullScreen
+//        self.present(addVC, animated: true)
     }
     
     // MARK: - UITableViewDelegate

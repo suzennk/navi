@@ -82,6 +82,21 @@ enum VerseContents: Int, CaseIterable, RawRepresentable {
     }
 }
 
+class AddOnYourOwnVC: ViewController {
+
+    public var delegate: OnYourOwnTableVC?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+        self.dismiss(animated: true) {
+            self.delegate?.addVC = AddOnYourOwnVC(nibName: "AddOnYourOwnVC", bundle: nil)
+        }    }
+}
+
+/*
 class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let cellId = "cellId"
@@ -200,12 +215,6 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
         tableView.contentInset = contentInset
     }
     
-    @objc private func handleCancelTapped() {
-        self.dismiss(animated: true) {
-            self.delegate?.addVC = AddOnYourOwnVC()
-        }
-    }
-    
     // MARK: - TableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cases.count
@@ -293,3 +302,4 @@ extension AddOnYourOwnVC: UITextFieldDelegate {
         return true
     }
 }
+*/
