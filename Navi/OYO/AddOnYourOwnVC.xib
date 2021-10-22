@@ -69,13 +69,13 @@
                     </constraints>
                 </stackView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="62g-Fk-yFT">
-                    <rect key="frame" x="0.0" y="112" width="414" height="714"/>
+                    <rect key="frame" x="0.0" y="120" width="414" height="706"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9PC-Dz-Gkn" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1106.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1090.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jXu-aV-Xin">
-                                    <rect key="frame" x="16" y="16" width="382" height="982.5"/>
+                                    <rect key="frame" x="16" y="0.0" width="382" height="982.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urf-o0-q6c">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="120"/>
@@ -370,7 +370,7 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhX-ow-5B9">
-                                    <rect key="frame" x="16" y="1030.5" width="382" height="60"/>
+                                    <rect key="frame" x="16" y="1014.5" width="382" height="60"/>
                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="ze5-A6-WvU"/>
@@ -392,7 +392,7 @@
                                 <constraint firstItem="OhX-ow-5B9" firstAttribute="top" secondItem="jXu-aV-Xin" secondAttribute="bottom" constant="32" id="SVM-7B-pbs"/>
                                 <constraint firstItem="OhX-ow-5B9" firstAttribute="centerX" secondItem="9PC-Dz-Gkn" secondAttribute="centerX" id="XKm-EE-1Ld"/>
                                 <constraint firstItem="jXu-aV-Xin" firstAttribute="leading" secondItem="9PC-Dz-Gkn" secondAttribute="leading" constant="16" id="cvq-op-YSs"/>
-                                <constraint firstItem="jXu-aV-Xin" firstAttribute="top" secondItem="9PC-Dz-Gkn" secondAttribute="top" constant="16" id="gOa-mr-Tua"/>
+                                <constraint firstItem="jXu-aV-Xin" firstAttribute="top" secondItem="9PC-Dz-Gkn" secondAttribute="top" id="gOa-mr-Tua"/>
                                 <constraint firstAttribute="bottom" secondItem="OhX-ow-5B9" secondAttribute="bottom" constant="16" id="sfU-0n-dDK"/>
                             </constraints>
                         </view>
@@ -412,7 +412,7 @@
             <color key="backgroundColor" name="navi-bg"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="848-fs-gvn" secondAttribute="trailing" constant="16" id="F1z-b1-YKz"/>
-                <constraint firstItem="62g-Fk-yFT" firstAttribute="top" secondItem="848-fs-gvn" secondAttribute="bottom" constant="8" id="K43-P2-eWl"/>
+                <constraint firstItem="62g-Fk-yFT" firstAttribute="top" secondItem="848-fs-gvn" secondAttribute="bottom" constant="16" id="K43-P2-eWl"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="62g-Fk-yFT" secondAttribute="trailing" id="Pas-1s-i0j"/>
                 <constraint firstItem="62g-Fk-yFT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fJA-zC-eKl"/>
                 <constraint firstAttribute="bottom" secondItem="62g-Fk-yFT" secondAttribute="bottom" constant="70" id="ndj-b3-r8H"/>
