@@ -156,6 +156,7 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         let theme = themes[indexPath.section]
         if let heads = categories[theme] {
             let head = heads[indexPath.row]
+            cell.theme = theme
             cell.head = head
         }
         

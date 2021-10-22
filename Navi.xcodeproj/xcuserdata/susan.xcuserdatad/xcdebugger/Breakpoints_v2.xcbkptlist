@@ -14,9 +14,9 @@
             filePath = "Navi/Home/View/HeadCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "head"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "theme"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>

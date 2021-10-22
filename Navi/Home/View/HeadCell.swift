@@ -25,7 +25,8 @@ class HeadCell: UITableViewCell {
         return v
     }()
     
-    var head: String = "테마 헤드" {
+    var theme: String = "테마"
+    var head: String = "헤드" {
         didSet {
             updateView()
         }
@@ -66,14 +67,19 @@ class HeadCell: UITableViewCell {
     }
     
     func updateView() {
-        headLabel.text = head
+        let verses = DataBaseService.shared.fetch(request: Verse.fetchRequest(of: [(theme, head)]))
+        let total = verses.count
+        let memorized = verses.filter{ $0.memorized }.count
+        headLabel.text = "\(head) (\(memorized)/\(total))"
         
         if isSelected {
             checkBox.tintColor = .selectedBackground
             checkBox.image = selectedImage
+            headLabel.textColor = .label
         } else {
             checkBox.tintColor = .unselectedBackground
             checkBox.image = unselectedImage
+            headLabel.textColor = .systemGray
         }
         
     }
