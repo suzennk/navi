@@ -8,26 +8,22 @@
 import Foundation
 
 struct MemorizeStatusViewModel {
-    let status: [(title: String, content: String)]
-    let memorizeStatus: [(theme: String, memorized: Int, total: Int)]
+    let memorizeStatus: [(theme: String, memorizedPercentage: Double, totalPercentage: Double)]
     
     init() {
-        let verses = DataBaseService.shared.fetch(request: Verse.fetchRequest())
-        let memCount = verses.filter { $0.memorized == true }.count
-        let oyoVerses = DataBaseService.shared.fetch(request: Verse.fetchRequestOfOYO())
-        let oyoMemCount = oyoVerses.filter { $0.memorized == true }.count
+        var memStatus = [(theme: String, memorizedPercentage: Double, totalPercentage: Double)]()
+        let max = DataBaseService.shared.themes.map { theme in
+            DataBaseService.shared.fetch(request: Verse.fetchRequest(of: theme)).count
+        }.max() ?? 0
         
-        status = [
-            ("외운 카드 수 / 모든 카드 수", "\(memCount) / \(verses.count)개 "),
-            ("외운 카드 수 / OYO 카드 수", "\(oyoMemCount) / \(oyoVerses.count)개 ")
-        ]
-        
-        var memStatus = [(theme: String, memorized: Int, total: Int)]()
         DataBaseService.shared.themes.forEach { theme in
             let verses = DataBaseService.shared.fetch(request: Verse.fetchRequest(of: theme))
             let total = verses.count
             let memorized = verses.filter{ $0.memorized }.count
-            memStatus.append((theme, memorized, total))
+            
+            let totalPercentage: Double = total > 0 ? (Double(total) / Double(max)) * 0.75 + 0.25 : 0
+            let memorizedPercentage: Double = total > 0 ? Double(memorized) / Double(total) : 0
+            memStatus.append((theme, memorizedPercentage, totalPercentage))
         }
         memorizeStatus = memStatus
     }

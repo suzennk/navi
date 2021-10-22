@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0807BFFD272281E2003C5669 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807BFFC272281E2003C5669 /* ChartView.swift */; };
 		08129E0A271E94BC00DDE22B /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08129E09271E94BC00DDE22B /* UIFont+Extension.swift */; };
 		085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B084826B136BF003EA5B7 /* AppDelegate.swift */; };
 		085B084B26B136BF003EA5B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B084A26B136BF003EA5B7 /* SceneDelegate.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0807BFFC272281E2003C5669 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		08129E09271E94BC00DDE22B /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		085B084526B136BF003EA5B7 /* Navi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		085B084826B136BF003EA5B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				089AB19A2716B76C00EA7941 /* BlurredView.swift */,
+				0807BFFC272281E2003C5669 /* ChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				08AB0A4D26D0E41C00066D6F /* CardCell.swift in Sources */,
 				085B087926B14655003EA5B7 /* TabBarController.swift in Sources */,
 				08AB0A3B26CCFDAE00066D6F /* Model.xcdatamodeld in Sources */,
+				0807BFFD272281E2003C5669 /* ChartView.swift in Sources */,
 				089762CE26C3D65700AFC555 /* TodayVerseView.swift in Sources */,
 				085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */,
 				08941B2F26E0986400E5CA97 /* OnYourOwnTableVC.swift in Sources */,
