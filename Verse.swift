@@ -16,6 +16,15 @@ public class Verse: NSManagedObject {
         return NSFetchRequest<Verse>(entityName: "Verse")
     }
     
+    @nonobjc public class func fetchRequest(of theme: String) -> NSFetchRequest<Verse> {
+        let request = NSFetchRequest<Verse>(entityName: "Verse")
+        let sort = NSSortDescriptor(key: #keyPath(Verse.id), ascending: true)
+        let predicate = NSPredicate(format: "theme = %@", theme)
+        request.sortDescriptors = [sort]
+        request.predicate = predicate
+        return request
+    }
+    
     @nonobjc public class func fetchReqest(of categories: [(theme: String, head: String)]) -> NSFetchRequest<Verse> {
         let request = NSFetchRequest<Verse>(entityName: "Verse")
         let sort = NSSortDescriptor(key: #keyPath(Verse.id), ascending: true)
