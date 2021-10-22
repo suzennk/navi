@@ -33,6 +33,9 @@ class MyPageVC: ViewController {
             view.backgroundColor = .systemBackground
         }
         
+        // 여기서는 예외적으로 navitaion title 색 반전
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemBackground]
+
         navigationItem.title = "마이페이지"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
