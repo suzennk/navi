@@ -46,11 +46,11 @@ class TabBarController: UITabBarController {
         
         self.viewControllers = [oyoNavContr, homeNavController, myNavContr]
         
-        tabBar.items?[0].image = UIImage(named: "oyo-u")?.withRenderingMode(.alwaysOriginal)
+        tabBar.items?[0].image = UIImage(named: "oyo-u")?.withTintColor(.label, renderingMode: .alwaysTemplate)
         tabBar.items?[0].selectedImage = UIImage(named: "oyo")?.withRenderingMode(.alwaysOriginal)
-        tabBar.items?[1].image = UIImage(named: "home-u")?.withRenderingMode(.alwaysOriginal)
+        tabBar.items?[1].image = UIImage(named: "home-u")?.withTintColor(.label, renderingMode: .alwaysTemplate)
         tabBar.items?[1].selectedImage = UIImage(named: "home")?.withRenderingMode(.alwaysOriginal)
-        tabBar.items?[2].image = UIImage(named: "my-u")?.withRenderingMode(.alwaysOriginal)
+        tabBar.items?[2].image = UIImage(named: "my-u")?.withTintColor(.label, renderingMode: .alwaysTemplate)
         tabBar.items?[2].selectedImage = UIImage(named: "my")?.withRenderingMode(.alwaysOriginal)
         
         tabBar.items?.forEach({
@@ -62,6 +62,15 @@ class TabBarController: UITabBarController {
         tabBar.layer.borderWidth = 0
         tabBar.layer.borderColor = UIColor.clear.cgColor
         tabBar.clipsToBounds = true
+        
+        if #available(iOS 15, *) {
+           let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.backgroundColor = .clear
+           tabBar.standardAppearance = tabBarAppearance
+           tabBar.scrollEdgeAppearance = tabBarAppearance
+        } else {
+            tabBar.barTintColor = .clear
+         }
     }
     
 }
