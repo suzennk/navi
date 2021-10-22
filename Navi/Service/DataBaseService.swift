@@ -124,7 +124,7 @@ class DataBaseService {
     
     // MARK: - Fetch: Verse
     public func fetchVerse(of categories: [(Theme, Head)]) -> [Verse] {
-        return fetch(request: Verse.fetchReqest(of: categories))
+        return fetch(request: Verse.fetchRequest(of: categories))
     }
     
     public func fetch(request: NSFetchRequest<Verse>) -> [Verse] {

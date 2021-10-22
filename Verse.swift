@@ -25,7 +25,7 @@ public class Verse: NSManagedObject {
         return request
     }
     
-    @nonobjc public class func fetchReqest(of categories: [(theme: String, head: String)]) -> NSFetchRequest<Verse> {
+    @nonobjc public class func fetchRequest(of categories: [(theme: String, head: String)]) -> NSFetchRequest<Verse> {
         let request = NSFetchRequest<Verse>(entityName: "Verse")
         let sort = NSSortDescriptor(key: #keyPath(Verse.id), ascending: true)
         let subpredicates = categories.map {
