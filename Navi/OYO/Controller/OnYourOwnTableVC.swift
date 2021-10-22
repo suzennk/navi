@@ -79,6 +79,7 @@ class OnYourOwnTableVC: UITableViewController {
     
     @objc func handleAddTapped() {
         addVC.delegate = self
+        addVC.modalPresentationStyle = .fullScreen
         self.present(addVC, animated: true)
     }
     

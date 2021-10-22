@@ -147,17 +147,17 @@ class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource
         view.addSubview(stackView)
         
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(16)
-            make.leading.equalTo(view.snp.leading).offset(16)
-            make.trailing.equalTo(view.snp.trailing).offset(-16)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
+            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(16)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-16)
             make.height.equalTo(44)
         }
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(stackView.snp.bottom).offset(8)
-            make.leading.equalTo(view.snp.leading)
-            make.trailing.equalTo(view.snp.trailing)
-            make.bottom.equalTo(view.snp.bottom)
+            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }
     
