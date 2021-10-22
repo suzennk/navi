@@ -60,6 +60,7 @@ class OnYourOwnTableVC: UITableViewController {
         // Add add button
         view.addSubview(addButton)
         addButton.snp.makeConstraints { make in
+            make.width.height.equalTo(80)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-20)
         }
