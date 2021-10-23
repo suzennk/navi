@@ -52,7 +52,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="61y-rR-G5c"/>
+                                <action selector="handleCancelTapped:" destination="-1" eventType="touchUpInside" id="6Y7-1u-oQP"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="암송카드 추가하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMx-e9-1Uo">
@@ -75,6 +75,9 @@
                                     <integer key="value" value="22"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="handleDoneTapped:" destination="-1" eventType="touchUpInside" id="src-1R-hhF"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

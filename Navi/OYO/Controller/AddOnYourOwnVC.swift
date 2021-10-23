@@ -162,9 +162,32 @@ class AddOnYourOwnVC: ViewController {
         selectCategoryButton.menu = menu
     }
     
-    @IBAction func cancelTapped(_ sender: Any) {
+    @IBAction func handleCancelTapped(_ sender: Any) {
         self.dismiss(animated: true) {
             self.delegate?.addVC = AddOnYourOwnVC(nibName: "AddOnYourOwnVC", bundle: nil)
+        }
+    }
+    
+    @IBAction func handleDoneTapped(_ sender: Any) {
+        let res = DataBaseService.shared.addOYOVerse(
+            bible: selectBibleButton.currentTitle!,
+            chapter: Int(chapterTextField.text!) ?? 0,
+            startVerse: Int(startVerseTextField.text!) ?? 0,
+            middleSymbol: Int(endVerseTextField.text!) == nil ? nil : "-",
+            endVerse: Int(endVerseTextField.text!) ?? 0,
+            head: categoryTextField.text!,
+            contents: contentTextView.text
+        )
+        
+        switch res {
+        case .success(_):
+            self.dismiss(animated: true) {
+                self.delegate?.oyoVerses = DataBaseService.shared.categorizedOyoVerses
+                self.delegate?.tableView.reloadData()
+                self.delegate?.addVC = AddOnYourOwnVC()
+            }
+        case .failure(let err):
+            print(err.localizedDescription)
         }
     }
     
@@ -200,75 +223,3 @@ extension AddOnYourOwnVC {
         scrollView.contentInset = contentInset
     }
 }
-
-/*
-class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @objc private func handleDoneTapped() {
-        if textFields.enumerated().filter({ offset, tf in
-            guard let text = tf.text, let type = VerseContents(rawValue: offset) else { return true }
-            if type.isValid(text) { return false }
-            else {
-                tf.errorMessage = type.errorMessage
-                return true
-            }
-        }).count > 0 {
-            return
-        }
-        
-        let texts = textFields.map { $0.text ?? "" }
-        
-        let chapter = Int(texts[VerseContents.chapter.rawValue]) ?? 0
-        let startVerse = Int(texts[VerseContents.startVerse.rawValue]) ?? 0
-        let endVerse = Int(texts[VerseContents.chapter.rawValue])
-        
-        let res = DataBaseService.shared.addOYOVerse(
-            bible: texts[VerseContents.bible.rawValue],
-            chapter: chapter,
-            startVerse: startVerse,
-            middleSymbol: endVerse == nil ? nil : "-",
-            endVerse: endVerse ?? 0,
-            head: texts[VerseContents.head.rawValue],
-            contents: texts[VerseContents.content.rawValue]
-        )
-        
-        switch res {
-        case .success(_):
-            self.dismiss(animated: true) {
-                // MARK: Reload Data 안됨
-                self.delegate?.oyoVerses = DataBaseService.shared.categorizedOyoVerses
-                self.delegate?.tableView.reloadData()
-                self.delegate?.addVC = AddOnYourOwnVC()
-            }
-        case .failure(let err):
-            print(err.localizedDescription)
-        }
-    }
-}
-
-// MARK: - UITextFieldDelegate
-extension AddOnYourOwnVC: UITextFieldDelegate {
-    
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        guard let text = textField.text else { return }
-        if let tf = textField as? SkyFloatingLabelTextField, let contentType = VerseContents(rawValue: tf.tag) {
-            
-            if contentType.isValid(text) {
-                tf.errorMessage = ""
-            } else {
-                tf.errorMessage = contentType.errorMessage
-            }
-        }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let tag = textField.tag
-        if tag < textFields.count - 1 {
-            textFields[tag+1].becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
-        }
-        return true
-    }
-}
-*/
