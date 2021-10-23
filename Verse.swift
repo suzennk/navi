@@ -35,10 +35,10 @@ public class Verse: NSManagedObject {
         return request
     }
     
-    @nonobjc public class func fetchRequestOfOYO() -> NSFetchRequest<Verse> {
+    @nonobjc public class func fetchRequest(oyo: Bool) -> NSFetchRequest<Verse> {
         let request = NSFetchRequest<Verse>(entityName: "Verse")
         let sort = NSSortDescriptor(key: #keyPath(Verse.id), ascending: true)
-        let predicate = NSPredicate(format: "theme = %@", "OYO")
+        let predicate = oyo ? NSPredicate(format: "theme = %@", "OYO") : NSPredicate(format: "theme != %@", "OYO")
         request.sortDescriptors = [sort]
         request.predicate = predicate
         return request

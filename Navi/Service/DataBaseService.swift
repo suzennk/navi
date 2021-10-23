@@ -44,6 +44,20 @@ class DataBaseService {
         }
     }
     
+    // MARK: - Predefined Verses
+    private var _predefinedVerses: [Verse] {
+        get {
+            return fetch(request: Verse.fetchRequest(oyo: false))
+        }
+    }
+    
+    public var todayVerse: Verse {
+        let count = _predefinedVerses.count
+        let calendar = Calendar(identifier: .gregorian)
+        let date = calendar.startOfDay(for: Date()).timeIntervalSinceReferenceDate
+        return _verses[Int(date) % count]
+    }
+    
     /**
      verses로부터 unique한 theme으로부터 head만 뽑아낸 dictionary 
      */
@@ -73,7 +87,7 @@ class DataBaseService {
     
     private var _oyoVerses: [Verse] {
         get {
-            return fetch(request: Verse.fetchRequestOfOYO())
+            return fetch(request: Verse.fetchRequest(oyo: true))
         }
     }
     

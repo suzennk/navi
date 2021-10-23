@@ -42,8 +42,8 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     private let verseView: TodayVerseView = {
         let v = TodayVerseView()
         v.translatesAutoresizingMaskIntoConstraints = false
-        let dummyVerse = DataBaseService.shared.verses.randomElement()!
-        v.verseViewModel = VerseViewModel(dummyVerse)
+        let todayVerse = DataBaseService.shared.todayVerse
+        v.verseViewModel = VerseViewModel(todayVerse)
         return v
     }()
     
