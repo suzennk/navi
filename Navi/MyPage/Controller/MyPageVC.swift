@@ -85,7 +85,7 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         cell.addSubview(view)
         view.snp.makeConstraints { make in
             make.edges.equalTo(cell.snp.edges).inset(UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16))
-            make.height.greaterThanOrEqualTo(200)
+            make.height.greaterThanOrEqualTo(250)
         }
 
         view.addSubview(chartView)

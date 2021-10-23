@@ -40,7 +40,6 @@ class ChartView: UIView {
         guard let vm = viewModel else { return }
         vm.memorizeStatus.enumerated().forEach { (index, status) in
             let barView = UIView()
-            barView.snp.makeConstraints { make in make.height.equalTo(200) }
             
             let totalBar = UIView()
             totalBar.snp.makeConstraints { make in make.width.equalTo(16) }
