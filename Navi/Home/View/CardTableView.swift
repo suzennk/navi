@@ -20,13 +20,7 @@ class CardTableView: UITableView {
     
     var filteredVerses: [Verse] = [] {
         didSet {
-            // Update UI for memorized verses
-            filteredVerses.enumerated().filter {
-                $0.element.memorized == true
-            }.forEach { (idx, _) in
-                let indexPath = IndexPath(row: idx, section: 0)
-                selectRow(at: indexPath, animated: false, scrollPosition: .none)
-            }
+            reloadData()
         }
     }
     
@@ -70,6 +64,18 @@ class CardTableView: UITableView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func reloadData() {
+        super.reloadData()
+        
+        // Update UI(check) for memorized verses
+        filteredVerses.enumerated().filter {
+            $0.element.memorized == true
+        }.forEach { (idx, _) in
+            let indexPath = IndexPath(row: idx, section: 0)
+            selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
     }
 }
 
