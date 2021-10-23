@@ -84,7 +84,7 @@ enum VerseContents: Int, CaseIterable, RawRepresentable {
 
 class AddOnYourOwnVC: ViewController {
 
-    public var delegate: OnYourOwnTableVC?
+    unowned var delegate: OnYourOwnTableVC?
 
     @IBOutlet weak var selectCategoryButton: UIButton!
     @IBOutlet weak var categoryTextField: UITextField!
@@ -100,22 +100,44 @@ class AddOnYourOwnVC: ViewController {
     
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var contentErrorLabel: UILabel!
+    
     @IBOutlet weak var doneButton: UIButton!
-    
-    
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViews()
+        setupBibles()
+    }
+    
+    func setupViews() {
+        categoryTextField.isHidden = true
+        categoryErrorLabel.isHidden = true
+        bibleErrorLabel.isHidden = true
+        rangeErrorLabel.isHidden = true
+        contentErrorLabel.isHidden = true
+    }
+    
+    func setupBibles() {
+        let items = Bible.bibles.map { bible in
+            return UIAction(title: bible.title) { a in
+                self.selectBibleButton.setTitle(a.title, for: .normal)
+            }
+        }
+        let menu = UIMenu(title: "", options: .displayInline, children: items)
+        
+        selectBibleButton.menu = menu
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
         self.dismiss(animated: true) {
             self.delegate?.addVC = AddOnYourOwnVC(nibName: "AddOnYourOwnVC", bundle: nil)
-        }    }
+        }
+    }
+    
+    @objc func handleSelectCategory(_ category: String) {
+        selectCategoryButton.setTitle(category, for: .normal)
+    }
 }
 
 /*
