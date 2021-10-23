@@ -11,13 +11,13 @@ class AddButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setBackgroundImage(UIImage(systemName: "plus.circle.fill")?.withTintColor(.naviYellow, renderingMode: .alwaysTemplate), for: .normal)
+        setBackgroundImage(UIImage(named: "add") ?? UIImage(), for: .normal)
         
         // disable highlighting on touch
         adjustsImageWhenHighlighted = false
         
-        backgroundColor = .systemBackground
-        layer.cornerRadius = 70
+        
+        layer.cornerRadius = 30
         
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.2
