@@ -51,6 +51,7 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         super.init(frame: frame, style: .grouped)
         
         backgroundColor = .systemBackground
+        showsVerticalScrollIndicator = false
         
         delegate = self
         dataSource = self
