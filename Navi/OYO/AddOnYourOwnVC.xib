@@ -80,14 +80,14 @@
                         <constraint firstAttribute="height" constant="44" id="OOo-my-A5c"/>
                     </constraints>
                 </stackView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="62g-Fk-yFT">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="62g-Fk-yFT">
                     <rect key="frame" x="0.0" y="120" width="414" height="706"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9PC-Dz-Gkn" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1090.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="811"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jXu-aV-Xin">
-                                    <rect key="frame" x="16" y="0.0" width="382" height="982.5"/>
+                                    <rect key="frame" x="16" y="0.0" width="382" height="703"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urf-o0-q6c">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="120"/>
@@ -100,7 +100,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="eax-8x-RT3"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -119,7 +119,7 @@
                                                                             <command title="Item 2" id="QjS-R0-htG"/>
                                                                         </children>
                                                                     </menu>
-                                                                    <state key="normal" title="Button"/>
+                                                                    <state key="normal" title="선택"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                             <integer key="value" value="5"/>
@@ -174,7 +174,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="861-LW-jEC"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -190,7 +190,7 @@
                                                                     <command title="Item 2" id="Bs7-Qy-0dO"/>
                                                                 </children>
                                                             </menu>
-                                                            <state key="normal" title="Button"/>
+                                                            <state key="normal" title="선택"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                     <integer key="value" value="5"/>
@@ -233,11 +233,11 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="zDD-fS-F0w"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YKc-mP-ao7">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YKc-mP-ao7">
                                                             <rect key="frame" x="0.0" y="35" width="362" height="44"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dzC-cN-Nid">
@@ -246,28 +246,14 @@
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJ5-Gm-FbN">
                                                                             <rect key="frame" x="0.0" y="0.0" width="95" height="44"/>
                                                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                                        </textField>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D3-WS-T9t">
-                                                                            <rect key="frame" x="103" y="0.0" width="12.5" height="44"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                            <color key="textColor" systemColor="systemGrayColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bga-zl-0eo">
-                                                                    <rect key="frame" x="123.5" y="0.0" width="115" height="44"/>
-                                                                    <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GhU-PE-oKI">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="100.5" height="44"/>
-                                                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                         </textField>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0K-f6-VeI">
-                                                                            <rect key="frame" x="108.5" y="0.0" width="6.5" height="44"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D3-WS-T9t">
+                                                                            <rect key="frame" x="103" y="0.0" width="12.5" height="44"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="12.5" id="gMe-Ma-cS7"/>
+                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -275,19 +261,42 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aPq-7F-ITi">
-                                                                    <rect key="frame" x="246.5" y="0.0" width="115.5" height="44"/>
+                                                                    <rect key="frame" x="123.5" y="0.0" width="238.5" height="44"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21X-dP-CwI">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="95" height="44"/>
-                                                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bga-zl-0eo">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="218" height="44"/>
+                                                                            <subviews>
+                                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GhU-PE-oKI">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="94.5" height="44"/>
+                                                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                                </textField>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0K-f6-VeI">
+                                                                                    <rect key="frame" x="102.5" y="0.0" width="12.5" height="44"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" constant="12.5" id="sy6-2S-jbb"/>
+                                                                                    </constraints>
+                                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21X-dP-CwI">
+                                                                                    <rect key="frame" x="123" y="0.0" width="95" height="44"/>
+                                                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                                </textField>
+                                                                            </subviews>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="44" id="Ckf-q1-bll"/>
+                                                                                <constraint firstItem="21X-dP-CwI" firstAttribute="width" secondItem="GhU-PE-oKI" secondAttribute="width" id="6og-Qo-uMS"/>
                                                                             </constraints>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                                        </textField>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="절" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXl-s8-NTX">
-                                                                            <rect key="frame" x="103" y="0.0" width="12.5" height="44"/>
+                                                                        </stackView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="절" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXl-s8-NTX">
+                                                                            <rect key="frame" x="226" y="0.0" width="12.5" height="44"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="12.5" id="bbc-uI-UAW"/>
+                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -297,6 +306,7 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="SNh-HL-lkT"/>
+                                                                <constraint firstItem="GhU-PE-oKI" firstAttribute="width" secondItem="DJ5-Gm-FbN" secondAttribute="width" id="ujZ-fp-ca5"/>
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="범위를 정확하게 기입해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9c-b6-VO2">
@@ -325,22 +335,22 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gi4-yy-e7I">
-                                            <rect key="frame" x="0.0" y="408" width="382" height="574.5"/>
+                                            <rect key="frame" x="0.0" y="408" width="382" height="295"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VIW-qa-uVS">
-                                                    <rect key="frame" x="10" y="10" width="362" height="554.5"/>
+                                                    <rect key="frame" x="10" y="10" width="362" height="275"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAb-G5-NRT">
                                                             <rect key="frame" x="0.0" y="0.0" width="362" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="oNF-TV-2vm"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ymm-7q-zdl">
-                                                            <rect key="frame" x="0.0" y="184.5" width="362" height="200"/>
+                                                            <rect key="frame" x="0.0" y="44.5" width="362" height="200"/>
                                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="tob-P4-DvH"/>
@@ -355,7 +365,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </textView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arW-Ba-h2d">
-                                                            <rect key="frame" x="0.0" y="538.5" width="362" height="16"/>
+                                                            <rect key="frame" x="0.0" y="259" width="362" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="XZC-DP-azC"/>
                                                             </constraints>
@@ -382,14 +392,16 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhX-ow-5B9">
-                                    <rect key="frame" x="16" y="1014.5" width="382" height="60"/>
-                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    <rect key="frame" x="16" y="735" width="382" height="60"/>
+                                    <color key="backgroundColor" name="naviYellow"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="ze5-A6-WvU"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="완료"/>
+                                    <state key="normal" title="완료">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                             <integer key="value" value="10"/>
@@ -439,6 +451,9 @@
         <namedColor name="navi-bg">
             <color red="1" green="0.89411764705882357" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="naviYellow">
+            <color red="1" green="0.75294117647058822" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -453,9 +468,6 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

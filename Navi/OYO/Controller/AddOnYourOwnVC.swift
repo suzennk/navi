@@ -110,6 +110,10 @@ class AddOnYourOwnVC: ViewController {
         setupBibles()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupCategories()
+    }
+    
     func setupViews() {
         categoryTextField.isHidden = true
         categoryErrorLabel.isHidden = true
@@ -127,6 +131,27 @@ class AddOnYourOwnVC: ViewController {
         let menu = UIMenu(title: "", options: .displayInline, children: items)
         
         selectBibleButton.menu = menu
+    }
+    
+    func setupCategories() {
+        let headItems = DataBaseService.shared.oyoHeads.map { head in
+            return UIAction(title: head) { a in
+                self.handleSelectCategory(a.title)
+                self.categoryTextField.text = a.title
+                self.categoryTextField.isHidden = true
+            }
+        }
+        
+        let item = UIAction(title: "직접입력", image: nil, identifier: nil) { a in
+            self.handleSelectCategory(a.title)
+            self.categoryTextField.text = ""
+            self.categoryTextField.isHidden = false
+        }
+        
+        
+        let menu = UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: headItems + [item])
+        
+        selectCategoryButton.menu = menu
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
