@@ -22,6 +22,7 @@
                 <outlet property="doneButton" destination="OhX-ow-5B9" id="sAx-EW-bhk"/>
                 <outlet property="endVerseTextField" destination="21X-dP-CwI" id="6Ab-Uq-FfQ"/>
                 <outlet property="rangeErrorLabel" destination="y9c-b6-VO2" id="dux-aj-yc7"/>
+                <outlet property="scrollView" destination="62g-Fk-yFT" id="cnP-Z2-fIS"/>
                 <outlet property="selectBibleButton" destination="yvk-dS-sud" id="hWM-FJ-OmL"/>
                 <outlet property="selectCategoryButton" destination="ZBw-Og-3GH" id="CMw-Z2-7hl"/>
                 <outlet property="startVerseTextField" destination="GhU-PE-oKI" id="YWH-0k-8bI"/>
@@ -56,7 +57,7 @@
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="암송카드 추가하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMx-e9-1Uo">
                             <rect key="frame" x="44" y="0.0" width="294" height="44"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>

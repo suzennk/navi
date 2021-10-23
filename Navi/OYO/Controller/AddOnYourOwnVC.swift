@@ -86,6 +86,8 @@ class AddOnYourOwnVC: ViewController {
 
     unowned var delegate: OnYourOwnTableVC?
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var selectCategoryButton: UIButton!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var categoryErrorLabel: UILabel!
@@ -108,10 +110,16 @@ class AddOnYourOwnVC: ViewController {
         
         setupViews()
         setupBibles()
+        
+        addObversers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupCategories()
+    }
+    
+    deinit {
+        removeObservers()
     }
     
     func setupViews() {
@@ -165,145 +173,37 @@ class AddOnYourOwnVC: ViewController {
     }
 }
 
-/*
-class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    private let cellId = "cellId"
-    public var delegate: OnYourOwnTableVC? = nil
-    
-    let cases = VerseContents.allCases
-    lazy var textFields: [SkyFloatingLabelTextField] = VerseContents.allCases.map {
-        let tf = $0.textField
-        tf.delegate = self
-        tf.tag = $0.rawValue
-        return tf
-    }
-    
-    lazy var cancelButton: UIButton = {
-        let b = UIButton()
-        b.setImage(UIImage(systemName: "xmark"), for: .normal)
-        b.tintColor = .systemGray
-        b.addTarget(self, action: #selector(handleCancelTapped), for: .touchUpInside)
-        b.backgroundColor = .systemGray5.withAlphaComponent(0.3)
-        b.layer.cornerRadius = 22
-        b.snp.makeConstraints { make in
-            make.width.equalTo(b.snp.height)
-        }
-        return b
-    }()
-    
-    lazy var doneButton: UIButton = {
-        let b = UIButton()
-        b.setImage(UIImage(systemName: "checkmark"), for: .normal)
-        b.titleLabel?.font = .boldSystemFont(ofSize: 18)
-        b.addTarget(self, action: #selector(handleDoneTapped), for: .touchUpInside)
-        b.backgroundColor = .systemGray5.withAlphaComponent(0.3)
-        b.layer.cornerRadius = 22
-        b.snp.makeConstraints { make in
-            make.width.equalTo(b.snp.height)
-        }
-        return b
-    }()
-    
-    let tableView = UITableView()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .systemBackground
-        
-        setupTableView()
-        
-        addObversers()
-    }
-    
-     override func configureConstraints() {
-        let titleLabel = UILabel()
-        titleLabel.text = "On Your Own"
-        titleLabel.textAlignment = .center
-        titleLabel.font = .preferredFont(forTextStyle: .title2, weight: .bold)
-        
-        let stackView = UIStackView(arrangedSubviews: [cancelButton, titleLabel, doneButton])
-        stackView.axis = .horizontal
-        stackView.distribution = .fill
-
-        view.addSubview(tableView)
-        view.addSubview(stackView)
-        
-        stackView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
-            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(16)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-16)
-            make.height.equalTo(44)
-        }
-        
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(stackView.snp.bottom).offset(8)
-            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-        }
-    }
-    
-    deinit {
-        removeObservers()
-    }
-    
-    func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.allowsSelection = false
-        tableView.separatorStyle = .none
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-    }
-    
+//- MARK: Keyboard Observers
+extension AddOnYourOwnVC {
     func addObversers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    func removeObservers()
-    {
+    func removeObservers() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    @objc func keyboardWillShow(notification:NSNotification) {
+    @objc func keyboardWillShow(notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return }
         var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
 
-        var contentInset:UIEdgeInsets = self.tableView.contentInset
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
         contentInset.bottom = keyboardFrame.size.height + 20
-        tableView.contentInset = contentInset
+        scrollView.contentInset = contentInset
     }
 
-    @objc func keyboardWillHide(notification:NSNotification) {
-
+    @objc func keyboardWillHide(notification: NSNotification) {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
-        tableView.contentInset = contentInset
+        scrollView.contentInset = contentInset
     }
-    
-    // MARK: - TableViewDelegate
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cases.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        
-        let tf = textFields[indexPath.row]
-        cell.addSubview(tf)
-        tf.snp.makeConstraints { make in
-            make.edges.equalTo(cell.snp.edges).inset(UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16))
-        }
-        return cell
-    }
-    
+}
+
+/*
+class AddOnYourOwnVC: ViewController, UITableViewDelegate, UITableViewDataSource {
+
     @objc private func handleDoneTapped() {
         if textFields.enumerated().filter({ offset, tf in
             guard let text = tf.text, let type = VerseContents(rawValue: offset) else { return true }
