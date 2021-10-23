@@ -49,6 +49,7 @@
 		08BE9E3E27229B6F00470AB3 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE9E3D27229B6F00470AB3 /* AddButton.swift */; };
 		08BE9E402722B16100470AB3 /* AddOnYourOwnVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08BE9E3F2722B16100470AB3 /* AddOnYourOwnVC.xib */; };
 		08EEB18926F1C07B00A29818 /* test_verses.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 08EEB18826F1C07B00A29818 /* test_verses.tsv */; };
+		08F2ECF027238FB00033FFB1 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2ECEF27238FB00033FFB1 /* UIView+Extension.swift */; };
 		1735D5F0F357685ACF82DB86 /* Pods_Navi_NaviUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E725CCFB8FD4D1CBEB745E9 /* Pods_Navi_NaviUITests.framework */; };
 		1C951D9316E6E2D78C3ECFAA /* Pods_NaviTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17ADC61355E79CC441E8C5D /* Pods_NaviTests.framework */; };
 		4FE6FAC31C6E766FE0D8AEAD /* Pods_Navi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492033842D5652D4110970C4 /* Pods_Navi.framework */; };
@@ -120,6 +121,7 @@
 		08BE9E3D27229B6F00470AB3 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		08BE9E3F2722B16100470AB3 /* AddOnYourOwnVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddOnYourOwnVC.xib; sourceTree = "<group>"; };
 		08EEB18826F1C07B00A29818 /* test_verses.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_verses.tsv; sourceTree = "<group>"; };
+		08F2ECEF27238FB00033FFB1 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		2FDFD6777C8E4357F3282A3C /* Pods-Navi-NaviUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-NaviUITests.debug.xcconfig"; path = "Target Support Files/Pods-Navi-NaviUITests/Pods-Navi-NaviUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E725CCFB8FD4D1CBEB745E9 /* Pods_Navi_NaviUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navi_NaviUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		492033842D5652D4110970C4 /* Pods_Navi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +279,7 @@
 			children = (
 				089762CB26C3C99900AFC555 /* UIColor+Extension.swift */,
 				08129E09271E94BC00DDE22B /* UIFont+Extension.swift */,
+				08F2ECEF27238FB00033FFB1 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -668,6 +671,7 @@
 				08AB0A3B26CCFDAE00066D6F /* Model.xcdatamodeld in Sources */,
 				0807BFFD272281E2003C5669 /* ChartView.swift in Sources */,
 				089762CE26C3D65700AFC555 /* TodayVerseView.swift in Sources */,
+				08F2ECF027238FB00033FFB1 /* UIView+Extension.swift in Sources */,
 				085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */,
 				08941B2F26E0986400E5CA97 /* OnYourOwnTableVC.swift in Sources */,
 				089AB1932715970200EA7941 /* OYODetailViewModel.swift in Sources */,

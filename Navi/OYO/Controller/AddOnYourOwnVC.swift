@@ -86,6 +86,28 @@ class AddOnYourOwnVC: ViewController {
 
     public var delegate: OnYourOwnTableVC?
 
+    @IBOutlet weak var selectCategoryButton: UIButton!
+    @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var categoryErrorLabel: UILabel!
+    
+    @IBOutlet weak var selectBibleButton: UIButton!
+    @IBOutlet weak var bibleErrorLabel: UILabel!
+    
+    @IBOutlet weak var chapterTextField: UITextField!
+    @IBOutlet weak var startVerseTextField: UITextField!
+    @IBOutlet weak var endVerseTextField: UITextField!
+    @IBOutlet weak var rangeErrorLabel: UILabel!
+    
+    @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var contentErrorLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

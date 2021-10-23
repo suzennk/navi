@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -13,6 +13,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddOnYourOwnVC" customModule="Navi" customModuleProvider="target">
             <connections>
+                <outlet property="bibleErrorLabel" destination="SKz-hK-qUY" id="FFr-sz-vor"/>
+                <outlet property="categoryErrorLabel" destination="uBt-ts-tEz" id="PMn-QH-7Ls"/>
+                <outlet property="categoryTextField" destination="B6Y-AW-QnE" id="WVQ-2q-F0S"/>
+                <outlet property="chapterTextField" destination="DJ5-Gm-FbN" id="Gqx-BZ-mdp"/>
+                <outlet property="contentErrorLabel" destination="arW-Ba-h2d" id="WZm-Sc-nte"/>
+                <outlet property="contentTextView" destination="ymm-7q-zdl" id="aZ2-nY-3zn"/>
+                <outlet property="doneButton" destination="OhX-ow-5B9" id="sAx-EW-bhk"/>
+                <outlet property="endVerseTextField" destination="21X-dP-CwI" id="6Ab-Uq-FfQ"/>
+                <outlet property="rangeErrorLabel" destination="y9c-b6-VO2" id="dux-aj-yc7"/>
+                <outlet property="selectBibleButton" destination="yvk-dS-sud" id="hWM-FJ-OmL"/>
+                <outlet property="selectCategoryButton" destination="ZBw-Og-3GH" id="CMw-Z2-7hl"/>
+                <outlet property="startVerseTextField" destination="GhU-PE-oKI" id="YWH-0k-8bI"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IdV-KH-WmQ"/>
             </connections>
         </placeholder>
@@ -375,10 +387,9 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="ze5-A6-WvU"/>
                                     </constraints>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="완료">
-                                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
-                                    </buttonConfiguration>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="완료"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                             <integer key="value" value="10"/>
