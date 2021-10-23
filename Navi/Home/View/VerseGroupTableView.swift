@@ -11,8 +11,17 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
 
     var homeDelegate: HomeVC?
     
-    private let themes = DataBaseService.shared.themes
-    private let categories = DataBaseService.shared.categories
+    private var themes: [String] {
+        get {
+            return DataBaseService.shared.themes
+        }
+    }
+    
+    private var categories: [String: [String]] {
+        get {
+            return DataBaseService.shared.categories
+        }
+    }
     
     /**
      Headers for each section.
@@ -123,13 +132,11 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         let theme = themes[section]
         folded[section] = !folded[section]
 
-        guard let nRows = categories[theme]?.count else {
-            debugPrint("error loading categories")
-            return
-        }
+        let nDelete = numberOfRows(inSection: section)
+        guard let nInsert = categories[theme]?.count else { return  }
         
-        let indexPaths = (0..<nRows).map { return IndexPath(row: $0, section: section) }
-                
+        let deleteIndexPaths = (0..<nDelete).map { return IndexPath(row: $0, section: section) }
+        let insertIndexPaths = (0..<nInsert).map { return IndexPath(row: $0, section: section) }
         
         if folded[section] {
             // update header selected status caused by folding section
@@ -137,10 +144,10 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
              header.isSelected = false
             
             // delete rows
-            deleteRows(at: indexPaths, with: .automatic)
+            deleteRows(at: deleteIndexPaths, with: .automatic)
         } else {
             // insert rows
-            insertRows(at: indexPaths, with: .automatic)
+            insertRows(at: insertIndexPaths, with: .automatic)
         }
         
         // notify homeVC
