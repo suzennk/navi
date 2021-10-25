@@ -48,7 +48,6 @@
 		08B6162626DF64E2009BE636 /* SortMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B6162526DF64E1009BE636 /* SortMethod.swift */; };
 		08BE9E3E27229B6F00470AB3 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE9E3D27229B6F00470AB3 /* AddButton.swift */; };
 		08BE9E402722B16100470AB3 /* AddOnYourOwnVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08BE9E3F2722B16100470AB3 /* AddOnYourOwnVC.xib */; };
-		08EEB18926F1C07B00A29818 /* test_verses.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 08EEB18826F1C07B00A29818 /* test_verses.tsv */; };
 		08F2ECF027238FB00033FFB1 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2ECEF27238FB00033FFB1 /* UIView+Extension.swift */; };
 		1735D5F0F357685ACF82DB86 /* Pods_Navi_NaviUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E725CCFB8FD4D1CBEB745E9 /* Pods_Navi_NaviUITests.framework */; };
 		1C951D9316E6E2D78C3ECFAA /* Pods_NaviTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17ADC61355E79CC441E8C5D /* Pods_NaviTests.framework */; };
@@ -120,7 +119,6 @@
 		08B6162526DF64E1009BE636 /* SortMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMethod.swift; sourceTree = "<group>"; };
 		08BE9E3D27229B6F00470AB3 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		08BE9E3F2722B16100470AB3 /* AddOnYourOwnVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddOnYourOwnVC.xib; sourceTree = "<group>"; };
-		08EEB18826F1C07B00A29818 /* test_verses.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_verses.tsv; sourceTree = "<group>"; };
 		08F2ECEF27238FB00033FFB1 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		2FDFD6777C8E4357F3282A3C /* Pods-Navi-NaviUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-NaviUITests.debug.xcconfig"; path = "Target Support Files/Pods-Navi-NaviUITests/Pods-Navi-NaviUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E725CCFB8FD4D1CBEB745E9 /* Pods_Navi_NaviUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navi_NaviUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,7 +209,6 @@
 			children = (
 				085B085F26B136C1003EA5B7 /* NaviTests.swift */,
 				085B086126B136C1003EA5B7 /* Info.plist */,
-				08EEB18826F1C07B00A29818 /* test_verses.tsv */,
 			);
 			path = NaviTests;
 			sourceTree = "<group>";
@@ -520,7 +517,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08EEB18926F1C07B00A29818 /* test_verses.tsv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
