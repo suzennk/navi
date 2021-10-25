@@ -63,7 +63,10 @@ class NaviTests: XCTestCase {
     }
     
     func testRemoveOYO() throws {
-        let v = db.fetch(request: Verse.fetchRequestOfOYO()).last!
+        guard let v = db.fetch(request: Verse.fetchRequest(oyo: true)).last else {
+            XCTAssertEqual(db.count, 0)
+            return
+        }
         
         let res = db.remove(v)
         
