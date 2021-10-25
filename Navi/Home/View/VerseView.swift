@@ -19,8 +19,8 @@ class VerseView: UIView {
     
     let contentLabel: UILabel = {
         let l = UILabel()
-        l.translatesAutoresizingMaskIntoConstraints = false
         l.font = .preferredFont(forTextStyle: .body)
+        l.lineBreakMode = .byCharWrapping
         l.numberOfLines = 0
         return l
     }()
@@ -29,6 +29,7 @@ class VerseView: UIView {
         let l = UILabel()
         l.font = .preferredFont(forTextStyle: .callout)
         l.textColor = .systemGray
+        l.textAlignment = .right
         l.numberOfLines = 1
         return l
     }()
@@ -41,19 +42,15 @@ class VerseView: UIView {
     
     func configureConstraints() {
         let stackView = UIStackView(arrangedSubviews: [contentLabel, rangeLabel])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.alignment = .trailing
+        stackView.distribution = .fill
 
         addSubview(stackView)
 
-        NSLayoutConstraint.activate([
-            heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
-        ])
+        stackView.snp.makeConstraints { make in
+            make.height.greaterThanOrEqualTo(100)
+            make.edges.equalTo(self.snp.edges).inset(UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding))
+        }
     }
     
     func updateView() {
