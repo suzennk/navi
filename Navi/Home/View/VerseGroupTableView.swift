@@ -48,11 +48,11 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     private let reuseIdentifier = "cellId"
     private let headerIdentifier = "headerId"
     
-    private let verseView: TodayVerseView = {
-        let v = TodayVerseView()
+    private let verseView: VerseView = {
+        let v = VerseView()
         v.translatesAutoresizingMaskIntoConstraints = false
         let todayVerse = DataBaseService.shared.todayVerse
-        v.verseViewModel = VerseViewModel(todayVerse)
+        v.viewModel = VerseViewModel(todayVerse)
         return v
     }()
     

@@ -1,5 +1,5 @@
 //
-//  TodayVerseView.swift
+//  VerseView.swift
 //  Navi
 //
 //  Created by Susan Kim on 2021/08/11.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class TodayVerseView: UIView {
+class VerseView: UIView {
     
     private let padding: CGFloat = 16
     
-    var verseViewModel: VerseViewModel? {
+    var viewModel: VerseViewModel? {
         didSet {
             updateView()
         }
@@ -25,6 +25,14 @@ class TodayVerseView: UIView {
         return l
     }()
     
+    let rangeLabel: UILabel = {
+        let l = UILabel()
+        l.font = .preferredFont(forTextStyle: .callout)
+        l.textColor = .systemGray
+        l.numberOfLines = 1
+        return l
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
                 
@@ -32,9 +40,10 @@ class TodayVerseView: UIView {
     }
     
     func configureConstraints() {
-        let stackView = UIStackView(arrangedSubviews: [contentLabel])
+        let stackView = UIStackView(arrangedSubviews: [contentLabel, rangeLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
+        stackView.alignment = .trailing
 
         addSubview(stackView)
 
@@ -48,7 +57,8 @@ class TodayVerseView: UIView {
     }
     
     func updateView() {
-        contentLabel.text = verseViewModel?.text
+        contentLabel.text = viewModel?.content
+        rangeLabel.text = viewModel?.rangeText
     }
     
     required init?(coder: NSCoder) {

@@ -8,6 +8,7 @@
 import Foundation
 
 struct VerseViewModel {
+    let content: String
     let rangeText: String
     let text: String
     
@@ -21,6 +22,8 @@ struct VerseViewModel {
         
         var text = ""
         text += "\(verse.contents)"
+        self.content = text
+        
         text += "(\(rangeText))"
         
         self.rangeText = rangeText

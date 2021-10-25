@@ -25,7 +25,7 @@
 		08941B3326E0A46500E5CA97 /* OnYourOwnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08941B3226E0A46500E5CA97 /* OnYourOwnCell.swift */; };
 		089762C926C3A91600AFC555 /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762C826C3A91600AFC555 /* HeadCell.swift */; };
 		089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CB26C3C99900AFC555 /* UIColor+Extension.swift */; };
-		089762CE26C3D65700AFC555 /* TodayVerseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CD26C3D65700AFC555 /* TodayVerseView.swift */; };
+		089762CE26C3D65700AFC555 /* VerseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CD26C3D65700AFC555 /* VerseView.swift */; };
 		089762D126C3D69D00AFC555 /* VerseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762D026C3D69D00AFC555 /* VerseViewModel.swift */; };
 		089AB191271596D000EA7941 /* OYODetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB190271596D000EA7941 /* OYODetailVC.swift */; };
 		089AB1932715970200EA7941 /* OYODetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB1922715970200EA7941 /* OYODetailViewModel.swift */; };
@@ -97,7 +97,7 @@
 		08941B3226E0A46500E5CA97 /* OnYourOwnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnYourOwnCell.swift; sourceTree = "<group>"; };
 		089762C826C3A91600AFC555 /* HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
 		089762CB26C3C99900AFC555 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		089762CD26C3D65700AFC555 /* TodayVerseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVerseView.swift; sourceTree = "<group>"; };
+		089762CD26C3D65700AFC555 /* VerseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseView.swift; sourceTree = "<group>"; };
 		089762D026C3D69D00AFC555 /* VerseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewModel.swift; sourceTree = "<group>"; };
 		089AB190271596D000EA7941 /* OYODetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailVC.swift; sourceTree = "<group>"; };
 		089AB1922715970200EA7941 /* OYODetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailViewModel.swift; sourceTree = "<group>"; };
@@ -351,7 +351,7 @@
 		08AD4D9E26C389DC00E14F64 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				089762CD26C3D65700AFC555 /* TodayVerseView.swift */,
+				089762CD26C3D65700AFC555 /* VerseView.swift */,
 				085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */,
 				08AD4DA026C38C0400E14F64 /* ThemeHeaderView.swift */,
 				089762C826C3A91600AFC555 /* HeadCell.swift */,
@@ -670,7 +670,7 @@
 				085B087926B14655003EA5B7 /* TabBarController.swift in Sources */,
 				08AB0A3B26CCFDAE00066D6F /* Model.xcdatamodeld in Sources */,
 				0807BFFD272281E2003C5669 /* ChartView.swift in Sources */,
-				089762CE26C3D65700AFC555 /* TodayVerseView.swift in Sources */,
+				089762CE26C3D65700AFC555 /* VerseView.swift in Sources */,
 				08F2ECF027238FB00033FFB1 /* UIView+Extension.swift in Sources */,
 				085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */,
 				08941B2F26E0986400E5CA97 /* OnYourOwnTableVC.swift in Sources */,
