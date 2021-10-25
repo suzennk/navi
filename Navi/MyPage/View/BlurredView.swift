@@ -11,14 +11,26 @@ import SnapKit
 class BlurredView: UIView {
     let cornerRadius: CGFloat = 20
     
-    lazy var view: UIView = {
-        let blurEffect = UIBlurEffect(style: .prominent)
-        let v = UIVisualEffectView(effect: blurEffect)
-        v.clipsToBounds = true
-        v.layer.borderWidth = 0.5
-        v.layer.borderColor = UIColor.systemBackground.cgColor
-        v.layer.cornerRadius = cornerRadius
-        return v
+    var contentView: UIView {
+        get {
+            return self.vibrancyView.contentView
+        }
+    }
+    
+    lazy var vibrancyView: UIVisualEffectView = {
+        let vibrancyEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: .systemUltraThinMaterial))
+        let vv = UIVisualEffectView(effect: vibrancyEffect)
+        return vv
+    }()
+    
+    lazy var blurView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        let bv = UIVisualEffectView(effect: blurEffect)
+        bv.clipsToBounds = true
+        bv.layer.borderWidth = 0.5
+        bv.layer.borderColor = UIColor.systemBackground.cgColor
+        bv.layer.cornerRadius = cornerRadius
+        return bv
     }()
     
     lazy var shadowView: UIView = {
@@ -37,16 +49,21 @@ class BlurredView: UIView {
         super.init(frame: frame)
         
         addSubview(shadowView)
-        addSubview(view)
+        addSubview(blurView)
         
-        view.snp.makeConstraints { make in
+        
+        blurView.snp.makeConstraints { make in
             make.edges.equalTo(self.snp.edges).inset(UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
         }
-        shadowView.snp.makeConstraints { make in
-            make.edges.equalTo(view.snp.edges)
+        
+        blurView.contentView.addSubview(vibrancyView)
+        vibrancyView.snp.makeConstraints { make in
+            make.edges.equalTo(blurView.snp.edges)
         }
-
-        alpha = 0.6
+        
+        shadowView.snp.makeConstraints { make in
+            make.edges.equalTo(blurView.snp.edges)
+        }
     }
     
     required init?(coder: NSCoder) {
