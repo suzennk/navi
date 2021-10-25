@@ -11,13 +11,16 @@ class OnYourOwnCell: UITableViewCell {
     var viewModel: VerseViewModel? {
         didSet {
             textLabel?.text = viewModel?.rangeText
+            detailTextLabel?.text = viewModel?.content
         }
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
         textLabel?.font = .preferredFont(forTextStyle: .body)
+        detailTextLabel?.font = .preferredFont(forTextStyle: .subheadline)
+        detailTextLabel?.textColor = .systemGray
         
         accessoryType = .disclosureIndicator
     }

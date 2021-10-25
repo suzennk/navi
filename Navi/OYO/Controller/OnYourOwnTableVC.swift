@@ -46,10 +46,8 @@ class OnYourOwnTableVC: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .automatic
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(OnYourOwnCell.self, forCellReuseIdentifier: cellId)
+
+        setupTableview()
         
         configureConstraints()
         
@@ -84,6 +82,12 @@ class OnYourOwnTableVC: UITableViewController {
     }
     
     // MARK: - UITableViewDelegate
+    func setupTableview() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(OnYourOwnCell.self, forCellReuseIdentifier: cellId)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return heads.count
     }
