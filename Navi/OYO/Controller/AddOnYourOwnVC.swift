@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SkyFloatingLabelTextField
 
 enum VerseContents: Int, CaseIterable, RawRepresentable {
     case head
@@ -58,27 +57,6 @@ enum VerseContents: Int, CaseIterable, RawRepresentable {
         case .endVerse:
             return "숫자를 올바르게 입력해주세요."
         }
-    }
-    
-    var textField: SkyFloatingLabelTextField {
-        let tf = SkyFloatingLabelTextField()
-        tf.title = self.text
-        tf.placeholder = self.text
-        tf.disabledColor = .systemGray6
-        tf.selectedLineColor = .naviYellow
-        tf.selectedTitleColor = .naviYellow
-//        switch self {
-//        case .startChapter:   fallthrough
-//        case .startVerse:     fallthrough
-//        case .endChapter:     fallthrough
-//        case .endVerse:
-//            tf.keyboardType = .numberPad
-//        case .theme:          fallthrough
-//        case .bible:
-//            tf.inputView = UIPickerView()
-//        case .content: break
-//        }
-        return tf
     }
 }
 
