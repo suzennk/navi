@@ -80,7 +80,6 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         
         let view = BlurredView()
         let chartView = ChartView()
-//        chartView.alpha = 0.6
         chartView.viewModel = MemorizeStatusViewModel()
         
         cell.addSubview(view)

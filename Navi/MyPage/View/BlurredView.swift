@@ -17,14 +17,8 @@ class BlurredView: UIView {
         }
     }
     
-    lazy var vibrancyView: UIVisualEffectView = {
-        let vibrancyEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: .systemUltraThinMaterial))
-        let vv = UIVisualEffectView(effect: vibrancyEffect)
-        return vv
-    }()
-    
     lazy var blurView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        let blurEffect = UIBlurEffect(style: .prominent)
         let bv = UIVisualEffectView(effect: blurEffect)
         bv.clipsToBounds = true
         bv.layer.borderWidth = 0.5
@@ -33,35 +27,24 @@ class BlurredView: UIView {
         return bv
     }()
     
-    lazy var shadowView: UIView = {
-        let v = UIView()
-        v.backgroundColor = .clear
-        v.layer.cornerRadius = cornerRadius
-        v.layer.masksToBounds = false
-        v.layer.shadowColor = UIColor.black.cgColor
-        v.layer.shadowOpacity = 0.1
-        v.layer.shadowRadius = 8.0
-        v.layer.shadowOffset = .init(width: 0, height: 5)
-        return v
+    lazy var vibrancyView: UIVisualEffectView = {
+        let vibrancyEffect = UIVibrancyEffect(blurEffect: blurView.effect as! UIBlurEffect)
+        let vv = UIVisualEffectView(effect: vibrancyEffect)
+        return vv
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(shadowView)
+        alpha = 0.6
+        
         addSubview(blurView)
-        
-        
         blurView.snp.makeConstraints { make in
             make.edges.equalTo(self.snp.edges).inset(UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
         }
         
         blurView.contentView.addSubview(vibrancyView)
         vibrancyView.snp.makeConstraints { make in
-            make.edges.equalTo(blurView.snp.edges)
-        }
-        
-        shadowView.snp.makeConstraints { make in
             make.edges.equalTo(blurView.snp.edges)
         }
     }

@@ -45,7 +45,7 @@ class ChartView: UIView {
             totalBar.snp.makeConstraints { make in make.width.equalTo(16) }
             totalBar.layer.cornerRadius = 8
             totalBar.clipsToBounds = true
-            totalBar.backgroundColor = .systemBackground.withAlphaComponent(0.8)
+            totalBar.backgroundColor = .systemBackground
             
             let memorizedBar = UIView()
             memorizedBar.layer.cornerRadius = 8
