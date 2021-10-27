@@ -109,7 +109,7 @@ class AddOnYourOwnVC: ViewController {
     }
     
     func setupBibles() {
-        let items = Bible.bibles.map { bible in
+        let items = Bible.allCases.map { bible in
             return UIAction(title: bible.title) { a in
                 self.selectBibleButton.setTitle(a.title, for: .normal)
             }
