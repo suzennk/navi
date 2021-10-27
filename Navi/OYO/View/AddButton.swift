@@ -11,11 +11,11 @@ class AddButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setBackgroundImage(UIImage(named: "add") ?? UIImage(), for: .normal)
+        backgroundColor = .naviYellow
+        setImage(UIImage(systemName: "plus")?.withTintColor(.systemBackground) ?? UIImage(), for: .normal)
         
         // disable highlighting on touch
         adjustsImageWhenHighlighted = false
-        
         
         layer.cornerRadius = 30
         
@@ -29,15 +29,19 @@ class AddButton: UIButton {
     
     func addTargets() {
         addTarget(self, action: #selector(pressed), for: .touchDown)
+        addTarget(self, action: #selector(cancelled), for: .touchUpOutside)
+        addTarget(self, action: #selector(cancelled), for: .touchUpInside)
     }
     
     @objc func pressed() {
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.allowUserInteraction, .curveEaseOut]) {
             self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        } completion: { _ in
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.allowUserInteraction, .curveEaseIn]) {
-                self.transform = CGAffineTransform.identity
-            }
+        }
+    }
+    
+    @objc func cancelled() {
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.allowUserInteraction, .curveEaseIn]) {
+            self.transform = CGAffineTransform.identity
         }
     }
     
