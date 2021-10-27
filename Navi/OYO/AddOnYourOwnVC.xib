@@ -245,18 +245,18 @@
                                                             <rect key="frame" x="0.0" y="35" width="362" height="44"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dzC-cN-Nid">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="115.5" height="44"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="118" height="44"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJ5-Gm-FbN">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="95" height="44"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
                                                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                         </textField>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D3-WS-T9t">
-                                                                            <rect key="frame" x="103" y="0.0" width="12.5" height="44"/>
+                                                                            <rect key="frame" x="98" y="0.0" width="20" height="44"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="12.5" id="gMe-Ma-cS7"/>
+                                                                                <constraint firstAttribute="width" constant="20" id="gMe-Ma-cS7"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                             <color key="textColor" systemColor="systemGrayColor"/>
@@ -265,19 +265,19 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aPq-7F-ITi">
-                                                                    <rect key="frame" x="123.5" y="0.0" width="238.5" height="44"/>
+                                                                    <rect key="frame" x="126" y="0.0" width="236" height="44"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bga-zl-0eo">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="218" height="44"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="208" height="44"/>
                                                                             <subviews>
                                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GhU-PE-oKI">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="94.5" height="44"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="89.5" height="44"/>
                                                                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                                 </textField>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0K-f6-VeI">
-                                                                                    <rect key="frame" x="102.5" y="0.0" width="12.5" height="44"/>
+                                                                                    <rect key="frame" x="97.5" y="0.0" width="12.5" height="44"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="12.5" id="sy6-2S-jbb"/>
                                                                                     </constraints>
@@ -286,7 +286,7 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21X-dP-CwI">
-                                                                                    <rect key="frame" x="123" y="0.0" width="95" height="44"/>
+                                                                                    <rect key="frame" x="118" y="0.0" width="90" height="44"/>
                                                                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -297,9 +297,9 @@
                                                                             </constraints>
                                                                         </stackView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="절" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXl-s8-NTX">
-                                                                            <rect key="frame" x="226" y="0.0" width="12.5" height="44"/>
+                                                                            <rect key="frame" x="216" y="0.0" width="20" height="44"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="12.5" id="bbc-uI-UAW"/>
+                                                                                <constraint firstAttribute="width" constant="20" id="bbc-uI-UAW"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                             <color key="textColor" systemColor="systemGrayColor"/>
