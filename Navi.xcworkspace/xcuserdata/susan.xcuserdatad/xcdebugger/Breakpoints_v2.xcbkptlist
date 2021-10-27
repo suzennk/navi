@@ -94,7 +94,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkName = "reloadData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -142,8 +142,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "sortMethod"
-            landmarkType = "24">
+            landmarkName = "CardTableView"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "25128200-EAF5-45DB-BA69-6A82F7159949 - 7c2fe60d7489dc50"

@@ -71,9 +71,9 @@ enum Bible: String, Comparable, CaseIterable {
     case 야고보서
     case 베드로전서
     case 베드로후서
-    case 요한1서
-    case 요한2서
-    case 요한3서
+    case 요한일서
+    case 요한이서
+    case 요한삼서
     case 유다서
     case 요한계시록
     
