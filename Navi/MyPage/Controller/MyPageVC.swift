@@ -78,20 +78,35 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.subviews.forEach { $0.removeFromSuperview() }
         
-        let view = BlurredView()
+        let blurView = BlurredView()
+        let label = UILabel()
+        label.text = "암송 현황"
+        label.font = .preferredFont(forTextStyle: .headline)
+        
+        cell.addSubview(blurView)
+        blurView.snp.makeConstraints { make in
+            make.edges.equalTo(cell.snp.edges).inset(UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16))
+            make.height.greaterThanOrEqualTo(300)
+        }
+
         let chartView = ChartView()
         chartView.viewModel = MemorizeStatusViewModel()
         
-        cell.addSubview(view)
-        view.snp.makeConstraints { make in
-            make.edges.equalTo(cell.snp.edges).inset(UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16))
-            make.height.greaterThanOrEqualTo(250)
+        blurView.addSubview(label) // MARK: - 원래는 contentView에 올려야 하는데 버그있는듯..
+        label.snp.makeConstraints { make in
+            make.top.equalTo(blurView.snp.top).offset(30)
+            make.leading.equalTo(blurView.snp.leading).offset(30)
+            make.trailing.equalTo(blurView.snp.trailing).offset(-30)
         }
-
-        view.addSubview(chartView)
+        
+        blurView.addSubview(chartView)
         chartView.snp.makeConstraints { make in
-            make.edges.equalTo(view.snp.edges).inset(UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))
+            make.top.equalTo(label.snp.bottom).offset(16)
+            make.leading.equalTo(blurView.snp.leading).offset(30)
+            make.trailing.equalTo(blurView.snp.trailing).offset(-30)
+            make.bottom.equalTo(blurView.snp.bottom).offset(-30)
         }
+        
         return cell
     }
 }
