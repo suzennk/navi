@@ -79,6 +79,13 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
             self.tableHeaderView = header
         }
         
+        // Footer View
+        let footerView = UIView()
+        footerView.snp.makeConstraints { make in
+            make.height.equalTo(80)
+        }
+        self.tableFooterView = footerView
+        
         // register cells
         register(HeadCell.self, forCellReuseIdentifier: reuseIdentifier)
         
