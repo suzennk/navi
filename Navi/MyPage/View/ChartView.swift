@@ -49,7 +49,7 @@ class ChartView: UIView {
             
             let memorizedBar = UIView()
             memorizedBar.layer.cornerRadius = 8
-            memorizedBar.backgroundColor = .systemPurple
+            memorizedBar.backgroundColor = status.completed ? .systemGreen : .systemPurple
             
             totalBar.addSubview(memorizedBar)
             memorizedBar.snp.makeConstraints { make in

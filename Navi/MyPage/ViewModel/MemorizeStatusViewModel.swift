@@ -8,10 +8,10 @@
 import Foundation
 
 struct MemorizeStatusViewModel {
-    let memorizeStatus: [(theme: String, memorizedPercentage: Double, totalPercentage: Double)]
+    let memorizeStatus: [(theme: String, memorizedPercentage: Double, totalPercentage: Double, completed: Bool)]
     
     init() {
-        var memStatus = [(theme: String, memorizedPercentage: Double, totalPercentage: Double)]()
+        var memStatus = [(theme: String, memorizedPercentage: Double, totalPercentage: Double, completed: Bool)]()
         let max = DataBaseService.shared.themes.map { theme in
             DataBaseService.shared.fetch(request: Verse.fetchRequest(of: theme)).count
         }.max() ?? 0
@@ -23,7 +23,8 @@ struct MemorizeStatusViewModel {
             
             let totalPercentage: Double = total > 0 ? (Double(total) / Double(max)) * 0.75 + 0.25 : 0
             let memorizedPercentage: Double = total > 0 ? Double(memorized) / Double(total) : 0
-            memStatus.append((theme, memorizedPercentage, totalPercentage))
+            let completed = memorizedPercentage == 1.0 ? true : false
+            memStatus.append((theme, memorizedPercentage, totalPercentage, completed))
         }
         memorizeStatus = memStatus
     }
