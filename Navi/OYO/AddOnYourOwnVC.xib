@@ -19,7 +19,7 @@
                 <outlet property="chapterTextField" destination="DJ5-Gm-FbN" id="Gqx-BZ-mdp"/>
                 <outlet property="contentErrorLabel" destination="arW-Ba-h2d" id="WZm-Sc-nte"/>
                 <outlet property="contentTextView" destination="ymm-7q-zdl" id="aZ2-nY-3zn"/>
-                <outlet property="doneButton" destination="OhX-ow-5B9" id="sAx-EW-bhk"/>
+                <outlet property="doneButton" destination="i2N-rQ-Uc3" id="vVc-40-kZC"/>
                 <outlet property="endVerseTextField" destination="21X-dP-CwI" id="6Ab-Uq-FfQ"/>
                 <outlet property="rangeErrorLabel" destination="y9c-b6-VO2" id="dux-aj-yc7"/>
                 <outlet property="scrollView" destination="62g-Fk-yFT" id="cnP-Z2-fIS"/>
@@ -88,7 +88,7 @@
                     <rect key="frame" x="0.0" y="120" width="414" height="706"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9PC-Dz-Gkn" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="811"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="719"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jXu-aV-Xin">
                                     <rect key="frame" x="16" y="0.0" width="382" height="703"/>
@@ -395,32 +395,12 @@
                                         </view>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhX-ow-5B9">
-                                    <rect key="frame" x="16" y="735" width="382" height="60"/>
-                                    <color key="backgroundColor" name="naviYellow"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="60" id="ze5-A6-WvU"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="완료">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="OhX-ow-5B9" firstAttribute="width" secondItem="jXu-aV-Xin" secondAttribute="width" id="3eH-X6-ZQ7"/>
                                 <constraint firstAttribute="trailing" secondItem="jXu-aV-Xin" secondAttribute="trailing" constant="16" id="EgH-hy-EmK"/>
-                                <constraint firstItem="OhX-ow-5B9" firstAttribute="top" secondItem="jXu-aV-Xin" secondAttribute="bottom" constant="32" id="SVM-7B-pbs"/>
-                                <constraint firstItem="OhX-ow-5B9" firstAttribute="centerX" secondItem="9PC-Dz-Gkn" secondAttribute="centerX" id="XKm-EE-1Ld"/>
                                 <constraint firstItem="jXu-aV-Xin" firstAttribute="leading" secondItem="9PC-Dz-Gkn" secondAttribute="leading" constant="16" id="cvq-op-YSs"/>
                                 <constraint firstItem="jXu-aV-Xin" firstAttribute="top" secondItem="9PC-Dz-Gkn" secondAttribute="top" id="gOa-mr-Tua"/>
-                                <constraint firstAttribute="bottom" secondItem="OhX-ow-5B9" secondAttribute="bottom" constant="16" id="sfU-0n-dDK"/>
+                                <constraint firstAttribute="bottom" secondItem="jXu-aV-Xin" secondAttribute="bottom" constant="16" id="jAr-tV-egE"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -454,9 +434,6 @@
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="navi-bg">
             <color red="1" green="0.89411764705882357" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="naviYellow">
-            <color red="1" green="0.75294117647058822" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

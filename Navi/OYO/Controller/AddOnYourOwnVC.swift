@@ -147,6 +147,13 @@ class AddOnYourOwnVC: ViewController {
     }
     
     @IBAction func handleDoneTapped(_ sender: Any) {
+        categoryErrorLabel.isHidden = categoryTextField.text != ""
+        bibleErrorLabel.isHidden = selectBibleButton.currentTitle != "선택"
+        rangeErrorLabel.isHidden = [chapterTextField.text!, startVerseTextField.text!, endVerseTextField.text!].compactMap { Int($0) }.count == 3
+        contentErrorLabel.isHidden = contentTextView.text != ""
+        
+        guard [categoryErrorLabel, bibleErrorLabel, rangeErrorLabel, contentErrorLabel].filter({ !$0.isHidden }).isEmpty else { return }
+        
         let res = DataBaseService.shared.addOYOVerse(
             bible: selectBibleButton.currentTitle!,
             chapter: Int(chapterTextField.text!) ?? 0,
