@@ -12,7 +12,13 @@ class AddButton: UIButton {
         super.init(frame: frame)
 
         backgroundColor = .naviYellow
-        setImage(UIImage(systemName: "plus")?.withTintColor(.systemBackground) ?? UIImage(), for: .normal)
+        if let plusImage = UIImage(systemName: "plus")?.withTintColor(.systemBackground, renderingMode: .alwaysOriginal) {
+            imageView?.snp.removeConstraints()
+            imageView?.snp.makeConstraints { make in
+                make.edges.equalTo(snp.edges).inset(16)
+            }
+            setImage(plusImage, for: .normal)
+        }
         
         // disable highlighting on touch
         adjustsImageWhenHighlighted = false
