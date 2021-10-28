@@ -149,7 +149,7 @@ class AddOnYourOwnVC: ViewController {
     @IBAction func handleDoneTapped(_ sender: Any) {
         categoryErrorLabel.isHidden = categoryTextField.text != ""
         bibleErrorLabel.isHidden = selectBibleButton.currentTitle != "선택"
-        rangeErrorLabel.isHidden = [chapterTextField.text!, startVerseTextField.text!, endVerseTextField.text!].compactMap { Int($0) }.count == 3
+        rangeErrorLabel.isHidden = [chapterTextField.text!, startVerseTextField.text!].compactMap { Int($0) }.count == 2
         contentErrorLabel.isHidden = contentTextView.text != ""
         
         guard [categoryErrorLabel, bibleErrorLabel, rangeErrorLabel, contentErrorLabel].filter({ !$0.isHidden }).isEmpty else { return }
@@ -159,7 +159,7 @@ class AddOnYourOwnVC: ViewController {
             chapter: Int(chapterTextField.text!) ?? 0,
             startVerse: Int(startVerseTextField.text!) ?? 0,
             middleSymbol: Int(endVerseTextField.text!) == nil ? nil : "-",
-            endVerse: Int(endVerseTextField.text!) ?? 0,
+            endVerse: Int(endVerseTextField.text!),
             head: categoryTextField.text!,
             contents: contentTextView.text
         )
