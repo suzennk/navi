@@ -17,7 +17,7 @@ struct CardViewModel {
         if verse.title != "" {
             self.title = verse.title
         } else {
-            self.title = "OYO"
+            self.title = verse.head
         }
         
         var versesText = "\(verse.bible) \(verse.chapter):\(verse.startVerse)"
