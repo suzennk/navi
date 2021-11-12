@@ -14,13 +14,18 @@ struct CardViewModel {
     let head: String
     
     init(_ verse: Verse) {
-        title = verse.title
+        if verse.title != "" {
+            self.title = verse.title
+        } else {
+            self.title = "OYO"
+        }
+        
         var versesText = "\(verse.bible) \(verse.chapter):\(verse.startVerse)"
         if let sym = verse.middleSymbol {
             versesText += "\(sym)\(verse.endVerse)"
         }
-        verseRange = versesText
-        content = verse.contents
-        head = verse.head
+        self.verseRange = versesText
+        self.content = verse.contents.trimmingCharacters(in: .whitespaces) + "\n"
+        self.head = verse.head
     }
 }
