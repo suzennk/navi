@@ -10,6 +10,7 @@ target 'Navi' do
 
   # Pods for Navi
   pod 'SnapKit', '~> 5.0.0'
+  pod 'lottie-ios'
 
   target 'NaviTests' do
     inherit! :search_paths
