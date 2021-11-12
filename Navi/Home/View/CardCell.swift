@@ -130,6 +130,23 @@ class CardCell: UITableViewCell {
         }
     }
     
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        let duration = highlighted ? 0.35 : 0.3
+        let transform = highlighted ?
+            CGAffineTransform(scaleX: 0.96, y: 0.96) : CGAffineTransform.identity
+        let animations = {
+            self.transform = transform
+        }
+        
+        UIView.animate(withDuration: duration,
+                       delay: 0,
+                       usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 0.0,
+                       options: [.allowUserInteraction, .beginFromCurrentState],
+                       animations: animations,
+                       completion: nil)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
