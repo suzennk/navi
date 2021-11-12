@@ -21,6 +21,8 @@
 		085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087E26B15058003EA5B7 /* QuizVC.swift */; };
 		085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */; };
 		0883EB7326E88BCE00FEBF6E /* Bible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0883EB7226E88BCE00FEBF6E /* Bible.swift */; };
+		088EC149273E7C5700A1FF63 /* check-success-yellow.json in Resources */ = {isa = PBXBuildFile; fileRef = 088EC148273E7C5700A1FF63 /* check-success-yellow.json */; };
+		088EC14B273E7C5F00A1FF63 /* check-success-green.json in Resources */ = {isa = PBXBuildFile; fileRef = 088EC14A273E7C5F00A1FF63 /* check-success-green.json */; };
 		08941B2F26E0986400E5CA97 /* OnYourOwnTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08941B2E26E0986400E5CA97 /* OnYourOwnTableVC.swift */; };
 		08941B3326E0A46500E5CA97 /* OnYourOwnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08941B3226E0A46500E5CA97 /* OnYourOwnCell.swift */; };
 		089762C926C3A91600AFC555 /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762C826C3A91600AFC555 /* HeadCell.swift */; };
@@ -92,6 +94,8 @@
 		085B087E26B15058003EA5B7 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseGroupTableView.swift; sourceTree = "<group>"; };
 		0883EB7226E88BCE00FEBF6E /* Bible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible.swift; sourceTree = "<group>"; };
+		088EC148273E7C5700A1FF63 /* check-success-yellow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-success-yellow.json"; sourceTree = "<group>"; };
+		088EC14A273E7C5F00A1FF63 /* check-success-green.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-success-green.json"; sourceTree = "<group>"; };
 		08941B2E26E0986400E5CA97 /* OnYourOwnTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnYourOwnTableVC.swift; sourceTree = "<group>"; };
 		08941B3226E0A46500E5CA97 /* OnYourOwnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnYourOwnCell.swift; sourceTree = "<group>"; };
 		089762C826C3A91600AFC555 /* HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 		085B084726B136BF003EA5B7 /* Navi */ = {
 			isa = PBXGroup;
 			children = (
+				088EC14C273E7C8700A1FF63 /* Animation */,
 				08B6162426DF6456009BE636 /* Enumerations */,
 				08A781FF26CCD1DC00338E97 /* Model */,
 				089762CA26C3C98800AFC555 /* Extension */,
@@ -230,6 +235,15 @@
 				08AD4D9E26C389DC00E14F64 /* View */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		088EC14C273E7C8700A1FF63 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				088EC14A273E7C5F00A1FF63 /* check-success-green.json */,
+				088EC148273E7C5700A1FF63 /* check-success-yellow.json */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		08941B2D26E097C500E5CA97 /* OYO */ = {
@@ -508,6 +522,8 @@
 			files = (
 				08AD4D9D26BCEE7800E14F64 /* cardset.tsv in Resources */,
 				085B085526B136C1003EA5B7 /* LaunchScreen.storyboard in Resources */,
+				088EC149273E7C5700A1FF63 /* check-success-yellow.json in Resources */,
+				088EC14B273E7C5F00A1FF63 /* check-success-green.json in Resources */,
 				08BE9E402722B16100470AB3 /* AddOnYourOwnVC.xib in Resources */,
 				085B085226B136C1003EA5B7 /* Assets.xcassets in Resources */,
 			);

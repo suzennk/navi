@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class CardCell: UITableViewCell {
     
@@ -25,11 +26,11 @@ class CardCell: UITableViewCell {
         return l
     }()
     
-    lazy var checkImageView: UIImageView = {
-        let iv = UIImageView()
+    lazy var checkImageView: AnimationView = {
+        let iv = AnimationView(animation: Animation.named("check-success-green"))
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.widthAnchor.constraint(equalTo: iv.heightAnchor).isActive = true
-        iv.image = unselectedImage
+        iv.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        iv.heightAnchor.constraint(equalTo: iv.widthAnchor).isActive = true
         iv.tintColor = .naviYellow
         iv.contentMode = .scaleAspectFit
         return iv
@@ -72,9 +73,9 @@ class CardCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         if selected {
-            checkImageView.image = selectedImage
+            checkImageView.play(completion: nil)
         } else {
-            checkImageView.image = unselectedImage
+            checkImageView.stop()
         }
     }
     

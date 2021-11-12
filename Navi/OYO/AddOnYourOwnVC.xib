@@ -428,6 +428,72 @@
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="69.642857142857139"/>
         </view>
+        <viewController id="y54-AC-GVZ">
+            <view key="view" contentMode="scaleToFill" id="040-lD-qfH">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vue-0W-sDh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3Z-3q-Qyu" userLabel="cancelButton">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="F3Z-3q-Qyu" secondAttribute="height" id="tIp-oN-S1t"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGray2Color"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handleCancelTapped:" destination="-1" eventType="touchUpInside" id="xIW-qc-zUV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="암송카드 추가하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkV-ea-Ckk">
+                                <rect key="frame" x="44" y="0.0" width="326" height="44"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sh-l1-HfB" userLabel="doneButton">
+                                <rect key="frame" x="370" y="0.0" width="44" height="44"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Sh-l1-HfB" secondAttribute="height" id="Khn-53-Jdu"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGray2Color"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="checkmark" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handleDoneTapped:" destination="-1" eventType="touchUpInside" id="RZC-I8-Aui"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="glM-lF-70e"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="Lph-EM-rm7"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="Vue-0W-sDh" firstAttribute="leading" secondItem="040-lD-qfH" secondAttribute="leading" id="LLU-9d-UT4"/>
+                    <constraint firstItem="Lph-EM-rm7" firstAttribute="trailing" secondItem="Vue-0W-sDh" secondAttribute="trailing" id="LqI-1U-J6d"/>
+                    <constraint firstItem="Vue-0W-sDh" firstAttribute="top" secondItem="Lph-EM-rm7" secondAttribute="top" id="Spe-l8-ouK"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="-619" y="70"/>
+        </viewController>
     </objects>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
