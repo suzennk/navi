@@ -43,6 +43,14 @@ public class Verse: NSManagedObject {
         request.predicate = predicate
         return request
     }
+    
+    @nonobjc public class func fetchRequest(id: Int64) -> NSFetchRequest<Verse> {
+        let request = NSFetchRequest<Verse>(entityName: "Verse")
+        let predicate = NSPredicate(format: "id = %@", "\(id)")
+        request.predicate = predicate
+        return request
+    }
+
 
     @NSManaged public var id: Int64
     @NSManaged public var subHead: String

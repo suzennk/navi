@@ -27,6 +27,7 @@ struct CardViewModel {
         }
         self.verseRange = versesText
         self.content = verse.contents.trimmingCharacters(in: .whitespaces) + "\n"
+//        self.content = verse.contents.trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ".", with: "") + "\n"
         self.head = verse.head
         self.subhead = verse.subHead
     }

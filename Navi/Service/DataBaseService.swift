@@ -116,6 +116,9 @@ class DataBaseService {
             loadVersesFromTSV()
         }
         
+        // patch verses with update history
+        patchVerses()
+        
         // MARK: - MUST DELETE: for testing
 //        fetch(request: Theme.fetchRequest()).forEach {
 //            context.delete($0)
@@ -203,10 +206,6 @@ class DataBaseService {
     private func loadAndSaveEntities(from dataArr: [[String]]) {
         dataArr[1..<dataArr.count].forEach { item in
             // skip invalid lines
-            if (318...319).contains(Int(item[0]) ?? 0) {
-                print(item)
-            }
-            
             if item.count < 10 {
                 return
             }
@@ -245,5 +244,35 @@ class DataBaseService {
         }
         
         loadAndSaveEntities(from: dataArr)
+    }
+    
+    // MARK: - Load at first launch
+    private func patchVerses() {
+        let updates: [(id: Int64, keyName: String, value: String)] = [
+            (60, "bible", "사도행전"),
+            (318, "theme", "180구절"),
+            (332, "title", "3. 통치하시는 성령"),
+            (333, "title", "3. 통치하시는 성령")
+        ]
+        
+        updates.forEach { (id, key, value) in
+            if let originalVerse = fetch(request: Verse.fetchRequest(id: id)).first {
+                if let originalValue = originalVerse.value(forKey: key) as? String, originalValue != value {
+                    originalVerse.setValue(value, forKey: key)
+                    debugPrint("Updated verse [\(id)] \(key) [\(originalValue)] -> [\(value)]")
+                }
+            }
+        }
+        
+        switch save() {
+        case .success:
+            let _ = updates
+                .map { $0.id }
+                .compactMap { fetch(request:Verse.fetchRequest(id: $0)).first }
+                .map { CardViewModel($0) }
+        case .failure:
+            break
+        }
+
     }
 }
