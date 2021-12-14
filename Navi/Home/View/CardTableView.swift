@@ -104,10 +104,11 @@ extension CardTableView: UITableViewDataSource {
         let verse = filteredVerses[indexPath.row]
         cell.viewModel = CardViewModel(verse)
         
-        cell.titleLabel.alpha = hidesContent ? 0 : 1
+        cell.titleLabel.alpha = hidesVerseRange ? 0 : 1
         cell.contentLabel.alpha = hidesContent ? 0 : 1
+        cell.headLabel.alpha = hidesVerseRange ? 0 : 1
+        cell.subheadLabel.alpha = hidesVerseRange ? 0 : 1
         cell.verseRangeLabel.alpha = hidesVerseRange ? 0 : 1
-        cell.littleVerseRangeLabel.alpha = hidesVerseRange ? 0 : 1
         
         return cell
     }

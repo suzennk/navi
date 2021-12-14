@@ -12,6 +12,7 @@ struct CardViewModel {
     let verseRange: String
     let content: String
     let head: String
+    let subhead: String
     
     init(_ verse: Verse) {
         if verse.title != "" {
@@ -27,5 +28,6 @@ struct CardViewModel {
         self.verseRange = versesText
         self.content = verse.contents.trimmingCharacters(in: .whitespaces) + "\n"
         self.head = verse.head
+        self.subhead = verse.subHead
     }
 }
