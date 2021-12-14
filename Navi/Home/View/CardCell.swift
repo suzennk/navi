@@ -55,7 +55,7 @@ class CardCell: UITableViewCell {
         return l
     }()
     
-    let littleVerseRangeLabel: UILabel = {
+    let subheadLabel: UILabel = {
         let l = UILabel()
         l.font = .preferredFont(forTextStyle: .body, weight: .light)
         return l
@@ -95,7 +95,7 @@ class CardCell: UITableViewCell {
         view.layer.masksToBounds = false
         
         let titleSV = UIStackView(arrangedSubviews: [titleLabel, checkImageView])
-        let bottomSV = UIStackView(arrangedSubviews: [headLabel, UIView(), littleVerseRangeLabel])
+        let bottomSV = UIStackView(arrangedSubviews: [headLabel, UIView(), subheadLabel])
         
         let stackView = UIStackView(arrangedSubviews: [
         titleSV,
@@ -127,7 +127,7 @@ class CardCell: UITableViewCell {
             verseRangeLabel.text = vm.verseRange
             contentLabel.text = vm.content
             headLabel.text = vm.head
-            littleVerseRangeLabel.text = vm.verseRange
+            subheadLabel.text = vm.subhead
         }
     }
     

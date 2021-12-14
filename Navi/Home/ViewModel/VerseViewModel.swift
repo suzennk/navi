@@ -15,9 +15,8 @@ struct VerseViewModel {
     init(_ verse: Verse) {
         var rangeText = ""
         rangeText += "\(verse.bible) \(verse.chapter):\(verse.startVerse)"
-        if let _ = verse.middleSymbol {
-            // use "-" instead of original
-            rangeText += "-\(verse.endVerse)"
+        if let sym = verse.middleSymbol {
+            rangeText += "\(sym)\(verse.endVerse)"
         }
         
         var text = ""

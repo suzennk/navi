@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 
 class OYODetailVC: ViewController {
-    
-    let verseContentTextView: UITextView = {
+    private let verseContentTextView: UITextView = {
         let tv = UITextView()
         tv.isScrollEnabled = false
         tv.isEditable = false
@@ -18,7 +17,7 @@ class OYODetailVC: ViewController {
         return tv
     }()
     
-    let verseRangeLabel: UILabel = {
+    private let verseRangeLabel: UILabel = {
         let l = UILabel()
         l.font = .preferredFont(forTextStyle: .body)
         l.textColor = .systemGray
@@ -26,7 +25,14 @@ class OYODetailVC: ViewController {
         return l
     }()
     
-    var viewModel: OYODetailViewModel? {
+    var verse: Verse? {
+        didSet {
+            guard let verse = verse else { return }
+            viewModel = OYODetailViewModel(verse: verse)
+        }
+    }
+    
+    private var viewModel: OYODetailViewModel? {
         didSet {
             updateView()
         }
@@ -35,6 +41,14 @@ class OYODetailVC: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        
+        setupBarButtonItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateView()
     }
     
     override func configureConstraints() {
@@ -47,10 +61,40 @@ class OYODetailVC: ViewController {
         }
     }
     
+    func setupBarButtonItems() {
+        let editItem = UIBarButtonItem(image: UIImage(systemName: "pencil"), style: .plain, target: self, action: #selector(handleEditButtonTapped))
+        let deleteItem = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(handleDeleteButtonTapped))
+        navigationItem.rightBarButtonItems = [deleteItem, editItem]
+    }
+    
     func updateView() {
         guard let vm = viewModel else { return }
         title = vm.title
         verseRangeLabel.text = vm.verseRange
         verseContentTextView.text = vm.content
+    }
+    
+    @objc func handleEditButtonTapped() {
+        let editOyoVC = EditOnYourOwnVC()
+        editOyoVC.originalVerse = verse
+        editOyoVC.delegate = self
+        editOyoVC.modalPresentationStyle = .fullScreen
+        self.present(editOyoVC, animated: true, completion: nil)
+    }
+    
+    @objc func handleDeleteButtonTapped() {
+        guard let verse = verse else {
+            debugPrint(type(of: self), "verse is nil")
+            return
+        }
+        
+        self.alert(title: "삭제하시겠습니까?", message: nil, okTitle: "취소", okHandler: { _ in 
+            // 아무것도 안함
+        }, cancelTitle: "삭제", cancelHandler: { [weak self] _ in
+            switch DataBaseService.shared.remove(verse) {
+            default:
+                self?.navigationController?.popViewController(animated: true)
+            }
+        }, completion: nil)
     }
 }
