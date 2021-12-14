@@ -7,6 +7,7 @@
 
 import Foundation
 
+// curently used in oyo table view cell only
 struct VerseViewModel {
     let content: String
     let rangeText: String
@@ -20,7 +21,7 @@ struct VerseViewModel {
         }
         
         var text = ""
-        text += "\(verse.contents)"
+        text += "\(verse.contents.replacingOccurrences(of: ".", with: ""))"
         self.content = text
         
         text += "(\(rangeText))"
