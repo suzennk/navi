@@ -51,13 +51,15 @@ class CardCell: UITableViewCell {
     
     let headLabel: UILabel = {
         let l = UILabel()
-        l.font = .preferredFont(forTextStyle: .body, weight: .light)
+        l.font = .preferredFont(forTextStyle: .callout, weight: .light)
+        l.adjustsFontSizeToFitWidth = true
         return l
     }()
     
     let subheadLabel: UILabel = {
         let l = UILabel()
-        l.font = .preferredFont(forTextStyle: .body, weight: .light)
+        l.font = .preferredFont(forTextStyle: .callout, weight: .light)
+        l.adjustsFontSizeToFitWidth = true
         return l
     }()
     
@@ -95,7 +97,8 @@ class CardCell: UITableViewCell {
         view.layer.masksToBounds = false
         
         let titleSV = UIStackView(arrangedSubviews: [titleLabel, checkImageView])
-        let bottomSV = UIStackView(arrangedSubviews: [headLabel, UIView(), subheadLabel])
+        let bottomSV = UIStackView(arrangedSubviews: [subheadLabel, UIView(), headLabel])
+        bottomSV.spacing = 4
         
         let stackView = UIStackView(arrangedSubviews: [
         titleSV,
