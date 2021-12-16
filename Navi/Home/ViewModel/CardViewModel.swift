@@ -22,9 +22,15 @@ struct CardViewModel {
         }
         
         var versesText = "\(verse.bible) \(verse.chapter):\(verse.startVerse)"
-        if let sym = verse.middleSymbol {
-            versesText += "\(sym)\(verse.endVerse)"
+        if let sym = verse.middleSymbol, sym.isEmpty == false {
+            if ["상", "하"].contains(sym) {
+                versesText += " \(sym)"
+            } else {
+                versesText += "\(sym)"
+                versesText += "\(verse.endVerse)"
+            }
         }
+        
         self.verseRange = versesText
         self.content = verse.contents.trimmingCharacters(in: .whitespaces) + "\n"
         self.head = verse.head

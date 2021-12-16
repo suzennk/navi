@@ -14,10 +14,14 @@ struct VerseViewModel {
     let text: String
     
     init(_ verse: Verse) {
-        var rangeText = ""
-        rangeText += "\(verse.bible) \(verse.chapter):\(verse.startVerse)"
-        if let sym = verse.middleSymbol {
-            rangeText += "\(sym)\(verse.endVerse)"
+        var rangeText = "\(verse.bible) \(verse.chapter):\(verse.startVerse)"
+        if let sym = verse.middleSymbol, sym.isEmpty == false {
+            if ["상", "하"].contains(sym) {
+                rangeText += " \(sym)"
+            } else {
+                rangeText += "\(sym)"
+                rangeText += "\(verse.endVerse)"
+            }
         }
         
         var text = ""

@@ -285,6 +285,7 @@
 		08941B3426E0A69F00E5CA97 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				089762D026C3D69D00AFC555 /* VerseViewModel.swift */,
 				089AB1922715970200EA7941 /* OYODetailViewModel.swift */,
 			);
 			path = ViewModel;
@@ -304,7 +305,6 @@
 		089762CF26C3D68C00AFC555 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				089762D026C3D69D00AFC555 /* VerseViewModel.swift */,
 				08AB0A4826D0DFE100066D6F /* CardTableViewModel.swift */,
 				08AB0A4E26D0E4AA00066D6F /* CardViewModel.swift */,
 			);
