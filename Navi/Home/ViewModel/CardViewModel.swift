@@ -26,7 +26,7 @@ struct CardViewModel {
             versesText += "\(sym)\(verse.endVerse)"
         }
         self.verseRange = versesText
-        self.content = verse.contents.trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ".", with: "") + "\n"
+        self.content = verse.contents.trimmingCharacters(in: .whitespaces) + "\n"
         self.head = verse.head
         self.subhead = verse.subHead
     }

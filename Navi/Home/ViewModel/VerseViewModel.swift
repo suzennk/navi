@@ -21,7 +21,7 @@ struct VerseViewModel {
         }
         
         var text = ""
-        text += "\(verse.contents.replacingOccurrences(of: ".", with: ""))"
+        text += "\(verse.contents)"
         self.content = text
         
         text += "(\(rangeText))"

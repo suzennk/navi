@@ -19,17 +19,30 @@ class DataBaseService {
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private lazy var context = appDelegate.persistentContainer.viewContext
 
-    // MARK: - All
-    public var count: Int {
-        let number = try? context.count(for: Verse.fetchRequest())
-        return number ?? 0
+    private var hasRemovedPeriods: Bool {
+        return UserDefaults.standard.bool(forKey: "hasRemovedPeriods")
     }
     
+    /**
+     Returns default themes: 5(predefined) + 1(OYO)
+     */
     private let _themes: [String] = ["LOA", "LOC", "60구절", "DEP", "180구절", "OYO"]
+    
+    /**
+     Returns all verses including OYO verses.
+     */
     private var _verses: [Verse] {
         get {
             return fetch(request: Verse.fetchRequest())
         }
+    }
+    
+    /**
+     Returns the number of verses including OYOs.
+     */
+    public var count: Int {
+        let number = try? context.count(for: Verse.fetchRequest())
+        return number ?? 0
     }
     
     public var themes: [String] {
@@ -44,7 +57,9 @@ class DataBaseService {
         }
     }
     
-    // MARK: - Predefined Verses
+    /**
+     Verses in cardset.tsv
+     */
     private var _predefinedVerses: [Verse] {
         get {
             return fetch(request: Verse.fetchRequest(oyo: false))
@@ -246,8 +261,8 @@ class DataBaseService {
         loadAndSaveEntities(from: dataArr)
     }
     
-    // MARK: - Load at first launch
-    private func patchVerses() {
+    // MARK: - Patch updated verses
+    private func patchUpdatedVerses() {
         let updates: [(id: Int64, keyName: String, value: String)] = [
             (60, "bible", "사도행전"),
             (318, "theme", "180구절"),
@@ -273,6 +288,28 @@ class DataBaseService {
         case .failure:
             break
         }
-
+    }
+    
+    private func removePeriodsFromeVerses() {
+        if hasRemovedPeriods == false {
+            _predefinedVerses.forEach { verse in
+                if verse.contents.contains(".") {
+                    verse.setValue(verse.contents.replacingOccurrences(of: ".", with: ""), forKey: "contents")
+                    debugPrint("Updated verse [\(verse.id)] contents [remove periods(.)")
+                }
+            }
+        }
+        
+        switch save() {
+        case .success:
+            UserDefaults.standard.setValue(true, forKey: "hasRemovedPeriods")
+        case .failure:
+            break
+        }
+    }
+    
+    private func patchVerses() {
+        patchUpdatedVerses()
+        removePeriodsFromeVerses()
     }
 }
