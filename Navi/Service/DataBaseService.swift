@@ -166,7 +166,7 @@ class DataBaseService {
         return []
     }
     
-    public func addOYOVerse(bible: String, chapter: Int, startVerse: Int, middleSymbol: String?, endVerse: Int?, head: String, contents: String) -> Result<Verse, Error> {
+    public func addOYOVerse(bible: String, chapter: Int, startVerse: Int, middleSymbol: String?, endVerse: Int?, head: String, title: String, contents: String) -> Result<Verse, Error> {
         let verse = Verse(context: context)
         verse.setValue(Date().timeIntervalSinceReferenceDate, forKey: "id")
         verse.setValue(bible, forKey: "bible")
@@ -177,7 +177,7 @@ class DataBaseService {
         verse.setValue("OYO", forKey: "theme")
         verse.setValue(head, forKey: "head")
         verse.setValue("", forKey: "subHead")
-        verse.setValue("", forKey: "title")
+        verse.setValue(title, forKey: "title")
         verse.setValue(contents, forKey: "contents")
         
         do {

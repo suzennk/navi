@@ -52,7 +52,7 @@ class VerseGroupTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         let v = VerseView()
         v.translatesAutoresizingMaskIntoConstraints = false
         let todayVerse = DataBaseService.shared.todayVerse
-        v.viewModel = VerseViewModel(todayVerse)
+        v.viewModel = OYOCellViewModel(todayVerse)
         return v
     }()
     

@@ -13,7 +13,7 @@ struct OYODetailViewModel {
     let content: String
     
     init(verse: Verse) {
-        self.title = verse.head
+        self.title = verse.title.isEmpty ? verse.head : verse.title
         
         var rangeText = ""
         rangeText += "\(verse.bible) \(verse.chapter)장 \(verse.startVerse)"

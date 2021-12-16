@@ -30,7 +30,7 @@
 		089762C926C3A91600AFC555 /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762C826C3A91600AFC555 /* HeadCell.swift */; };
 		089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CB26C3C99900AFC555 /* UIColor+Extension.swift */; };
 		089762CE26C3D65700AFC555 /* VerseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CD26C3D65700AFC555 /* VerseView.swift */; };
-		089762D126C3D69D00AFC555 /* VerseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762D026C3D69D00AFC555 /* VerseViewModel.swift */; };
+		089762D126C3D69D00AFC555 /* OYOCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762D026C3D69D00AFC555 /* OYOCellViewModel.swift */; };
 		089AB191271596D000EA7941 /* OYODetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB190271596D000EA7941 /* OYODetailVC.swift */; };
 		089AB1932715970200EA7941 /* OYODetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB1922715970200EA7941 /* OYODetailViewModel.swift */; };
 		089AB1992716AEF900EA7941 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB1982716AEF900EA7941 /* MyPageVC.swift */; };
@@ -105,7 +105,7 @@
 		089762C826C3A91600AFC555 /* HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
 		089762CB26C3C99900AFC555 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		089762CD26C3D65700AFC555 /* VerseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseView.swift; sourceTree = "<group>"; };
-		089762D026C3D69D00AFC555 /* VerseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewModel.swift; sourceTree = "<group>"; };
+		089762D026C3D69D00AFC555 /* OYOCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYOCellViewModel.swift; sourceTree = "<group>"; };
 		089AB190271596D000EA7941 /* OYODetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailVC.swift; sourceTree = "<group>"; };
 		089AB1922715970200EA7941 /* OYODetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailViewModel.swift; sourceTree = "<group>"; };
 		089AB1982716AEF900EA7941 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 		08941B3426E0A69F00E5CA97 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				089762D026C3D69D00AFC555 /* VerseViewModel.swift */,
+				089762D026C3D69D00AFC555 /* OYOCellViewModel.swift */,
 				089AB1922715970200EA7941 /* OYODetailViewModel.swift */,
 			);
 			path = ViewModel;
@@ -674,7 +674,7 @@
 				085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */,
 				089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */,
 				088777242768A7B1008D4BC4 /* EditOnYourOwnVC.swift in Sources */,
-				089762D126C3D69D00AFC555 /* VerseViewModel.swift in Sources */,
+				089762D126C3D69D00AFC555 /* OYOCellViewModel.swift in Sources */,
 				08AB0A4B26D0E15800066D6F /* CardTableView.swift in Sources */,
 				085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */,
 				089AB191271596D000EA7941 /* OYODetailVC.swift in Sources */,

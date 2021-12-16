@@ -70,6 +70,8 @@ class AddOnYourOwnVC: ViewController {
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var categoryErrorLabel: UILabel!
     
+    @IBOutlet weak var titleTextField: UITextField!
+    
     @IBOutlet weak var selectBibleButton: UIButton!
     @IBOutlet weak var bibleErrorLabel: UILabel!
     
@@ -137,7 +139,6 @@ class AddOnYourOwnVC: ViewController {
             self.categoryTextField.isHidden = false
         }
         
-        
         let menu = UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: headItems + [item])
         
         selectCategoryButton.menu = menu
@@ -155,16 +156,13 @@ class AddOnYourOwnVC: ViewController {
             middleSymbol: Int(endVerseTextField.text!) == nil ? nil : middleSymbolButton.currentTitle,
             endVerse: Int(endVerseTextField.text!),
             head: categoryTextField.text!,
+            title: titleTextField.text!,
             contents: contentTextView.text
         )
         
         switch res {
         case .success(_):
-            self.dismiss(animated: true) {
-//                self.delegate?.oyoVerses = DataBaseService.shared.categorizedOyoVerses
-//                self.delegate?.tableView.reloadData()
-//                self.delegate?.addVC = AddOnYourOwnVC()
-            }
+            self.dismiss(animated: true)
         case .failure(let err):
             print(err.localizedDescription)
         }

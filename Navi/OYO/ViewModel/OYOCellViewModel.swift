@@ -1,5 +1,5 @@
 //
-//  VerseViewModel.swift
+//  OYOCellViewModel.swift
 //  Navi
 //
 //  Created by Susan Kim on 2021/08/11.
@@ -7,11 +7,9 @@
 
 import Foundation
 
-// curently used in oyo table view cell only
-struct VerseViewModel {
+struct OYOCellViewModel {
     let content: String
     let rangeText: String
-    let text: String
     
     init(_ verse: Verse) {
         var rangeText = "\(verse.bible) \(verse.chapter):\(verse.startVerse)"
@@ -31,7 +29,6 @@ struct VerseViewModel {
         text += "(\(rangeText))"
         
         self.rangeText = rangeText
-        self.text = text
     }
 }
 

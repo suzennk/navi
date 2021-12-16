@@ -8,7 +8,7 @@
 import UIKit
 
 class OnYourOwnCell: UITableViewCell {
-    var viewModel: VerseViewModel? {
+    var viewModel: OYOCellViewModel? {
         didSet {
             textLabel?.text = viewModel?.rangeText
             detailTextLabel?.text = viewModel?.content

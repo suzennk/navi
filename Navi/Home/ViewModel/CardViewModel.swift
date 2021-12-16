@@ -11,14 +11,19 @@ struct CardViewModel {
     let title: String
     let verseRange: String
     let content: String
-    let head: String
-    let subhead: String
+    let bottomRight: String
+    let bottomLeft: String
     
     init(_ verse: Verse) {
-        if verse.title != "" {
-            self.title = verse.title
+        self.title = verse.title.isEmpty ? verse.theme : verse.title
+        
+        if verse.theme == "OYO" {
+            self.bottomLeft = verse.head
+            self.bottomRight = "OYO"
+            
         } else {
-            self.title = verse.head
+            self.bottomLeft = verse.subHead
+            self.bottomRight = verse.head
         }
         
         var versesText = "\(verse.bible) \(verse.chapter):\(verse.startVerse)"
@@ -33,7 +38,5 @@ struct CardViewModel {
         
         self.verseRange = versesText
         self.content = verse.contents.trimmingCharacters(in: .whitespaces) + "\n"
-        self.head = verse.head
-        self.subhead = verse.subHead
     }
 }

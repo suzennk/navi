@@ -25,6 +25,7 @@ class EditOnYourOwnVC: AddOnYourOwnVC {
         
         selectCategoryButton.setTitle(verse.head, for: .normal)
         categoryTextField.text = verse.head
+        titleTextField.text = verse.title
         selectBibleButton.setTitle(verse.bible, for: .normal)
         chapterTextField.text = "\(verse.chapter)"
         startVerseTextField.text = "\(verse.startVerse)"

@@ -122,7 +122,7 @@ class OnYourOwnTableVC: UITableViewController {
         
         let head = heads[indexPath.section]
         if let verse = oyoVerses[head]?[indexPath.row] {
-            cell.viewModel = VerseViewModel(verse)
+            cell.viewModel = OYOCellViewModel(verse)
         }
         
         return cell

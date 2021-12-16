@@ -129,8 +129,8 @@ class CardCell: UITableViewCell {
             titleLabel.text = vm.title
             verseRangeLabel.text = vm.verseRange
             contentLabel.text = vm.content
-            headLabel.text = vm.head
-            subheadLabel.text = vm.subhead
+            headLabel.text = vm.bottomRight
+            subheadLabel.text = vm.bottomLeft
         }
     }
     
