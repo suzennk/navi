@@ -284,7 +284,6 @@ class DataBaseService {
         updateData.enumerated().forEach { (idx, item) in
             if item.count < 10 { return }
             if let originalVerse = fetch(request: Verse.fetchRequest(id: Int64(idx))).first {
-                print("\(item)")
                 let chapter = Int(item[2].replacingOccurrences(of: ":", with: ""))!
 
                 originalVerse.setValue(Int(item[0])!, forKey: "id")
