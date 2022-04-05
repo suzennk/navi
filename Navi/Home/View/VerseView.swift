@@ -11,7 +11,7 @@ class VerseView: UIView {
     
     private let padding: CGFloat = 16
     
-    var viewModel: VerseViewModel? {
+    var viewModel: OYOCellViewModel? {
         didSet {
             updateView()
         }

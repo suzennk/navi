@@ -54,6 +54,14 @@ class OnYourOwnTableVC: UITableViewController {
         oyoVerses = DataBaseService.shared.categorizedOyoVerses
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.oyoVerses = DataBaseService.shared.categorizedOyoVerses
+        self.tableView.reloadData()
+        self.addVC = AddOnYourOwnVC()
+    }
+    
     func configureConstraints() {
         // Add add button
         view.addSubview(addButton)
@@ -76,7 +84,6 @@ class OnYourOwnTableVC: UITableViewController {
     }
     
     @objc func handleAddTapped() {
-        addVC.delegate = self
         addVC.modalPresentationStyle = .fullScreen
         self.present(addVC, animated: true, completion: nil)
     }
@@ -115,7 +122,7 @@ class OnYourOwnTableVC: UITableViewController {
         
         let head = heads[indexPath.section]
         if let verse = oyoVerses[head]?[indexPath.row] {
-            cell.viewModel = VerseViewModel(verse)
+            cell.viewModel = OYOCellViewModel(verse)
         }
         
         return cell
@@ -125,26 +132,26 @@ class OnYourOwnTableVC: UITableViewController {
         let head = heads[indexPath.section]
         if let verse = oyoVerses[head]?[indexPath.row] {
             let oyoDetailVC = OYODetailVC()
-            oyoDetailVC.viewModel = OYODetailViewModel(verse: verse)
+            oyoDetailVC.verse = verse
             self.navigationController?.pushViewController(oyoDetailVC, animated: true)
         }
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let head = heads[indexPath.section]
-            if let verse = oyoVerses[head]?[indexPath.row] {
-                let res = DataBaseService.shared.remove(verse)
-                switch res {
-                case .success(_):
-                    oyoVerses[head]?.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .automatic)
-                    oyoVerses = DataBaseService.shared.categorizedOyoVerses
-                    tableView.reloadData()
-                default:
-                    break
-                }
-            }
-        }
-    }
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            let head = heads[indexPath.section]
+//            if let verse = oyoVerses[head]?[indexPath.row] {
+//                let res = DataBaseService.shared.remove(verse)
+//                switch res {
+//                case .success(_):
+//                    oyoVerses[head]?.remove(at: indexPath.row)
+//                    tableView.deleteRows(at: [indexPath], with: .automatic)
+//                    oyoVerses = DataBaseService.shared.categorizedOyoVerses
+//                    tableView.reloadData()
+//                default:
+//                    break
+//                }
+//            }
+//        }
+//    }
 }

@@ -21,6 +21,8 @@
 		085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087E26B15058003EA5B7 /* QuizVC.swift */; };
 		085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */; };
 		0883EB7326E88BCE00FEBF6E /* Bible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0883EB7226E88BCE00FEBF6E /* Bible.swift */; };
+		088777242768A7B1008D4BC4 /* EditOnYourOwnVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088777232768A7B1008D4BC4 /* EditOnYourOwnVC.swift */; };
+		088777262768B238008D4BC4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088777252768B238008D4BC4 /* UIViewController+Extension.swift */; };
 		088EC149273E7C5700A1FF63 /* check-success-yellow.json in Resources */ = {isa = PBXBuildFile; fileRef = 088EC148273E7C5700A1FF63 /* check-success-yellow.json */; };
 		088EC14B273E7C5F00A1FF63 /* check-success-green.json in Resources */ = {isa = PBXBuildFile; fileRef = 088EC14A273E7C5F00A1FF63 /* check-success-green.json */; };
 		08941B2F26E0986400E5CA97 /* OnYourOwnTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08941B2E26E0986400E5CA97 /* OnYourOwnTableVC.swift */; };
@@ -28,7 +30,7 @@
 		089762C926C3A91600AFC555 /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762C826C3A91600AFC555 /* HeadCell.swift */; };
 		089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CB26C3C99900AFC555 /* UIColor+Extension.swift */; };
 		089762CE26C3D65700AFC555 /* VerseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762CD26C3D65700AFC555 /* VerseView.swift */; };
-		089762D126C3D69D00AFC555 /* VerseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762D026C3D69D00AFC555 /* VerseViewModel.swift */; };
+		089762D126C3D69D00AFC555 /* OYOCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089762D026C3D69D00AFC555 /* OYOCellViewModel.swift */; };
 		089AB191271596D000EA7941 /* OYODetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB190271596D000EA7941 /* OYODetailVC.swift */; };
 		089AB1932715970200EA7941 /* OYODetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB1922715970200EA7941 /* OYODetailViewModel.swift */; };
 		089AB1992716AEF900EA7941 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB1982716AEF900EA7941 /* MyPageVC.swift */; };
@@ -94,6 +96,8 @@
 		085B087E26B15058003EA5B7 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseGroupTableView.swift; sourceTree = "<group>"; };
 		0883EB7226E88BCE00FEBF6E /* Bible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible.swift; sourceTree = "<group>"; };
+		088777232768A7B1008D4BC4 /* EditOnYourOwnVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOnYourOwnVC.swift; sourceTree = "<group>"; };
+		088777252768B238008D4BC4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		088EC148273E7C5700A1FF63 /* check-success-yellow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-success-yellow.json"; sourceTree = "<group>"; };
 		088EC14A273E7C5F00A1FF63 /* check-success-green.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-success-green.json"; sourceTree = "<group>"; };
 		08941B2E26E0986400E5CA97 /* OnYourOwnTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnYourOwnTableVC.swift; sourceTree = "<group>"; };
@@ -101,7 +105,7 @@
 		089762C826C3A91600AFC555 /* HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
 		089762CB26C3C99900AFC555 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		089762CD26C3D65700AFC555 /* VerseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseView.swift; sourceTree = "<group>"; };
-		089762D026C3D69D00AFC555 /* VerseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewModel.swift; sourceTree = "<group>"; };
+		089762D026C3D69D00AFC555 /* OYOCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYOCellViewModel.swift; sourceTree = "<group>"; };
 		089AB190271596D000EA7941 /* OYODetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailVC.swift; sourceTree = "<group>"; };
 		089AB1922715970200EA7941 /* OYODetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OYODetailViewModel.swift; sourceTree = "<group>"; };
 		089AB1982716AEF900EA7941 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 				08941B2E26E0986400E5CA97 /* OnYourOwnTableVC.swift */,
 				08AC129D26E368CE0066750F /* AddOnYourOwnVC.swift */,
 				089AB190271596D000EA7941 /* OYODetailVC.swift */,
+				088777232768A7B1008D4BC4 /* EditOnYourOwnVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 		08941B3426E0A69F00E5CA97 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				089762D026C3D69D00AFC555 /* OYOCellViewModel.swift */,
 				089AB1922715970200EA7941 /* OYODetailViewModel.swift */,
 			);
 			path = ViewModel;
@@ -291,6 +297,7 @@
 				089762CB26C3C99900AFC555 /* UIColor+Extension.swift */,
 				08129E09271E94BC00DDE22B /* UIFont+Extension.swift */,
 				08F2ECEF27238FB00033FFB1 /* UIView+Extension.swift */,
+				088777252768B238008D4BC4 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -298,7 +305,6 @@
 		089762CF26C3D68C00AFC555 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				089762D026C3D69D00AFC555 /* VerseViewModel.swift */,
 				08AB0A4826D0DFE100066D6F /* CardTableViewModel.swift */,
 				08AB0A4E26D0E4AA00066D6F /* CardViewModel.swift */,
 			);
@@ -661,12 +667,14 @@
 				08B6162626DF64E2009BE636 /* SortMethod.swift in Sources */,
 				089AB19B2716B76C00EA7941 /* BlurredView.swift in Sources */,
 				085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */,
+				088777262768B238008D4BC4 /* UIViewController+Extension.swift in Sources */,
 				08BE9E3E27229B6F00470AB3 /* AddButton.swift in Sources */,
 				08AB0A4026CD0AA200066D6F /* Verse.swift in Sources */,
 				08AB0A4726D0DD2100066D6F /* CardTableVC.swift in Sources */,
 				085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */,
 				089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */,
-				089762D126C3D69D00AFC555 /* VerseViewModel.swift in Sources */,
+				088777242768A7B1008D4BC4 /* EditOnYourOwnVC.swift in Sources */,
+				089762D126C3D69D00AFC555 /* OYOCellViewModel.swift in Sources */,
 				08AB0A4B26D0E15800066D6F /* CardTableView.swift in Sources */,
 				085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */,
 				089AB191271596D000EA7941 /* OYODetailVC.swift in Sources */,
@@ -862,14 +870,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21111201;
+				CURRENT_PROJECT_VERSION = 21121601;
 				DEVELOPMENT_TEAM = 3ZLXC439TG;
 				INFOPLIST_FILE = Navi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.suzennk.navi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -885,14 +893,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21111201;
+				CURRENT_PROJECT_VERSION = 21121601;
 				DEVELOPMENT_TEAM = 3ZLXC439TG;
 				INFOPLIST_FILE = Navi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.suzennk.navi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

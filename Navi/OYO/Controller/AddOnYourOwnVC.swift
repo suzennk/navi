@@ -62,19 +62,22 @@ enum VerseContents: Int, CaseIterable, RawRepresentable {
 
 class AddOnYourOwnVC: ViewController {
 
-    unowned var delegate: OnYourOwnTableVC?
-
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var selectCategoryButton: UIButton!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var categoryErrorLabel: UILabel!
+    
+    @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var selectBibleButton: UIButton!
     @IBOutlet weak var bibleErrorLabel: UILabel!
     
     @IBOutlet weak var chapterTextField: UITextField!
     @IBOutlet weak var startVerseTextField: UITextField!
+    @IBOutlet weak var middleSymbolButton: UIButton!
     @IBOutlet weak var endVerseTextField: UITextField!
     @IBOutlet weak var rangeErrorLabel: UILabel!
     
@@ -85,6 +88,8 @@ class AddOnYourOwnVC: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupTextFieldDelegates()
         
         setupViews()
         setupBibles()
@@ -134,15 +139,32 @@ class AddOnYourOwnVC: ViewController {
             self.categoryTextField.isHidden = false
         }
         
-        
         let menu = UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: headItems + [item])
         
         selectCategoryButton.menu = menu
     }
     
     @IBAction func handleCancelTapped(_ sender: Any) {
-        self.dismiss(animated: true) {
-            self.delegate?.addVC = AddOnYourOwnVC(nibName: "AddOnYourOwnVC", bundle: nil)
+        self.dismiss(animated: true)
+    }
+    
+    func commitChanges() {
+        let res = DataBaseService.shared.addOYOVerse(
+            bible: selectBibleButton.currentTitle!,
+            chapter: Int(chapterTextField.text!) ?? 0,
+            startVerse: Int(startVerseTextField.text!) ?? 0,
+            middleSymbol: Int(endVerseTextField.text!) == nil ? nil : middleSymbolButton.currentTitle,
+            endVerse: Int(endVerseTextField.text!),
+            head: categoryTextField.text!,
+            title: titleTextField.text!,
+            contents: contentTextView.text
+        )
+        
+        switch res {
+        case .success(_):
+            self.dismiss(animated: true)
+        case .failure(let err):
+            print(err.localizedDescription)
         }
     }
     
@@ -154,30 +176,26 @@ class AddOnYourOwnVC: ViewController {
         
         guard [categoryErrorLabel, bibleErrorLabel, rangeErrorLabel, contentErrorLabel].filter({ !$0.isHidden }).isEmpty else { return }
         
-        let res = DataBaseService.shared.addOYOVerse(
-            bible: selectBibleButton.currentTitle!,
-            chapter: Int(chapterTextField.text!) ?? 0,
-            startVerse: Int(startVerseTextField.text!) ?? 0,
-            middleSymbol: Int(endVerseTextField.text!) == nil ? nil : "-",
-            endVerse: Int(endVerseTextField.text!),
-            head: categoryTextField.text!,
-            contents: contentTextView.text
-        )
-        
-        switch res {
-        case .success(_):
-            self.dismiss(animated: true) {
-                self.delegate?.oyoVerses = DataBaseService.shared.categorizedOyoVerses
-                self.delegate?.tableView.reloadData()
-                self.delegate?.addVC = AddOnYourOwnVC()
-            }
-        case .failure(let err):
-            print(err.localizedDescription)
-        }
+        commitChanges()
     }
     
     @objc func handleSelectCategory(_ category: String) {
         selectCategoryButton.setTitle(category, for: .normal)
+    }
+    
+    @IBAction func handleMiddleSymbolButtonTapped(_ sender: Any) {
+        if let text = endVerseTextField.text, text == "" {
+            // end verse 비어있으면 middle symbol 없음
+            middleSymbolButton.setTitle("", for: .normal)
+        } else if middleSymbolButton.currentTitle == "-" {  // end verse 입력되어 있음
+            // middle symbol toggle [-] -> [,]
+            middleSymbolButton.setTitle(",", for: .normal)
+        } else if middleSymbolButton.currentTitle == "," {
+            // middle symbol toggle [,] -> [-]
+            middleSymbolButton.setTitle("-", for: .normal)
+        } else {
+            middleSymbolButton.setTitle("-", for: .normal)
+        }
     }
 }
 
@@ -206,5 +224,22 @@ extension AddOnYourOwnVC {
     @objc func keyboardWillHide(notification: NSNotification) {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
+    }
+}
+
+extension AddOnYourOwnVC: UITextFieldDelegate {
+    func setupTextFieldDelegates() {
+        endVerseTextField.delegate = self
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("did end editing ")
+        if let text = textField.text, text.isEmpty {
+            middleSymbolButton.setTitle("", for: .normal)
+        } else {
+            if middleSymbolButton.currentTitle == "" {
+                middleSymbolButton.setTitle("-", for: .normal)
+            }
+        }
     }
 }
