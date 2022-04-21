@@ -36,8 +36,7 @@ extension UIViewController {
             let cancelAction: UIAlertAction = UIAlertAction(title: cancelTitle, style: UIAlertAction.Style.cancel, handler: cancelHandler)
             alert.addAction(cancelAction)
         } else {
-            if let cancelTitle = cancelTitle {
-                
+            if let _ = cancelTitle {
                 let cancelAction: UIAlertAction = UIAlertAction(title: okTitle, style: UIAlertAction.Style.cancel, handler: cancelHandler)
                 alert.addAction(cancelAction)
             } else {

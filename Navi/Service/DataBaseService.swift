@@ -15,6 +15,7 @@ typealias Theme = String
 class DataBaseService {
     static let shared = DataBaseService()
     static let fileName = "cardset"
+    static let updateFileName = "updated_cardset"
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private lazy var context = appDelegate.persistentContainer.viewContext
@@ -131,8 +132,9 @@ class DataBaseService {
             loadVersesFromTSV()
         }
         
-        // patch verses with update history
-        patchVerses()
+        // update verses with update file
+        print("Update verses with update file")
+        updateVerses()
         
         // MARK: - MUST DELETE: for testing
 //        fetch(request: Theme.fetchRequest()).forEach {
@@ -204,7 +206,7 @@ class DataBaseService {
     
     // MARK: - Load at first launch
     /**
-        암송 말씀 데이터파일(.csv)을 읽고 데이터 파싱을 진행한다.
+        암송 말씀 데이터파일(.tsv)을 읽고 데이터 파싱을 진행한다.
      */
     private func parseFile(at url:URL) -> [[String]]? {
         do {
@@ -262,54 +264,42 @@ class DataBaseService {
     }
     
     // MARK: - Patch updated verses
-    private func patchUpdatedVerses() {
-        let updates: [(id: Int64, keyName: String, value: String)] = [
-            (60, "bible", "사도행전"),
-            (318, "theme", "180구절"),
-            (332, "title", "3. 통치하시는 성령"),
-            (333, "title", "3. 통치하시는 성령")
-        ]
+    private func loadUpdateDataArray() -> [[String]]? {
+        guard let path = Bundle.main.path(forResource: "\(DataBaseService.updateFileName)", ofType: "tsv") else {
+            print("Error locating update file")
+            return nil
+        }
         
-        updates.forEach { (id, key, value) in
-            if let originalVerse = fetch(request: Verse.fetchRequest(id: id)).first {
-                if let originalValue = originalVerse.value(forKey: key) as? String, originalValue != value {
-                    originalVerse.setValue(value, forKey: key)
-                    debugPrint("Updated verse [\(id)] \(key) [\(originalValue)] -> [\(value)]")
-                }
+        let dataArr = parseFile(at: URL(fileURLWithPath: path))
+        return dataArr
+    }
+    
+    private func updateVerses() {
+        guard let updateData = loadUpdateDataArray() else {
+            print("Failed to update data due to empty data")
+            return
+        }
+        print("update data count: \(updateData.count)")
+        
+        updateData.enumerated().forEach { (idx, item) in
+            if item.count < 10 { return }
+            if let originalVerse = fetch(request: Verse.fetchRequest(id: Int64(idx))).first {
+                let chapter = Int(item[2].replacingOccurrences(of: ":", with: ""))!
+
+                originalVerse.setValue(Int(item[0])!, forKey: "id")
+                originalVerse.setValue(item[1], forKey: "bible")
+                originalVerse.setValue(chapter, forKey: "chapter")
+                originalVerse.setValue(Int(item[3])!, forKey: "startVerse")
+                originalVerse.setValue(item[4] == "" ? nil : item[4], forKey: "middleSymbol")
+                originalVerse.setValue(Int(item[5]) ?? 0, forKey: "endVerse")
+                originalVerse.setValue(item[6], forKey: "theme")
+                originalVerse.setValue(item[7], forKey: "head")
+                originalVerse.setValue(item[8], forKey: "subHead")
+                originalVerse.setValue(item[9], forKey: "title")
+                originalVerse.setValue(item[10], forKey: "contents")
             }
         }
         
-        switch save() {
-        case .success:
-            let _ = updates
-                .map { $0.id }
-                .compactMap { fetch(request:Verse.fetchRequest(id: $0)).first }
-                .map { CardViewModel($0) }
-        case .failure:
-            break
-        }
-    }
-    
-    private func removePeriodsFromeVerses() {
-        if hasRemovedPeriods == false {
-            _predefinedVerses.forEach { verse in
-                if verse.contents.contains(".") {
-                    verse.setValue(verse.contents.replacingOccurrences(of: ".", with: ""), forKey: "contents")
-                    debugPrint("Updated verse [\(verse.id)] contents [remove periods(.)")
-                }
-            }
-        }
-        
-        switch save() {
-        case .success:
-            UserDefaults.standard.setValue(true, forKey: "hasRemovedPeriods")
-        case .failure:
-            break
-        }
-    }
-    
-    private func patchVerses() {
-        patchUpdatedVerses()
-        removePeriodsFromeVerses()
+        _ = save()
     }
 }
