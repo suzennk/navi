@@ -83,13 +83,13 @@ extension CardTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let verse = filteredVerses[indexPath.row]
         verse.setValue(true, forKey: "memorized")
-        DataBaseService.shared.save()
+        _ = DataBaseService.shared.save()
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let verse = filteredVerses[indexPath.row]
         verse.setValue(false, forKey: "memorized")
-        DataBaseService.shared.save()
+        _ = DataBaseService.shared.save()
     }
 }
 
@@ -107,7 +107,6 @@ extension CardTableView: UITableViewDataSource {
         cell.titleLabel.alpha = hidesVerseRange ? 0 : 1
         cell.contentLabel.alpha = hidesContent ? 0 : 1
         cell.headLabel.alpha = hidesVerseRange ? 0 : 1
-        cell.subheadLabel.alpha = hidesVerseRange ? 0 : 1
         cell.verseRangeLabel.alpha = hidesVerseRange ? 0 : 1
         
         return cell
