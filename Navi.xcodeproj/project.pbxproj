@@ -23,6 +23,9 @@
 		085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */; };
 		087F75D12812551300B5CC95 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F75D02812551300B5CC95 /* Verse.swift */; };
 		087F75D4281277A100B5CC95 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087F75D3281277A100B5CC95 /* Quiz.storyboard */; };
+		087F75D8281299F500B5CC95 /* QuizRangeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F75D7281299F500B5CC95 /* QuizRangeCollectionVC.swift */; };
+		087F75E228129F7200B5CC95 /* CircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F75E128129F7200B5CC95 /* CircleCell.swift */; };
+		087F75E42812CFC200B5CC95 /* QuizType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F75E32812CFC200B5CC95 /* QuizType.swift */; };
 		0883EB7326E88BCE00FEBF6E /* Bible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0883EB7226E88BCE00FEBF6E /* Bible.swift */; };
 		088777242768A7B1008D4BC4 /* EditOnYourOwnVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088777232768A7B1008D4BC4 /* EditOnYourOwnVC.swift */; };
 		088777262768B238008D4BC4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088777252768B238008D4BC4 /* UIViewController+Extension.swift */; };
@@ -100,6 +103,9 @@
 		085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseGroupTableView.swift; sourceTree = "<group>"; };
 		087F75D02812551300B5CC95 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Verse.swift; path = Navi/Verse.swift; sourceTree = SOURCE_ROOT; };
 		087F75D3281277A100B5CC95 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
+		087F75D7281299F500B5CC95 /* QuizRangeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRangeCollectionVC.swift; sourceTree = "<group>"; };
+		087F75E128129F7200B5CC95 /* CircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCell.swift; sourceTree = "<group>"; };
+		087F75E32812CFC200B5CC95 /* QuizType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizType.swift; sourceTree = "<group>"; };
 		0883EB7226E88BCE00FEBF6E /* Bible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible.swift; sourceTree = "<group>"; };
 		088777232768A7B1008D4BC4 /* EditOnYourOwnVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOnYourOwnVC.swift; sourceTree = "<group>"; };
 		088777252768B238008D4BC4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -249,10 +255,36 @@
 		087F75D22812732D00B5CC95 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				087F75D3281277A100B5CC95 /* Quiz.storyboard */,
-				085B087E26B15058003EA5B7 /* QuizVC.swift */,
+				087F75DD28129A9A00B5CC95 /* View */,
+				087F75DC28129A2200B5CC95 /* Controller */,
+				087F75DE28129AA200B5CC95 /* ViewModel */,
 			);
 			path = Quiz;
+			sourceTree = "<group>";
+		};
+		087F75DC28129A2200B5CC95 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				085B087E26B15058003EA5B7 /* QuizVC.swift */,
+				087F75D7281299F500B5CC95 /* QuizRangeCollectionVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		087F75DD28129A9A00B5CC95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				087F75D3281277A100B5CC95 /* Quiz.storyboard */,
+				087F75E128129F7200B5CC95 /* CircleCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		087F75DE28129AA200B5CC95 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		088EC14C273E7C8700A1FF63 /* Animation */ = {
@@ -366,6 +398,7 @@
 				08AB0A3926CCFDAE00066D6F /* Model.xcdatamodeld */,
 				087F75D02812551300B5CC95 /* Verse.swift */,
 				0883EB7226E88BCE00FEBF6E /* Bible.swift */,
+				087F75E32812CFC200B5CC95 /* QuizType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -680,6 +713,7 @@
 				0883EB7326E88BCE00FEBF6E /* Bible.swift in Sources */,
 				08AC12A026E36B2D0066750F /* NaviInputTextField.swift in Sources */,
 				089AB1992716AEF900EA7941 /* MyPageVC.swift in Sources */,
+				087F75D8281299F500B5CC95 /* QuizRangeCollectionVC.swift in Sources */,
 				08B6162626DF64E2009BE636 /* SortMethod.swift in Sources */,
 				089AB19B2716B76C00EA7941 /* BlurredView.swift in Sources */,
 				085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */,
@@ -689,6 +723,7 @@
 				085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */,
 				089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */,
 				088777242768A7B1008D4BC4 /* EditOnYourOwnVC.swift in Sources */,
+				087F75E42812CFC200B5CC95 /* QuizType.swift in Sources */,
 				087F75D12812551300B5CC95 /* Verse.swift in Sources */,
 				089762D126C3D69D00AFC555 /* OYOCellViewModel.swift in Sources */,
 				08AB0A4B26D0E15800066D6F /* CardTableView.swift in Sources */,
@@ -711,6 +746,7 @@
 				085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */,
 				08941B2F26E0986400E5CA97 /* OnYourOwnTableVC.swift in Sources */,
 				089AB1932715970200EA7941 /* OYODetailViewModel.swift in Sources */,
+				087F75E228129F7200B5CC95 /* CircleCell.swift in Sources */,
 				085B084B26B136BF003EA5B7 /* SceneDelegate.swift in Sources */,
 				089762C926C3A91600AFC555 /* HeadCell.swift in Sources */,
 			);
