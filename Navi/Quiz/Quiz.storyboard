@@ -198,6 +198,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMH-6Q-LF4" customClass="BaseButton" customModule="Navi" customModuleProvider="target">
+                                <rect key="frame" x="16" y="896" width="382" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="iDN-Bp-XY1"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QE0-yA-BmI">
                                 <rect key="frame" x="0.0" y="88" width="414" height="100"/>
                                 <subviews>
@@ -227,19 +234,31 @@
                         <viewLayoutGuide key="safeArea" id="tHY-jq-RTn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bMH-6Q-LF4" firstAttribute="leading" secondItem="tHY-jq-RTn" secondAttribute="leading" constant="16" id="4CW-Cy-W8S"/>
                             <constraint firstItem="tHY-jq-RTn" firstAttribute="bottom" secondItem="nmg-Dt-Jg5" secondAttribute="bottom" id="4G6-qn-EOd"/>
+                            <constraint firstItem="tHY-jq-RTn" firstAttribute="bottom" secondItem="bMH-6Q-LF4" secondAttribute="bottom" constant="8" id="PzV-zG-juV"/>
                             <constraint firstItem="QE0-yA-BmI" firstAttribute="top" secondItem="tHY-jq-RTn" secondAttribute="top" id="QMc-ej-3qa"/>
+                            <constraint firstAttribute="trailing" secondItem="bMH-6Q-LF4" secondAttribute="trailing" constant="16" id="Tb4-gh-2vO"/>
                             <constraint firstItem="tHY-jq-RTn" firstAttribute="trailing" secondItem="nmg-Dt-Jg5" secondAttribute="trailing" id="XCa-dG-HwV"/>
                             <constraint firstItem="nmg-Dt-Jg5" firstAttribute="top" secondItem="QE0-yA-BmI" secondAttribute="bottom" constant="16" id="ZPc-h2-Dl6"/>
+                            <constraint firstItem="bMH-6Q-LF4" firstAttribute="top" secondItem="HNA-EO-PGV" secondAttribute="bottom" id="cev-XJ-aW3"/>
                             <constraint firstItem="QE0-yA-BmI" firstAttribute="leading" secondItem="tHY-jq-RTn" secondAttribute="leading" id="ctm-PR-T8q"/>
                             <constraint firstItem="tHY-jq-RTn" firstAttribute="trailing" secondItem="QE0-yA-BmI" secondAttribute="trailing" id="iLC-2E-dkf"/>
                             <constraint firstItem="nmg-Dt-Jg5" firstAttribute="leading" secondItem="tHY-jq-RTn" secondAttribute="leading" id="scw-xg-jUg"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PzV-zG-juV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="gja-Ls-Xnh"/>
                     <connections>
                         <outlet property="collectionView" destination="nmg-Dt-Jg5" id="bJH-1l-hge"/>
+                        <outlet property="disabledConstraint" destination="cev-XJ-aW3" id="5WD-MM-l2Q"/>
+                        <outlet property="enabledConstraint" destination="PzV-zG-juV" id="Ycq-Ly-iKQ"/>
                         <outlet property="quizTypeLabel" destination="Mve-we-g5M" id="03A-ZN-eaZ"/>
+                        <outlet property="startButton" destination="bMH-6Q-LF4" id="FeL-5B-qX8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zv5-v5-nOx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
