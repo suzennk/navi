@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5E647E89-9CFD-4430-971E-874A979F5FBE"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D811034-BE5A-4E5B-A7BE-B0980547358F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Navi/Home/View/CardTableView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "filteredVerses"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "7D811034-BE5A-4E5B-A7BE-B0980547358F - 896d880c9ef9591a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.filteredVerses.getter : Swift.Array&lt;Navi.Verse&gt;"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "7D811034-BE5A-4E5B-A7BE-B0980547358F - cfed6116adfc1cd6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.filteredVerses.setter : Swift.Array&lt;Navi.Verse&gt;"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "7D811034-BE5A-4E5B-A7BE-B0980547358F - b562f9030823c1c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.filteredVerses.modify : Swift.Array&lt;Navi.Verse&gt;"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "7D811034-BE5A-4E5B-A7BE-B0980547358F - b07d162443d7ebce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.filteredVerses.modify : Swift.Array&lt;Navi.Verse&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F1162AA-7117-419C-B0FF-CD7CA26053E4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Navi/OYO/View/NaviInputTextField.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "updateView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "898D2A3B-07A3-40BE-BB8D-7BFAD2848861"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Navi/Home/Controller/CardTableVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "viewModel"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25128200-EAF5-45DB-BA69-6A82F7159949"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Navi/Home/View/CardTableView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "sortMethod"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "25128200-EAF5-45DB-BA69-6A82F7159949 - 7c2fe60d7489dc50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.sortMethod.getter : Navi.SortMethod"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "107">
+               </Location>
+               <Location
+                  uuid = "25128200-EAF5-45DB-BA69-6A82F7159949 - 415474bd59aaa024"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.sortMethod.setter : Navi.SortMethod"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "251">
+               </Location>
+               <Location
+                  uuid = "25128200-EAF5-45DB-BA69-6A82F7159949 - eb27f5498fcdef12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.sortMethod.modify : Navi.SortMethod"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "25128200-EAF5-45DB-BA69-6A82F7159949 - fd5f0bc7cd9dfd24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Navi.CardTableView.sortMethod.modify : Navi.SortMethod with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Navi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susan/Documents/Navi/Navi/Home/View/CardTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CF95132-E3AE-4C6C-AD6F-E7F9B2CAD085"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Navi/OYO/Controller/AddOnYourOwnVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "textFieldDidEndEditing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
