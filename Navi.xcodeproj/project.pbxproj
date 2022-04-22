@@ -22,6 +22,7 @@
 		085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087E26B15058003EA5B7 /* QuizVC.swift */; };
 		085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */; };
 		087F75D12812551300B5CC95 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F75D02812551300B5CC95 /* Verse.swift */; };
+		087F75D4281277A100B5CC95 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087F75D3281277A100B5CC95 /* Quiz.storyboard */; };
 		0883EB7326E88BCE00FEBF6E /* Bible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0883EB7226E88BCE00FEBF6E /* Bible.swift */; };
 		088777242768A7B1008D4BC4 /* EditOnYourOwnVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088777232768A7B1008D4BC4 /* EditOnYourOwnVC.swift */; };
 		088777262768B238008D4BC4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088777252768B238008D4BC4 /* UIViewController+Extension.swift */; };
@@ -98,6 +99,7 @@
 		085B087E26B15058003EA5B7 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseGroupTableView.swift; sourceTree = "<group>"; };
 		087F75D02812551300B5CC95 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Verse.swift; path = Navi/Verse.swift; sourceTree = SOURCE_ROOT; };
+		087F75D3281277A100B5CC95 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		0883EB7226E88BCE00FEBF6E /* Bible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible.swift; sourceTree = "<group>"; };
 		088777232768A7B1008D4BC4 /* EditOnYourOwnVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOnYourOwnVC.swift; sourceTree = "<group>"; };
 		088777252768B238008D4BC4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -206,10 +208,10 @@
 				085B085326B136C1003EA5B7 /* LaunchScreen.storyboard */,
 				085B085626B136C1003EA5B7 /* Info.plist */,
 				085B087826B14655003EA5B7 /* TabBarController.swift */,
-				085B087E26B15058003EA5B7 /* QuizVC.swift */,
 				085B088426B15F67003EA5B7 /* Home */,
 				089AB1942716AEB100EA7941 /* MyPage */,
 				08941B2D26E097C500E5CA97 /* OYO */,
+				087F75D22812732D00B5CC95 /* Quiz */,
 				08AD4D9C26BCEE7800E14F64 /* cardset.tsv */,
 				0853585A27FC75A4004929D0 /* updated_cardset.tsv */,
 			);
@@ -242,6 +244,15 @@
 				08AD4D9E26C389DC00E14F64 /* View */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		087F75D22812732D00B5CC95 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				087F75D3281277A100B5CC95 /* Quiz.storyboard */,
+				085B087E26B15058003EA5B7 /* QuizVC.swift */,
+			);
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 		088EC14C273E7C8700A1FF63 /* Animation */ = {
@@ -536,6 +547,7 @@
 				088EC14B273E7C5F00A1FF63 /* check-success-green.json in Resources */,
 				08BE9E402722B16100470AB3 /* AddOnYourOwnVC.xib in Resources */,
 				085B085226B136C1003EA5B7 /* Assets.xcassets in Resources */,
+				087F75D4281277A100B5CC95 /* Quiz.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
