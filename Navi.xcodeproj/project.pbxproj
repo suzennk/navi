@@ -21,6 +21,7 @@
 		085B087D26B14C9A003EA5B7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087C26B14C9A003EA5B7 /* HomeVC.swift */; };
 		085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B087E26B15058003EA5B7 /* QuizVC.swift */; };
 		085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */; };
+		087F75D12812551300B5CC95 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F75D02812551300B5CC95 /* Verse.swift */; };
 		0883EB7326E88BCE00FEBF6E /* Bible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0883EB7226E88BCE00FEBF6E /* Bible.swift */; };
 		088777242768A7B1008D4BC4 /* EditOnYourOwnVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088777232768A7B1008D4BC4 /* EditOnYourOwnVC.swift */; };
 		088777262768B238008D4BC4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088777252768B238008D4BC4 /* UIViewController+Extension.swift */; };
@@ -39,7 +40,6 @@
 		089AB19D2716C53800EA7941 /* MemorizeStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089AB19C2716C53800EA7941 /* MemorizeStatusViewModel.swift */; };
 		08A7820126CCD88D00338E97 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A7820026CCD88D00338E97 /* PersistentContainer.swift */; };
 		08AB0A3B26CCFDAE00066D6F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A3926CCFDAE00066D6F /* Model.xcdatamodeld */; };
-		08AB0A4026CD0AA200066D6F /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A3E26CD0AA200066D6F /* Verse.swift */; };
 		08AB0A4726D0DD2100066D6F /* CardTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A4626D0DD2100066D6F /* CardTableVC.swift */; };
 		08AB0A4926D0DFE100066D6F /* CardTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A4826D0DFE100066D6F /* CardTableViewModel.swift */; };
 		08AB0A4B26D0E15800066D6F /* CardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB0A4A26D0E15800066D6F /* CardTableView.swift */; };
@@ -97,6 +97,7 @@
 		085B087C26B14C9A003EA5B7 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		085B087E26B15058003EA5B7 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseGroupTableView.swift; sourceTree = "<group>"; };
+		087F75D02812551300B5CC95 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Verse.swift; path = Navi/Verse.swift; sourceTree = SOURCE_ROOT; };
 		0883EB7226E88BCE00FEBF6E /* Bible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible.swift; sourceTree = "<group>"; };
 		088777232768A7B1008D4BC4 /* EditOnYourOwnVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOnYourOwnVC.swift; sourceTree = "<group>"; };
 		088777252768B238008D4BC4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -115,7 +116,6 @@
 		089AB19C2716C53800EA7941 /* MemorizeStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeStatusViewModel.swift; sourceTree = "<group>"; };
 		08A7820026CCD88D00338E97 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		08AB0A3A26CCFDAE00066D6F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		08AB0A3E26CD0AA200066D6F /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Verse.swift; path = ../../Verse.swift; sourceTree = "<group>"; };
 		08AB0A4626D0DD2100066D6F /* CardTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableVC.swift; sourceTree = "<group>"; };
 		08AB0A4826D0DFE100066D6F /* CardTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewModel.swift; sourceTree = "<group>"; };
 		08AB0A4A26D0E15800066D6F /* CardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableView.swift; sourceTree = "<group>"; };
@@ -353,7 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				08AB0A3926CCFDAE00066D6F /* Model.xcdatamodeld */,
-				08AB0A3E26CD0AA200066D6F /* Verse.swift */,
+				087F75D02812551300B5CC95 /* Verse.swift */,
 				0883EB7226E88BCE00FEBF6E /* Bible.swift */,
 			);
 			path = Model;
@@ -673,11 +673,11 @@
 				085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */,
 				088777262768B238008D4BC4 /* UIViewController+Extension.swift in Sources */,
 				08BE9E3E27229B6F00470AB3 /* AddButton.swift in Sources */,
-				08AB0A4026CD0AA200066D6F /* Verse.swift in Sources */,
 				08AB0A4726D0DD2100066D6F /* CardTableVC.swift in Sources */,
 				085B087F26B15058003EA5B7 /* QuizVC.swift in Sources */,
 				089762CC26C3C99900AFC555 /* UIColor+Extension.swift in Sources */,
 				088777242768A7B1008D4BC4 /* EditOnYourOwnVC.swift in Sources */,
+				087F75D12812551300B5CC95 /* Verse.swift in Sources */,
 				089762D126C3D69D00AFC555 /* OYOCellViewModel.swift in Sources */,
 				08AB0A4B26D0E15800066D6F /* CardTableView.swift in Sources */,
 				085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */,
@@ -874,14 +874,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21040501;
+				CURRENT_PROJECT_VERSION = 22042201;
 				DEVELOPMENT_TEAM = 3ZLXC439TG;
 				INFOPLIST_FILE = Navi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.suzennk.navi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -897,14 +897,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21040501;
+				CURRENT_PROJECT_VERSION = 22042201;
 				DEVELOPMENT_TEAM = 3ZLXC439TG;
 				INFOPLIST_FILE = Navi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.suzennk.navi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
