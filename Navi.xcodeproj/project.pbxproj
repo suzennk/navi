@@ -23,6 +23,7 @@
 		085B088326B15F63003EA5B7 /* VerseGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */; };
 		0873552B2813F83600ED78D5 /* correct.json in Resources */ = {isa = PBXBuildFile; fileRef = 0873552A2813F83600ED78D5 /* correct.json */; };
 		0873552D2813F83C00ED78D5 /* wrong.json in Resources */ = {isa = PBXBuildFile; fileRef = 0873552C2813F83C00ED78D5 /* wrong.json */; };
+		0873552F2813FB7800ED78D5 /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 0873552E2813FB7800ED78D5 /* invalid.json */; };
 		087F75D12812551300B5CC95 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F75D02812551300B5CC95 /* Verse.swift */; };
 		087F75D4281277A100B5CC95 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087F75D3281277A100B5CC95 /* Quiz.storyboard */; };
 		087F75D8281299F500B5CC95 /* QuizRangeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F75D7281299F500B5CC95 /* QuizRangeCollectionVC.swift */; };
@@ -112,6 +113,7 @@
 		085B088226B15F63003EA5B7 /* VerseGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseGroupTableView.swift; sourceTree = "<group>"; };
 		0873552A2813F83600ED78D5 /* correct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = correct.json; sourceTree = "<group>"; };
 		0873552C2813F83C00ED78D5 /* wrong.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wrong.json; sourceTree = "<group>"; };
+		0873552E2813FB7800ED78D5 /* invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid.json; sourceTree = "<group>"; };
 		087F75D02812551300B5CC95 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Verse.swift; path = Navi/Verse.swift; sourceTree = SOURCE_ROOT; };
 		087F75D3281277A100B5CC95 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		087F75D7281299F500B5CC95 /* QuizRangeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRangeCollectionVC.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				087F75F22813EBA600B5CC95 /* hourglass.json */,
 				088EC14A273E7C5F00A1FF63 /* check-success-green.json */,
 				088EC148273E7C5700A1FF63 /* check-success-yellow.json */,
+				0873552E2813FB7800ED78D5 /* invalid.json */,
 				0873552A2813F83600ED78D5 /* correct.json */,
 				0873552C2813F83C00ED78D5 /* wrong.json */,
 			);
@@ -613,6 +616,7 @@
 				0873552B2813F83600ED78D5 /* correct.json in Resources */,
 				088EC149273E7C5700A1FF63 /* check-success-yellow.json in Resources */,
 				087F75E72812EAC700B5CC95 /* BaseButton.xib in Resources */,
+				0873552F2813FB7800ED78D5 /* invalid.json in Resources */,
 				0853585B27FC75A4004929D0 /* updated_cardset.tsv in Resources */,
 				088EC14B273E7C5F00A1FF63 /* check-success-green.json in Resources */,
 				08BE9E402722B16100470AB3 /* AddOnYourOwnVC.xib in Resources */,
