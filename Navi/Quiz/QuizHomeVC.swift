@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuizVC: UIViewController {
+class QuizHomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
