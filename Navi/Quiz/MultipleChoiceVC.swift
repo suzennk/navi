@@ -63,21 +63,37 @@ class MultipleChoiceVC: ViewController {
         }
         
         let viewModel = CardViewModel(questionVerses[currentQuestionNumber])
-        questionTextView.text = viewModel.content
         
-        [button0, button1, button2, button3].forEach { button in
+        if quizType == .bibleRange {
+            questionTextView.text = viewModel.content
+        } else if quizType == .title {
+            questionTextView.text = "\(viewModel.content)[\(viewModel.verseRange)]"
+        }
+        
+       answerButtons.forEach { button in
             if let verse = DataBaseService.shared.verses.randomElement() {
                 let cardVM = CardViewModel(verse)
-                button?.button.setTitle(cardVM.verseRange, for: .normal)
+                if quizType == .bibleRange {
+                    button.button.setTitle(cardVM.verseRange, for: .normal)
+                } else {
+                    button.button.setTitle(cardVM.title, for: .normal)
+                }
             } else {
-                button?.button.setTitle("창세기 1:1", for: .normal)
+                if quizType == .title {
+                    button.button.setTitle("창세기 1:1", for: .normal)
+                } else {
+                    button.button.setTitle("1. 구원의 확신", for: .normal)
+                }
             }
         }
         
         let actualAnswer = (0...3).randomElement() ?? 0
         self.actualAnswer = actualAnswer
-        [button0, button1, button2, button3][actualAnswer]?
-            .button.setTitle(viewModel.verseRange, for: .normal)
+        if quizType == .bibleRange {
+            answerButtons[actualAnswer].button.setTitle(viewModel.verseRange, for: .normal)
+        } else if quizType == .title {
+            answerButtons[actualAnswer].button.setTitle(viewModel.title, for: .normal)
+        }
     }
     
     func initializeQuiz() {
