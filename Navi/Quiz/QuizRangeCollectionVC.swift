@@ -94,6 +94,22 @@ class QuizRangeCollectionVC: UIViewController, UICollectionViewDelegate, UIColle
     func handleStartTapped() {
         performSegue(withIdentifier: "startQuizSegue", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let multipleChoiceVC = segue.destination as? MultipleChoiceVC {
+            let selectedIndexPaths = collectionView.indexPathsForSelectedItems ?? []
+            let selectedCategories = selectedIndexPaths.compactMap { indexPath in
+                categories[indexPath.item]
+            }
+            let candidateVerses = DataBaseService.shared.fetchVerse(of: selectedCategories)
+            multipleChoiceVC.quizType = self.quizType
+            multipleChoiceVC.questionVerses = (1...10).compactMap { _ in candidateVerses.randomElement()
+            }
+        } else {
+            // do something...
+            // 내용 맞추기
+        }
+    }
 }
 
 extension QuizRangeCollectionVC: UICollectionViewDelegateFlowLayout {

@@ -64,7 +64,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Uaq-tg-4qN" kind="show" id="oiM-YK-9aH"/>
+                                            <segue destination="Uaq-tg-4qN" kind="show" identifier="bibleRangeSegue" id="oiM-YK-9aH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61a-s9-7BG">
@@ -84,7 +84,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Uaq-tg-4qN" kind="show" id="JMF-q9-lWc"/>
+                                            <segue destination="Uaq-tg-4qN" kind="show" identifier="titleSegue" id="JMF-q9-lWc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWc-Mt-A4d">
@@ -104,7 +104,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Uaq-tg-4qN" kind="show" id="elc-fa-oqs"/>
+                                            <segue destination="Uaq-tg-4qN" kind="show" identifier="contentSegue" id="elc-fa-oqs"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -453,7 +453,7 @@
                         <outlet property="button3" destination="She-Rc-8py" id="Coi-M2-PE7"/>
                         <outlet property="questionNumberLabel" destination="mam-ra-xCj" id="Gik-rd-f5N"/>
                         <outlet property="questionTextView" destination="WvP-V8-0vu" id="ZXm-n3-BGk"/>
-                        <outlet property="quizTypeLabel" destination="eVO-Nl-LJ5" id="dpc-tB-EPa"/>
+                        <outlet property="quizTypeLabel" destination="eVO-Nl-LJ5" id="DjG-VA-hiu"/>
                         <outlet property="rightImageView" destination="n5T-ok-JOZ" id="IQo-Na-F0K"/>
                         <outlet property="timerSlider" destination="LJe-Xt-K9K" id="t7y-O0-jSy"/>
                     </connections>
@@ -464,7 +464,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JMF-q9-lWc"/>
+        <segue reference="elc-fa-oqs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="mypage-bg" width="924" height="1620"/>
