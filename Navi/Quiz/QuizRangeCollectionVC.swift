@@ -92,7 +92,7 @@ class QuizRangeCollectionVC: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func handleStartTapped() {
-        print("let's go!")
+        performSegue(withIdentifier: "startQuizSegue", sender: self)
     }
 }
 
