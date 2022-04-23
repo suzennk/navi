@@ -34,6 +34,11 @@ class MultipleChoiceVC: ViewController {
     var actualAnswer = 0
     var selectedAnswer = 0
     
+    let timerPerQuestion = 10.0
+    var scheduledTimer: Timer? = nil
+    var timer: Timer? = nil
+    var deadline: Date = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,6 +99,10 @@ class MultipleChoiceVC: ViewController {
         } else if quizType == .title {
             answerButtons[actualAnswer].button.setTitle(viewModel.title, for: .normal)
         }
+        
+        self.deadline = Date() + timerPerQuestion
+        self.scheduledTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(handleTimerFired), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: timerPerQuestion, target: self, selector: #selector(handleTimesUp), userInfo: nil, repeats: false)
     }
     
     func initializeQuiz() {
@@ -101,6 +110,8 @@ class MultipleChoiceVC: ViewController {
             quizTypeLabel.text = quizType.rawValue
         }
         currentQuestionNumber = 0
+        timerSlider.minimumValue = 0
+        timerSlider.maximumValue = 1
     }
     
     @IBAction func handleXTapped(_ sender: Any) {
@@ -108,6 +119,9 @@ class MultipleChoiceVC: ViewController {
     }
     
     @objc func handleAnswerTapped(_ sender: Any) {
+        self.scheduledTimer?.invalidate()
+        self.timer?.invalidate()
+        
         if let button = sender as? UIButton {
             if button.tag == self.actualAnswer {
                 // selected correct answer
@@ -126,23 +140,35 @@ class MultipleChoiceVC: ViewController {
                 answerButtons[actualAnswer].button.layer.borderColor = UIColor.systemGreen.cgColor
                 answerButtons[actualAnswer].button.backgroundColor = .systemBackground
             }
-            
-            animationView.isHidden = false
-            answerButtons.forEach {
-                $0.button.isUserInteractionEnabled = false
-            }
-            
-            animationView.play()
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.animationView.isHidden = true
-                self.currentQuestionNumber += 1
-                self.startRound()
-                [self.button0, self.button1, self.button2, self.button3].forEach {
-                    $0?.button.isUserInteractionEnabled = true
-                }
-
-            }
+        } else {
+            answerButtons[actualAnswer].button.layer.borderWidth = 2
+            answerButtons[actualAnswer].button.layer.borderColor = UIColor.orange.cgColor
+            answerButtons[actualAnswer].button.backgroundColor = .systemBackground
         }
+        
+        animationView.isHidden = false
+        answerButtons.forEach {
+            $0.button.isUserInteractionEnabled = false
+        }
+        
+        animationView.play()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.animationView.isHidden = true
+            self.currentQuestionNumber += 1
+            self.startRound()
+            [self.button0, self.button1, self.button2, self.button3].forEach {
+                $0?.button.isUserInteractionEnabled = true
+            }
+
+        }
+    }
+    
+    @objc func handleTimerFired() {
+        timerSlider.value = Float(Date().distance(to: self.deadline) / timerPerQuestion)
+    }
+    
+    @objc func handleTimesUp() {
+        handleAnswerTapped(0)
     }
 }
