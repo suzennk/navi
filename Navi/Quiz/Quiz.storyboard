@@ -429,10 +429,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NP-Zj-iNA" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Qa3-W6-wuo"/>
+                                    <constraint firstAttribute="width" constant="100" id="Rr3-LV-ENG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ENm-td-u0r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="4NP-Zj-iNA" firstAttribute="centerX" secondItem="ZFb-Nx-m3O" secondAttribute="centerX" id="2qZ-TV-KT6"/>
                             <constraint firstItem="CaA-Ea-OYy" firstAttribute="trailing" secondItem="ZFb-Nx-m3O" secondAttribute="trailing" id="4BI-gU-I2B"/>
                             <constraint firstItem="ENm-td-u0r" firstAttribute="trailing" secondItem="yUF-kn-D3v" secondAttribute="trailing" id="52f-xz-0Zz"/>
                             <constraint firstAttribute="bottom" secondItem="CaA-Ea-OYy" secondAttribute="bottom" id="FHG-C6-kWG"/>
@@ -443,10 +452,12 @@
                             <constraint firstItem="ioe-pB-yVX" firstAttribute="top" secondItem="yUF-kn-D3v" secondAttribute="bottom" constant="16" id="mHU-og-zFm"/>
                             <constraint firstItem="CaA-Ea-OYy" firstAttribute="leading" secondItem="ZFb-Nx-m3O" secondAttribute="leading" id="ocF-sO-xJf"/>
                             <constraint firstItem="yUF-kn-D3v" firstAttribute="leading" secondItem="ENm-td-u0r" secondAttribute="leading" id="wBn-h4-wdB"/>
+                            <constraint firstItem="4NP-Zj-iNA" firstAttribute="centerY" secondItem="ZFb-Nx-m3O" secondAttribute="centerY" id="wX0-OF-Tw0"/>
                             <constraint firstItem="ioe-pB-yVX" firstAttribute="leading" secondItem="ENm-td-u0r" secondAttribute="leading" constant="16" id="yRD-ec-K3Z"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animationView" destination="4NP-Zj-iNA" id="Ubi-lW-u6l"/>
                         <outlet property="button0" destination="fEX-UM-lxd" id="WgH-R5-cc3"/>
                         <outlet property="button1" destination="Fob-j1-zwx" id="kbn-Aw-UCQ"/>
                         <outlet property="button2" destination="cwU-SG-5Rl" id="nSM-Hd-W98"/>

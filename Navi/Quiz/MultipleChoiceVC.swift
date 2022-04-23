@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class MultipleChoiceVC: ViewController {
     @IBOutlet weak var quizTypeLabel: UILabel!
@@ -13,11 +14,18 @@ class MultipleChoiceVC: ViewController {
     @IBOutlet weak var rightImageView: UIImageView!
     @IBOutlet weak var questionTextView: UITextView!
     @IBOutlet weak var timerSlider: UISlider!
+    @IBOutlet weak var animationView: AnimationView!
     
     @IBOutlet weak var button0: RoundedBorderButton!
     @IBOutlet weak var button1: RoundedBorderButton!
     @IBOutlet weak var button2: RoundedBorderButton!
     @IBOutlet weak var button3: RoundedBorderButton!
+    
+    var answerButtons: [RoundedBorderButton] {
+        get {
+            return [button0, button1, button2, button3].compactMap { $0 }
+        }
+    }
     
     var quizType: QuizType? = nil
     var questionVerses: [Verse] = []
@@ -49,7 +57,11 @@ class MultipleChoiceVC: ViewController {
             return
         }
         questionNumberLabel.text = "질문 \(currentQuestionNumber + 1) / \(questionVerses.count)"
-
+        answerButtons.forEach {
+            $0.button.backgroundColor = .systemGray5
+            $0.button.layer.borderWidth = 0
+        }
+        
         let viewModel = CardViewModel(questionVerses[currentQuestionNumber])
         questionTextView.text = viewModel.content
         
@@ -82,13 +94,39 @@ class MultipleChoiceVC: ViewController {
     @objc func handleAnswerTapped(_ sender: Any) {
         if let button = sender as? UIButton {
             if button.tag == self.actualAnswer {
-                print("correct!")
+                // selected correct answer
+                animationView.animation = Animation.named("correct")
+                answerButtons[button.tag].button.layer.borderWidth = 2
+                answerButtons[button.tag].button.layer.borderColor = UIColor.systemGreen.cgColor
+                answerButtons[button.tag].button.backgroundColor = .systemBackground
             } else {
-                print("incorrect!")
+                // selected incorrect answer
+                animationView.animation = Animation.named("invalid")
+                answerButtons[button.tag].button.layer.borderWidth = 2
+                answerButtons[button.tag].button.layer.borderColor = UIColor.systemRed.cgColor
+                answerButtons[button.tag].button.backgroundColor = .systemBackground
+                
+                answerButtons[actualAnswer].button.layer.borderWidth = 2
+                answerButtons[actualAnswer].button.layer.borderColor = UIColor.systemGreen.cgColor
+                answerButtons[actualAnswer].button.backgroundColor = .systemBackground
             }
             
-            currentQuestionNumber += 1
-            startRound()
+            animationView.isHidden = false
+            answerButtons.forEach {
+                $0.button.isUserInteractionEnabled = false
+            }
+            
+            animationView.play()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.animationView.isHidden = true
+                self.currentQuestionNumber += 1
+                self.startRound()
+                [self.button0, self.button1, self.button2, self.button3].forEach {
+                    $0?.button.isUserInteractionEnabled = true
+                }
+
+            }
         }
     }
 }
