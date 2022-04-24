@@ -12,6 +12,7 @@ class WordOrderingVC: UIViewController {
     @IBOutlet weak var quizTypeLabel: UILabel!
     @IBOutlet weak var questionNumberLabel: UILabel!
     @IBOutlet weak var rightImageView: UIImageView!
+    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerCollectionView: UICollectionView!
     @IBOutlet weak var timerSlider: UISlider!
     @IBOutlet weak var animationView: AnimationView!
@@ -81,6 +82,9 @@ class WordOrderingVC: UIViewController {
         }
         questionNumberLabel.text = "질문 \(currentQuestionNumber + 1) / \(questionVerses.count)"
 
+        let questionVerse = questionVerses[currentQuestionNumber]
+        let viewModel = CardViewModel(questionVerse)
+        questionLabel.text = viewModel.verseRange
         answerCVDelegate.answer = []
         answerCollectionView.reloadData()
         

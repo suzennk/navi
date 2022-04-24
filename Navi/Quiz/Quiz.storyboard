@@ -619,7 +619,7 @@
                                         <color key="tintColor" name="naviYellow"/>
                                     </slider>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-Th-McU">
-                                        <rect key="frame" x="16" y="16" width="350" height="316"/>
+                                        <rect key="frame" x="16" y="54" width="350" height="278"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="npw-Fn-iqC" customClass="AlignedCollectionViewFlowLayout" customModule="Navi" customModuleProvider="target">
                                             <size key="itemSize" width="128" height="128"/>
@@ -690,16 +690,28 @@
                                             <constraint firstAttribute="height" constant="60" id="vdS-TJ-KDD"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkZ-Mu-8uB">
+                                        <rect key="frame" x="16" y="16" width="350" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="jot-i3-iyS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="j8s-e8-u4p" firstAttribute="leading" secondItem="6ah-RA-d0f" secondAttribute="leading" constant="16" id="65E-2M-quw"/>
                                     <constraint firstAttribute="trailing" secondItem="hmx-Th-McU" secondAttribute="trailing" constant="16" id="8VB-3Q-Rku"/>
+                                    <constraint firstItem="wkZ-Mu-8uB" firstAttribute="leading" secondItem="6ah-RA-d0f" secondAttribute="leading" constant="16" id="A6C-KK-eXD"/>
+                                    <constraint firstItem="hmx-Th-McU" firstAttribute="top" secondItem="wkZ-Mu-8uB" secondAttribute="bottom" constant="8" id="DaJ-Hh-IkO"/>
                                     <constraint firstAttribute="trailing" secondItem="UVC-F8-25r" secondAttribute="trailing" constant="16" id="Jzh-O9-0lb"/>
                                     <constraint firstItem="s5F-Ye-WhC" firstAttribute="top" secondItem="UVC-F8-25r" secondAttribute="bottom" constant="16" id="O4E-eE-8Vf"/>
+                                    <constraint firstItem="wkZ-Mu-8uB" firstAttribute="top" secondItem="6ah-RA-d0f" secondAttribute="top" constant="16" id="Ogb-D1-6kD"/>
                                     <constraint firstItem="UVC-F8-25r" firstAttribute="top" secondItem="j8s-e8-u4p" secondAttribute="bottom" constant="16" id="QZi-x8-LL0"/>
                                     <constraint firstItem="s5F-Ye-WhC" firstAttribute="leading" secondItem="6ah-RA-d0f" secondAttribute="leading" constant="16" id="XHe-Z4-XnC"/>
-                                    <constraint firstItem="hmx-Th-McU" firstAttribute="top" secondItem="6ah-RA-d0f" secondAttribute="top" constant="16" id="bpc-sW-Dcp"/>
+                                    <constraint firstAttribute="trailing" secondItem="wkZ-Mu-8uB" secondAttribute="trailing" constant="16" id="eys-dY-c8D"/>
                                     <constraint firstAttribute="trailing" secondItem="s5F-Ye-WhC" secondAttribute="trailing" constant="16" id="hj3-WH-d8D"/>
                                     <constraint firstItem="j8s-e8-u4p" firstAttribute="top" secondItem="hmx-Th-McU" secondAttribute="bottom" constant="16" id="ifI-uh-USS"/>
                                     <constraint firstAttribute="bottom" secondItem="s5F-Ye-WhC" secondAttribute="bottom" constant="16" id="rK4-dR-Qxx"/>
@@ -750,6 +762,7 @@
                         <outlet property="answerCollectionView" destination="hmx-Th-McU" id="wdF-51-fBJ"/>
                         <outlet property="confirmButton" destination="dBz-RK-eui" id="pjh-4o-gDf"/>
                         <outlet property="questionCollectionView" destination="UVC-F8-25r" id="PLK-31-7Nl"/>
+                        <outlet property="questionLabel" destination="wkZ-Mu-8uB" id="Yo9-05-2Xm"/>
                         <outlet property="questionNumberLabel" destination="qAG-K5-Zt9" id="hai-Ou-Rc0"/>
                         <outlet property="quizTypeLabel" destination="lOz-IQ-ads" id="fiX-Le-q0M"/>
                         <outlet property="resetButton" destination="HpZ-fM-ega" id="5VQ-IG-7SD"/>
@@ -762,6 +775,10 @@
             <point key="canvasLocation" x="1992.753623188406" y="491.51785714285711"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4NP-Zj-iNA"/>
+        <designable name="r7K-zl-028"/>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="elc-fa-oqs"/>
     </inferredMetricsTieBreakers>

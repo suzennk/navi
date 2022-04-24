@@ -42,7 +42,7 @@ class TabBarController: UITabBarController {
             $0.imageInsets = .init(top: 9, left: 0, bottom: -9, right: 0)
         })
         
-        self.selectedViewController = viewControllers?[2]
+        self.selectedViewController = viewControllers?[1]
         
         tabBar.layer.borderWidth = 0
         tabBar.layer.borderColor = UIColor.clear.cgColor
