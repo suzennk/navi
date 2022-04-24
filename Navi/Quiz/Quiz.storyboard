@@ -437,6 +437,11 @@
                                     <constraint firstAttribute="height" constant="100" id="Qa3-W6-wuo"/>
                                     <constraint firstAttribute="width" constant="100" id="Rr3-LV-ENG"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ENm-td-u0r"/>
@@ -709,12 +714,17 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7K-zl-028" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <rect key="frame" x="157" y="368" width="100" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="3bH-Nv-Ga7"/>
                                     <constraint firstAttribute="height" constant="100" id="eJQ-DC-BHk"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XvS-Ry-NDj"/>
@@ -732,7 +742,7 @@
                             <constraint firstItem="3eQ-oF-x0E" firstAttribute="top" secondItem="XvS-Ry-NDj" secondAttribute="top" id="gdm-QP-xbn"/>
                             <constraint firstItem="pET-ZT-vqg" firstAttribute="trailing" secondItem="UW0-W7-gPr" secondAttribute="trailing" id="rTB-Lg-DL6"/>
                             <constraint firstItem="6ah-RA-d0f" firstAttribute="leading" secondItem="XvS-Ry-NDj" secondAttribute="leading" constant="16" id="ySB-td-OIu"/>
-                            <constraint firstItem="r7K-zl-028" firstAttribute="centerY" secondItem="UW0-W7-gPr" secondAttribute="centerY" id="zHz-ZJ-eOc"/>
+                            <constraint firstItem="r7K-zl-028" firstAttribute="centerY" secondItem="UW0-W7-gPr" secondAttribute="centerY" constant="-30" id="zHz-ZJ-eOc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -752,9 +762,6 @@
             <point key="canvasLocation" x="1992.753623188406" y="491.51785714285711"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="r7K-zl-028"/>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="elc-fa-oqs"/>
     </inferredMetricsTieBreakers>
