@@ -37,8 +37,12 @@ class WordOrderingVC: UIViewController {
         // 타이머 슬라이더 thumbImage 없애기
         timerSlider.setThumbImage(UIImage(), for: .normal)
         
+        // 질문쪽 Collection View Leading 정렬
         questionCollectionView.delegate = qDelegate
         questionCollectionView.dataSource = qDelegate
+        
+        let layout = questionCollectionView.collectionViewLayout as? AlignedCollectionViewFlowLayout
+        layout?.horizontalAlignment = .leading
         
         initializeQuiz()
         startRound()
