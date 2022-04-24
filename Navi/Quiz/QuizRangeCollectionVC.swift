@@ -110,8 +110,13 @@ class QuizRangeCollectionVC: UIViewController, UICollectionViewDelegate, UIColle
             multipleChoiceVC.questionVerses = (1...10).compactMap { _ in candidateVerses.randomElement()
             }
         } else if let wordOrderingVC = segue.destination as? WordOrderingVC {
-            // do something...
-            // 내용 맞추기
+            let selectedIndexPaths = collectionView.indexPathsForSelectedItems ?? []
+            let selectedCategories = selectedIndexPaths.compactMap { indexPath in
+                categories[indexPath.item]
+            }
+            let candidateVerses = DataBaseService.shared.fetchVerse(of: selectedCategories)
+            wordOrderingVC.quizType = self.quizType
+            wordOrderingVC.questionVerses = (1...10).compactMap { _ in candidateVerses.randomElement() }
         }
     }
 }

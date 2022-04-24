@@ -551,10 +551,10 @@
                                 <rect key="frame" x="16" y="160" width="382" height="686"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UVC-F8-25r">
-                                        <rect key="frame" x="16" y="420" width="350" height="250"/>
+                                        <rect key="frame" x="16" y="394" width="350" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="250" id="wdD-ZY-w3F"/>
+                                            <constraint firstAttribute="height" constant="200" id="65x-9t-N1G"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3gA-wr-b27" customClass="AlignedCollectionViewFlowLayout" customModule="Navi" customModuleProvider="target">
                                             <size key="itemSize" width="128" height="128"/>
@@ -610,11 +610,11 @@
                                         </cells>
                                     </collectionView>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="j8s-e8-u4p">
-                                        <rect key="frame" x="14" y="374" width="354" height="31"/>
+                                        <rect key="frame" x="14" y="348" width="354" height="31"/>
                                         <color key="tintColor" name="naviYellow"/>
                                     </slider>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-Th-McU">
-                                        <rect key="frame" x="16" y="16" width="350" height="342"/>
+                                        <rect key="frame" x="16" y="16" width="350" height="316"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="npw-Fn-iqC" customClass="AlignedCollectionViewFlowLayout" customModule="Navi" customModuleProvider="target">
                                             <size key="itemSize" width="128" height="128"/>
@@ -669,17 +669,36 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s5F-Ye-WhC">
+                                        <rect key="frame" x="16" y="610" width="350" height="60"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpZ-fM-ega" customClass="RoundedBorderButton" customModule="Navi" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="171" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBz-RK-eui" customClass="RoundedBorderButton" customModule="Navi" customModuleProvider="target">
+                                                <rect key="frame" x="179" y="0.0" width="171" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="vdS-TJ-KDD"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="j8s-e8-u4p" firstAttribute="leading" secondItem="6ah-RA-d0f" secondAttribute="leading" constant="16" id="65E-2M-quw"/>
                                     <constraint firstAttribute="trailing" secondItem="hmx-Th-McU" secondAttribute="trailing" constant="16" id="8VB-3Q-Rku"/>
                                     <constraint firstAttribute="trailing" secondItem="UVC-F8-25r" secondAttribute="trailing" constant="16" id="Jzh-O9-0lb"/>
+                                    <constraint firstItem="s5F-Ye-WhC" firstAttribute="top" secondItem="UVC-F8-25r" secondAttribute="bottom" constant="16" id="O4E-eE-8Vf"/>
                                     <constraint firstItem="UVC-F8-25r" firstAttribute="top" secondItem="j8s-e8-u4p" secondAttribute="bottom" constant="16" id="QZi-x8-LL0"/>
+                                    <constraint firstItem="s5F-Ye-WhC" firstAttribute="leading" secondItem="6ah-RA-d0f" secondAttribute="leading" constant="16" id="XHe-Z4-XnC"/>
                                     <constraint firstItem="hmx-Th-McU" firstAttribute="top" secondItem="6ah-RA-d0f" secondAttribute="top" constant="16" id="bpc-sW-Dcp"/>
+                                    <constraint firstAttribute="trailing" secondItem="s5F-Ye-WhC" secondAttribute="trailing" constant="16" id="hj3-WH-d8D"/>
                                     <constraint firstItem="j8s-e8-u4p" firstAttribute="top" secondItem="hmx-Th-McU" secondAttribute="bottom" constant="16" id="ifI-uh-USS"/>
+                                    <constraint firstAttribute="bottom" secondItem="s5F-Ye-WhC" secondAttribute="bottom" constant="16" id="rK4-dR-Qxx"/>
                                     <constraint firstItem="UVC-F8-25r" firstAttribute="leading" secondItem="6ah-RA-d0f" secondAttribute="leading" constant="16" id="sLS-ac-YXH"/>
-                                    <constraint firstAttribute="bottom" secondItem="UVC-F8-25r" secondAttribute="bottom" constant="16" id="t8N-kb-OvK"/>
                                     <constraint firstAttribute="trailing" secondItem="j8s-e8-u4p" secondAttribute="trailing" constant="16" id="u0W-5V-JhA"/>
                                     <constraint firstItem="hmx-Th-McU" firstAttribute="leading" secondItem="6ah-RA-d0f" secondAttribute="leading" constant="16" id="yim-8U-Ebn"/>
                                 </constraints>
@@ -719,9 +738,11 @@
                     <connections>
                         <outlet property="animationView" destination="r7K-zl-028" id="Td6-DZ-4aF"/>
                         <outlet property="answerCollectionView" destination="hmx-Th-McU" id="wdF-51-fBJ"/>
+                        <outlet property="confirmButton" destination="dBz-RK-eui" id="pjh-4o-gDf"/>
                         <outlet property="questionCollectionView" destination="UVC-F8-25r" id="PLK-31-7Nl"/>
                         <outlet property="questionNumberLabel" destination="qAG-K5-Zt9" id="hai-Ou-Rc0"/>
                         <outlet property="quizTypeLabel" destination="lOz-IQ-ads" id="fiX-Le-q0M"/>
+                        <outlet property="resetButton" destination="HpZ-fM-ega" id="5VQ-IG-7SD"/>
                         <outlet property="rightImageView" destination="tRg-gN-I8d" id="qH6-Eo-nZU"/>
                         <outlet property="timerSlider" destination="j8s-e8-u4p" id="ohQ-Zr-apD"/>
                     </connections>
@@ -732,7 +753,6 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="4NP-Zj-iNA"/>
         <designable name="r7K-zl-028"/>
     </designables>
     <inferredMetricsTieBreakers>

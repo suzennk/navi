@@ -16,16 +16,25 @@ class WordOrderingVC: UIViewController {
     @IBOutlet weak var timerSlider: UISlider!
     @IBOutlet weak var animationView: AnimationView!
     @IBOutlet weak var questionCollectionView: UICollectionView!
+    @IBOutlet weak var resetButton: RoundedBorderButton!
+    @IBOutlet weak var confirmButton: RoundedBorderButton!
     
     let answerCVDelegate = AnswerCVDelegate()
     
     var quizType: QuizType? = nil
-    var questionVerses: [Verse] = []
+    var questionVerses: [Verse] = [] {
+        didSet {
+            scrambledFragments = questionVerses.map({ verse in
+                verse.contents.components(separatedBy: " ").map { $0 }.shuffled()
+            })
+        }
+    }
     
     var currentQuestionNumber = 0
-    var fragments = ["aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "aaaaaaa", "aaaaaaaa"]
+    var scrambledFragments = [[String]]()
+    var fragments = [String]()
     
-    let timePerQuestion = 10.0
+    let timePerQuestion = 20.0
     var scheduledTimer: Timer? = nil
     var timer: Timer? = nil
     var deadline: Date = Date()
@@ -51,11 +60,20 @@ class WordOrderingVC: UIViewController {
         let questionLayout = questionCollectionView.collectionViewLayout as? AlignedCollectionViewFlowLayout
         questionLayout?.horizontalAlignment = .leading
         
+        // 초기화, 확인 버튼
+        resetButton.button.layer.cornerRadius = 20
+        resetButton.button.setTitle("초기화", for: .normal)
+        resetButton.button.addTarget(self, action: #selector(handleResetTapped), for: .touchUpInside)
+        confirmButton.button.layer.cornerRadius = 20
+        confirmButton.button.setTitle("확인", for: .normal)
+        confirmButton.button.backgroundColor = .naviYellow
+        confirmButton.button.addTarget(self, action: #selector(handleConfirmTapped), for: .touchUpInside)
+        
         initializeQuiz()
         startRound()
     }
     
-    func startRound() {
+    @objc func startRound() {
         guard currentQuestionNumber < questionVerses.count else {
             print("finished!")
             self.dismiss(animated: true)
@@ -63,6 +81,12 @@ class WordOrderingVC: UIViewController {
         }
         questionNumberLabel.text = "질문 \(currentQuestionNumber + 1) / \(questionVerses.count)"
 
+        answerCVDelegate.answer = []
+        answerCollectionView.reloadData()
+        
+        fragments = scrambledFragments[currentQuestionNumber]
+        questionCollectionView.reloadData()
+        
         self.deadline = Date() + timePerQuestion
         self.scheduledTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(handleTimerFired), userInfo: nil, repeats: true)
         self.timer = Timer.scheduledTimer(timeInterval: timePerQuestion, target: self, selector: #selector(handleTimesUp), userInfo: nil, repeats: false)
@@ -86,7 +110,47 @@ class WordOrderingVC: UIViewController {
     }
     
     @objc func handleTimesUp() {
-
+        fragments.removeAll()
+        handleConfirmTapped()
+    }
+    
+    @objc func handleResetTapped() {
+        answerCVDelegate.answer = []
+        answerCollectionView.reloadData()
+        
+        fragments = scrambledFragments[currentQuestionNumber]
+        questionCollectionView.reloadData()
+    }
+    
+    @objc func handleConfirmTapped() {
+        // 사용하지 않은 조각이 있으면 리턴
+        guard fragments.isEmpty else { return }
+        
+        self.scheduledTimer?.invalidate()
+        self.timer?.invalidate()
+        
+        // 답이 맞으면
+        let answer = answerCVDelegate.answer
+        let actualAnswer = questionVerses[currentQuestionNumber]
+        if answer.joined() == actualAnswer.contents.replacingOccurrences(of: " ", with: "") {
+            animationView.animation = Animation.named("correct")
+        } else {
+            animationView.animation = Animation.named("invalid")
+        }
+        
+        animationView.isHidden = false
+        answerCollectionView.isUserInteractionEnabled = false
+        questionCollectionView.isUserInteractionEnabled = false
+        
+        animationView.play()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.animationView.isHidden = true
+            self.currentQuestionNumber += 1
+            self.startRound()
+            self.answerCollectionView.isUserInteractionEnabled = true
+            self.questionCollectionView.isUserInteractionEnabled = true
+        }
     }
 }
 
