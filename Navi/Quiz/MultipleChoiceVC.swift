@@ -81,7 +81,7 @@ class MultipleChoiceVC: ViewController {
                 if quizType == .bibleRange {
                     button.button.setTitle(cardVM.verseRange, for: .normal)
                 } else {
-                    button.button.setTitle(cardVM.title, for: .normal)
+                    button.button.setTitle(verse.head, for: .normal)
                 }
             } else {
                 if quizType == .title {
@@ -97,7 +97,7 @@ class MultipleChoiceVC: ViewController {
         if quizType == .bibleRange {
             answerButtons[actualAnswer].button.setTitle(viewModel.verseRange, for: .normal)
         } else if quizType == .title {
-            answerButtons[actualAnswer].button.setTitle(viewModel.title, for: .normal)
+            answerButtons[actualAnswer].button.setTitle(questionVerses[actualAnswer].head, for: .normal)
         }
         
         self.deadline = Date() + timePerQuestion
