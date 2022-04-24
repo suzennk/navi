@@ -34,7 +34,7 @@ class WordOrderingVC: UIViewController {
     var scrambledFragments = [[String]]()
     var fragments = [String]()
     
-    let timePerQuestion = 20.0
+    let timePerQuestion = 60.0
     var scheduledTimer: Timer? = nil
     var timer: Timer? = nil
     var deadline: Date = Date()
@@ -88,7 +88,10 @@ class WordOrderingVC: UIViewController {
         questionCollectionView.reloadData()
         
         self.deadline = Date() + timePerQuestion
+        
+        self.scheduledTimer?.invalidate()
         self.scheduledTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(handleTimerFired), userInfo: nil, repeats: true)
+        self.timer?.invalidate()
         self.timer = Timer.scheduledTimer(timeInterval: timePerQuestion, target: self, selector: #selector(handleTimesUp), userInfo: nil, repeats: false)
     }
     
@@ -110,8 +113,20 @@ class WordOrderingVC: UIViewController {
     }
     
     @objc func handleTimesUp() {
-        fragments.removeAll()
-        handleConfirmTapped()
+        answerCollectionView.isUserInteractionEnabled = false
+        questionCollectionView.isUserInteractionEnabled = false
+
+        animationView.animation = Animation.named("invalid")
+        animationView.isHidden = false
+        animationView.play()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.animationView.isHidden = true
+            self.currentQuestionNumber += 1
+            self.startRound()
+            self.answerCollectionView.isUserInteractionEnabled = true
+            self.questionCollectionView.isUserInteractionEnabled = true
+        }
     }
     
     @objc func handleResetTapped() {
@@ -126,28 +141,28 @@ class WordOrderingVC: UIViewController {
         // 사용하지 않은 조각이 있으면 리턴
         guard fragments.isEmpty else { return }
         
-        self.scheduledTimer?.invalidate()
-        self.timer?.invalidate()
-        
+        answerCollectionView.isUserInteractionEnabled = false
+        questionCollectionView.isUserInteractionEnabled = false
+
         // 답이 맞으면
         let answer = answerCVDelegate.answer
         let actualAnswer = questionVerses[currentQuestionNumber]
-        if answer.joined() == actualAnswer.contents.replacingOccurrences(of: " ", with: "") {
+        let isCorrect = answer.joined() == actualAnswer.contents.replacingOccurrences(of: " ", with: "")
+        if isCorrect {
             animationView.animation = Animation.named("correct")
         } else {
             animationView.animation = Animation.named("invalid")
         }
         
         animationView.isHidden = false
-        answerCollectionView.isUserInteractionEnabled = false
-        questionCollectionView.isUserInteractionEnabled = false
-        
         animationView.play()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.animationView.isHidden = true
-            self.currentQuestionNumber += 1
-            self.startRound()
+            if isCorrect {
+                self.currentQuestionNumber += 1
+                self.startRound()
+            }
             self.answerCollectionView.isUserInteractionEnabled = true
             self.questionCollectionView.isUserInteractionEnabled = true
         }
