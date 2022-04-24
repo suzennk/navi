@@ -26,6 +26,7 @@
 		0873552F2813FB7800ED78D5 /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 0873552E2813FB7800ED78D5 /* invalid.json */; };
 		0873553B28151A1500ED78D5 /* WordOrderingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873553A28151A1500ED78D5 /* WordOrderingVC.swift */; };
 		0873553E28151E2300ED78D5 /* FragmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873553D28151E2300ED78D5 /* FragmentCell.swift */; };
+		087355432815265400ED78D5 /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087355422815265400ED78D5 /* AlignedCollectionViewFlowLayout.swift */; };
 		087F75D12812551300B5CC95 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F75D02812551300B5CC95 /* Verse.swift */; };
 		087F75D4281277A100B5CC95 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087F75D3281277A100B5CC95 /* Quiz.storyboard */; };
 		087F75D8281299F500B5CC95 /* QuizRangeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F75D7281299F500B5CC95 /* QuizRangeCollectionVC.swift */; };
@@ -118,6 +119,7 @@
 		0873552E2813FB7800ED78D5 /* invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid.json; sourceTree = "<group>"; };
 		0873553A28151A1500ED78D5 /* WordOrderingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOrderingVC.swift; sourceTree = "<group>"; };
 		0873553D28151E2300ED78D5 /* FragmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentCell.swift; sourceTree = "<group>"; };
+		087355422815265400ED78D5 /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		087F75D02812551300B5CC95 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Verse.swift; path = Navi/Verse.swift; sourceTree = SOURCE_ROOT; };
 		087F75D3281277A100B5CC95 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		087F75D7281299F500B5CC95 /* QuizRangeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRangeCollectionVC.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				08129E09271E94BC00DDE22B /* UIFont+Extension.swift */,
 				08F2ECEF27238FB00033FFB1 /* UIView+Extension.swift */,
 				088777252768B238008D4BC4 /* UIViewController+Extension.swift */,
+				087355422815265400ED78D5 /* AlignedCollectionViewFlowLayout.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				085B087D26B14C9A003EA5B7 /* HomeVC.swift in Sources */,
 				08129E0A271E94BC00DDE22B /* UIFont+Extension.swift in Sources */,
 				08AC129E26E368CE0066750F /* AddOnYourOwnVC.swift in Sources */,
+				087355432815265400ED78D5 /* AlignedCollectionViewFlowLayout.swift in Sources */,
 				087F75F12813D9DE00B5CC95 /* MultipleChoiceVC.swift in Sources */,
 				08AB0A4926D0DFE100066D6F /* CardTableViewModel.swift in Sources */,
 				08AB0A4D26D0E41C00066D6F /* CardCell.swift in Sources */,
