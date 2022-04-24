@@ -92,7 +92,11 @@ class QuizRangeCollectionVC: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func handleStartTapped() {
-        performSegue(withIdentifier: "startQuizSegue", sender: self)
+        if quizType == .bibleRange || quizType == .title {
+            performSegue(withIdentifier: "startQuizSegue", sender: self)
+        } else if quizType == .content {
+            performSegue(withIdentifier: "wordOrderingSegue", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -105,7 +109,7 @@ class QuizRangeCollectionVC: UIViewController, UICollectionViewDelegate, UIColle
             multipleChoiceVC.quizType = self.quizType
             multipleChoiceVC.questionVerses = (1...10).compactMap { _ in candidateVerses.randomElement()
             }
-        } else {
+        } else if let wordOrderingVC = segue.destination as? WordOrderingVC {
             // do something...
             // 내용 맞추기
         }

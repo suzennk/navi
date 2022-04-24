@@ -34,7 +34,7 @@ class MultipleChoiceVC: ViewController {
     var actualAnswer = 0
     var selectedAnswer = 0
     
-    let timerPerQuestion = 10.0
+    let timePerQuestion = 10.0
     var scheduledTimer: Timer? = nil
     var timer: Timer? = nil
     var deadline: Date = Date()
@@ -100,9 +100,9 @@ class MultipleChoiceVC: ViewController {
             answerButtons[actualAnswer].button.setTitle(viewModel.title, for: .normal)
         }
         
-        self.deadline = Date() + timerPerQuestion
+        self.deadline = Date() + timePerQuestion
         self.scheduledTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(handleTimerFired), userInfo: nil, repeats: true)
-        self.timer = Timer.scheduledTimer(timeInterval: timerPerQuestion, target: self, selector: #selector(handleTimesUp), userInfo: nil, repeats: false)
+        self.timer = Timer.scheduledTimer(timeInterval: timePerQuestion, target: self, selector: #selector(handleTimesUp), userInfo: nil, repeats: false)
     }
     
     func initializeQuiz() {
@@ -165,7 +165,7 @@ class MultipleChoiceVC: ViewController {
     }
     
     @objc func handleTimerFired() {
-        timerSlider.value = Float(Date().distance(to: self.deadline) / timerPerQuestion)
+        timerSlider.value = Float(Date().distance(to: self.deadline) / timePerQuestion)
     }
     
     @objc func handleTimesUp() {
