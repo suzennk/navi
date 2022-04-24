@@ -141,6 +141,7 @@ class MultipleChoiceVC: ViewController {
                 answerButtons[actualAnswer].button.backgroundColor = .systemBackground
             }
         } else {
+            animationView.animation = Animation.named("invalid")
             answerButtons[actualAnswer].button.layer.borderWidth = 2
             answerButtons[actualAnswer].button.layer.borderColor = UIColor.orange.cgColor
             answerButtons[actualAnswer].button.backgroundColor = .systemBackground
@@ -160,7 +161,6 @@ class MultipleChoiceVC: ViewController {
             [self.button0, self.button1, self.button2, self.button3].forEach {
                 $0?.button.isUserInteractionEnabled = true
             }
-
         }
     }
     
