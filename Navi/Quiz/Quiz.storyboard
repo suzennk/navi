@@ -603,8 +603,8 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="100" height="44"/>
                                                 <connections>
-                                                    <outlet property="fragmentView" destination="XWZ-Bs-382" id="7gF-9V-3n6"/>
-                                                    <outlet property="label" destination="a3C-aO-Ceu" id="gbL-jF-zcR"/>
+                                                    <outlet property="fragmentView" destination="XWZ-Bs-382" id="b9l-sy-fOo"/>
+                                                    <outlet property="label" destination="a3C-aO-Ceu" id="0wc-09-4SG"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -616,20 +616,56 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-Th-McU">
                                         <rect key="frame" x="16" y="16" width="350" height="342"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="npw-Fn-iqC">
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="npw-Fn-iqC" customClass="AlignedCollectionViewFlowLayout" customModule="Navi" customModuleProvider="target">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zEe-EL-EOi">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="answerFragmentCell" id="zEe-EL-EOi" customClass="AnswerFragmentCell" customModule="Navi" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="U6Z-0L-XdN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tio-gk-QtL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-Od-yjs">
+                                                                    <rect key="frame" x="8" y="8" width="84" height="28"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="m7C-Od-yjs" firstAttribute="top" secondItem="Tio-gk-QtL" secondAttribute="top" constant="8" id="5K5-vd-4m7"/>
+                                                                <constraint firstAttribute="trailing" secondItem="m7C-Od-yjs" secondAttribute="trailing" constant="8" id="Dhf-Nk-DJM"/>
+                                                                <constraint firstItem="m7C-Od-yjs" firstAttribute="leading" secondItem="Tio-gk-QtL" secondAttribute="leading" constant="8" id="hnt-K8-tkK"/>
+                                                                <constraint firstAttribute="bottom" secondItem="m7C-Od-yjs" secondAttribute="bottom" constant="8" id="v0B-tO-pes"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Tio-gk-QtL" firstAttribute="top" secondItem="U6Z-0L-XdN" secondAttribute="top" id="Ng9-jG-haP"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Tio-gk-QtL" secondAttribute="bottom" id="PQR-2J-L2w"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Tio-gk-QtL" secondAttribute="trailing" id="rAZ-rc-Jec"/>
+                                                        <constraint firstItem="Tio-gk-QtL" firstAttribute="leading" secondItem="U6Z-0L-XdN" secondAttribute="leading" id="yFD-SX-zqH"/>
+                                                    </constraints>
                                                 </collectionViewCellContentView>
+                                                <size key="customSize" width="100" height="44"/>
+                                                <connections>
+                                                    <outlet property="fragmentView" destination="Tio-gk-QtL" id="OLc-Tx-DC0"/>
+                                                    <outlet property="label" destination="m7C-Od-yjs" id="L1C-Io-L4p"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
