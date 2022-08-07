@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0807BFFD272281E2003C5669 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807BFFC272281E2003C5669 /* ChartView.swift */; };
 		08129E0A271E94BC00DDE22B /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08129E09271E94BC00DDE22B /* UIFont+Extension.swift */; };
-		0853585B27FC75A4004929D0 /* updated_cardset.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0853585A27FC75A4004929D0 /* updated_cardset.tsv */; };
+		0827EA95289FE10D00628A82 /* updated_cardset.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0827EA94289FE10D00628A82 /* updated_cardset.tsv */; };
 		085B084926B136BF003EA5B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B084826B136BF003EA5B7 /* AppDelegate.swift */; };
 		085B084B26B136BF003EA5B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B084A26B136BF003EA5B7 /* SceneDelegate.swift */; };
 		085B084D26B136BF003EA5B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B084C26B136BF003EA5B7 /* ViewController.swift */; };
@@ -97,7 +97,7 @@
 /* Begin PBXFileReference section */
 		0807BFFC272281E2003C5669 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		08129E09271E94BC00DDE22B /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
-		0853585A27FC75A4004929D0 /* updated_cardset.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = updated_cardset.tsv; path = "../../../Library/Mobile Documents/com~apple~Numbers/Documents/updated_cardset.tsv"; sourceTree = "<group>"; };
+		0827EA94289FE10D00628A82 /* updated_cardset.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = updated_cardset.tsv; sourceTree = "<group>"; };
 		085B084526B136BF003EA5B7 /* Navi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		085B084826B136BF003EA5B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		085B084A26B136BF003EA5B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 				08941B2D26E097C500E5CA97 /* OYO */,
 				087F75D22812732D00B5CC95 /* Quiz */,
 				08AD4D9C26BCEE7800E14F64 /* cardset.tsv */,
-				0853585A27FC75A4004929D0 /* updated_cardset.tsv */,
+				0827EA94289FE10D00628A82 /* updated_cardset.tsv */,
 			);
 			path = Navi;
 			sourceTree = "<group>";
@@ -626,10 +626,10 @@
 				08AD4D9D26BCEE7800E14F64 /* cardset.tsv in Resources */,
 				085B085526B136C1003EA5B7 /* LaunchScreen.storyboard in Resources */,
 				0873552B2813F83600ED78D5 /* correct.json in Resources */,
+				0827EA95289FE10D00628A82 /* updated_cardset.tsv in Resources */,
 				088EC149273E7C5700A1FF63 /* check-success-yellow.json in Resources */,
 				087F75E72812EAC700B5CC95 /* BaseButton.xib in Resources */,
 				0873552F2813FB7800ED78D5 /* invalid.json in Resources */,
-				0853585B27FC75A4004929D0 /* updated_cardset.tsv in Resources */,
 				088EC14B273E7C5F00A1FF63 /* check-success-green.json in Resources */,
 				08BE9E402722B16100470AB3 /* AddOnYourOwnVC.xib in Resources */,
 				085B085226B136C1003EA5B7 /* Assets.xcassets in Resources */,

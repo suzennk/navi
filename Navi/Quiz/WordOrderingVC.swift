@@ -19,6 +19,7 @@ class WordOrderingVC: UIViewController {
     @IBOutlet weak var questionCollectionView: UICollectionView!
     @IBOutlet weak var resetButton: RoundedBorderButton!
     @IBOutlet weak var confirmButton: RoundedBorderButton!
+    @IBOutlet weak var skipButton: RoundedBorderButton!
     
     let answerCVDelegate = AnswerCVDelegate()
     
@@ -26,7 +27,14 @@ class WordOrderingVC: UIViewController {
     var questionVerses: [Verse] = [] {
         didSet {
             scrambledFragments = questionVerses.map({ verse in
-                verse.contents.components(separatedBy: " ").map { $0 }.shuffled()
+                var fragments = [String]()
+                let words = verse.contents.components(separatedBy: " ").map { String($0) }
+                let fragmentSize = words.count < 10 ? 1 : words.count < 25 ? 2 : 4
+                for i in stride(from: 0, to: words.count, by: fragmentSize) {
+                    let j = min(words.count, i+fragmentSize)
+                    fragments.append(words[i..<j].joined(separator: " "))
+                }
+                return fragments
             })
         }
     }
@@ -34,12 +42,7 @@ class WordOrderingVC: UIViewController {
     var currentQuestionNumber = 0
     var scrambledFragments = [[String]]()
     var fragments = [String]()
-    
-    let timePerQuestion = 60.0
-    var scheduledTimer: Timer? = nil
-    var timer: Timer? = nil
-    var deadline: Date = Date()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,7 +64,7 @@ class WordOrderingVC: UIViewController {
         let questionLayout = questionCollectionView.collectionViewLayout as? AlignedCollectionViewFlowLayout
         questionLayout?.horizontalAlignment = .leading
         
-        // 초기화, 확인 버튼
+        // 초기화, 확인, 스킵 버튼
         resetButton.button.layer.cornerRadius = 20
         resetButton.button.setTitle("초기화", for: .normal)
         resetButton.button.addTarget(self, action: #selector(handleResetTapped), for: .touchUpInside)
@@ -69,6 +72,9 @@ class WordOrderingVC: UIViewController {
         confirmButton.button.setTitle("확인", for: .normal)
         confirmButton.button.backgroundColor = .naviYellow
         confirmButton.button.addTarget(self, action: #selector(handleConfirmTapped), for: .touchUpInside)
+        skipButton.button.layer.cornerRadius = 20
+        skipButton.button.setTitle("건너뛰기", for: .normal)
+        skipButton.button.addTarget(self, action: #selector(handleSkip), for: .touchUpInside)
         
         initializeQuiz()
         startRound()
@@ -90,13 +96,6 @@ class WordOrderingVC: UIViewController {
         
         fragments = scrambledFragments[currentQuestionNumber]
         questionCollectionView.reloadData()
-        
-        self.deadline = Date() + timePerQuestion
-        
-        self.scheduledTimer?.invalidate()
-        self.scheduledTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(handleTimerFired), userInfo: nil, repeats: true)
-        self.timer?.invalidate()
-        self.timer = Timer.scheduledTimer(timeInterval: timePerQuestion, target: self, selector: #selector(handleTimesUp), userInfo: nil, repeats: false)
     }
     
     func initializeQuiz() {
@@ -112,11 +111,7 @@ class WordOrderingVC: UIViewController {
         self.dismiss(animated: true)
     }
     
-    @objc func handleTimerFired() {
-        timerSlider.value = Float(Date().distance(to: self.deadline) / timePerQuestion)
-    }
-    
-    @objc func handleTimesUp() {
+    @objc func handleSkip() {
         answerCollectionView.isUserInteractionEnabled = false
         questionCollectionView.isUserInteractionEnabled = false
 

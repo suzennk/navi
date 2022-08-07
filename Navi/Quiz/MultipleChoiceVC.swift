@@ -75,20 +75,28 @@ class MultipleChoiceVC: ViewController {
             questionTextView.text = "\(viewModel.content)[\(viewModel.verseRange)]"
         }
         
-       answerButtons.forEach { button in
+        var verseArr = [Verse]()
+        while (verseArr.count < 4) {
             if let verse = DataBaseService.shared.verses.randomElement() {
-                let cardVM = CardViewModel(verse)
-                if quizType == .bibleRange {
-                    button.button.setTitle(cardVM.verseRange, for: .normal)
-                } else {
-                    button.button.setTitle(verse.head, for: .normal)
+                if (verse.head != questionVerses[currentQuestionNumber].head
+                    && !verseArr.contains(where: { $0.head == verse.head })) {
+                    verseArr.append(verse)
                 }
+            }
+        }
+
+        answerButtons.enumerated().forEach { (idx, button) in
+            let verse = verseArr[idx]
+            let cardVM = CardViewModel(verse)
+            if quizType == .bibleRange {
+                button.button.setTitle(cardVM.verseRange, for: .normal)
             } else {
-                if quizType == .title {
-                    button.button.setTitle("창세기 1:1", for: .normal)
-                } else {
-                    button.button.setTitle("1. 구원의 확신", for: .normal)
+                // 앞에 숫자 떼어주기
+                var head = verse.head
+                if head.contains(" ") {
+                    head = head.components(separatedBy: " ")[1...].joined(separator: " ")
                 }
+                button.button.setTitle(head, for: .normal)
             }
         }
         
@@ -97,7 +105,12 @@ class MultipleChoiceVC: ViewController {
         if quizType == .bibleRange {
             answerButtons[actualAnswer].button.setTitle(viewModel.verseRange, for: .normal)
         } else if quizType == .title {
-            answerButtons[actualAnswer].button.setTitle(questionVerses[actualAnswer].head, for: .normal)
+            // 앞에 숫자 떼어주기
+            var head = questionVerses[currentQuestionNumber].head
+            if head.contains(" ") {
+                head = head.components(separatedBy: " ")[1...].joined(separator: " ")
+            }
+            answerButtons[actualAnswer].button.setTitle(head, for: .normal)
         }
         
         self.deadline = Date() + timePerQuestion

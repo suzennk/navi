@@ -23,6 +23,7 @@ class CardCell: UITableViewCell {
         let l = UILabel()
         l.font = .preferredFont(forTextStyle: .title3, weight: .bold)
         l.textColor = UIColor(named: "card-title")
+        l.numberOfLines = 0
         return l
     }()
     
@@ -39,6 +40,7 @@ class CardCell: UITableViewCell {
     let verseRangeLabel: UILabel = {
         let l = UILabel()
         l.font = .preferredFont(forTextStyle: .title3, weight: .semibold)
+        l.numberOfLines = 0
         return l
     }()
     
@@ -52,14 +54,14 @@ class CardCell: UITableViewCell {
     let headLabel: UILabel = {
         let l = UILabel()
         l.font = .preferredFont(forTextStyle: .callout, weight: .light)
-        l.adjustsFontSizeToFitWidth = true
+        l.numberOfLines = 0
         return l
     }()
     
     let subheadLabel: UILabel = {
         let l = UILabel()
         l.font = .preferredFont(forTextStyle: .callout, weight: .light)
-        l.adjustsFontSizeToFitWidth = true
+        l.numberOfLines = 0
         return l
     }()
     
@@ -97,8 +99,10 @@ class CardCell: UITableViewCell {
         view.layer.masksToBounds = false
         
         let titleSV = UIStackView(arrangedSubviews: [titleLabel, checkImageView])
+        titleSV.alignment = .center
         let bottomSV = UIStackView(arrangedSubviews: [subheadLabel, UIView(), headLabel])
         bottomSV.spacing = 4
+        bottomSV.alignment = .top
         
         let stackView = UIStackView(arrangedSubviews: [
         titleSV,
