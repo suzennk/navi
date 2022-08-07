@@ -8,7 +8,7 @@
 import Foundation
 
 enum QuizType: String {
-    case bibleRange = "장절 맞추기"
-    case title = "제목 맞추기"
-    case content = "내용 맞추기"
+    case bibleRange = "장절 맞히기"
+    case title = "제목 맞히기"
+    case content = "내용 맞히기"
 }

@@ -63,7 +63,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="장절 맞추기">
+                                                <state key="normal" title="장절 맞히기">
                                                     <color key="titleColor" systemColor="systemGrayColor"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -83,7 +83,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="제목 맞추기">
+                                                <state key="normal" title="제목 맞히기">
                                                     <color key="titleColor" systemColor="systemGrayColor"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -103,7 +103,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="내용 맞추기">
+                                                <state key="normal" title="내용 맞히기">
                                                     <color key="titleColor" systemColor="systemGrayColor"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -327,7 +327,7 @@
                                                     <constraint firstItem="Ol6-VG-O0C" firstAttribute="leading" secondItem="Jmm-S4-VS6" secondAttribute="leading" id="qDd-wS-exH"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맞추기 랄랄라" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVO-Nl-LJ5">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맞히기 랄랄라" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVO-Nl-LJ5">
                                                 <rect key="frame" x="0.0" y="51.666666666666671" width="279" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -537,7 +537,7 @@
                                                     <constraint firstItem="JHC-EN-myJ" firstAttribute="leading" secondItem="kpO-nH-ewG" secondAttribute="leading" id="ces-2t-UTl"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맞추기 랄랄라" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOz-IQ-ads">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맞히기 랄랄라" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOz-IQ-ads">
                                                 <rect key="frame" x="0.0" y="51.666666666666671" width="279" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
