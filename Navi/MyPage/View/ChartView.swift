@@ -69,6 +69,7 @@ class ChartView: UIView {
             
             let label = UILabel()
             label.font = .preferredFont(forTextStyle: .caption2)
+            label.adjustsFontSizeToFitWidth = true
             label.text = status.theme
             label.snp.makeConstraints { make in make.height.equalTo(20) }
             

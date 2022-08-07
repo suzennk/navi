@@ -39,6 +39,7 @@ class ThemeHeaderView: UIControl {
     lazy var button: UIButton = {
         let b = UIButton()
         b.translatesAutoresizingMaskIntoConstraints = false
+        b.titleLabel?.font = .preferredFont(forTextStyle: .subheadline)
         b.backgroundColor = .unselectedBackground
         b.layer.cornerRadius = buttonHeight / 2
         b.addTarget(self, action: #selector(handleFoldUnfold), for: .touchUpInside)
