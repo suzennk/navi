@@ -223,6 +223,10 @@ class DataBaseService {
     private func loadAndSaveEntities(from dataArr: [[String]]) {
         dataArr[1..<dataArr.count].forEach { item in
             // skip invalid lines
+            if (318...319).contains(Int(item[0]) ?? 0) {
+                print(item)
+            }
+            
             if item.count < 10 {
                 return
             }
