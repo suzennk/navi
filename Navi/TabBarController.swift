@@ -27,7 +27,10 @@ class TabBarController: UITabBarController {
         let myPageVC = MyPageVC()
         let myNavController = UINavigationController(rootViewController: myPageVC)
         
-        self.viewControllers = [oyoNavContr, homeNavController, quizNavController, myNavController]
+        let cloudKitVC = CloudKitTestViewController()
+        let cloudKitNavController = UINavigationController(rootViewController: cloudKitVC)
+        
+        self.viewControllers = [oyoNavContr, homeNavController, quizNavController, myNavController, cloudKitNavController]
         
         tabBar.items?[0].image = UIImage(named: "oyo-u")?.withTintColor(.label, renderingMode: .alwaysTemplate)
         tabBar.items?[0].selectedImage = UIImage(named: "oyo")?.withRenderingMode(.alwaysOriginal)
@@ -42,7 +45,8 @@ class TabBarController: UITabBarController {
             $0.imageInsets = .init(top: 9, left: 0, bottom: -9, right: 0)
         })
         
-        self.selectedViewController = viewControllers?[1]
+        // MARK: TODO - will change to 1
+        self.selectedViewController = viewControllers?[4]
         
         tabBar.layer.borderWidth = 0
         tabBar.layer.borderColor = UIColor.clear.cgColor
