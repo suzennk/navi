@@ -32,9 +32,10 @@ class WordOrderingVC: UIViewController {
                 let fragmentSize = words.count < 10 ? 1 : words.count < 25 ? 2 : 4
                 for i in stride(from: 0, to: words.count, by: fragmentSize) {
                     let j = min(words.count, i+fragmentSize)
-                    fragments.append(words[i..<j].joined(separator: " "))
+                    let scrambledWords = words[i..<j].joined(separator: " ")
+                    fragments.append(scrambledWords)
                 }
-                return fragments
+                return fragments.shuffled()
             })
         }
     }
@@ -144,9 +145,9 @@ class WordOrderingVC: UIViewController {
         questionCollectionView.isUserInteractionEnabled = false
 
         // 답이 맞으면
-        let answer = answerCVDelegate.answer
+        let submitAnswer = answerCVDelegate.answer
         let actualAnswer = questionVerses[currentQuestionNumber]
-        let isCorrect = answer.joined() == actualAnswer.contents.replacingOccurrences(of: " ", with: "")
+        let isCorrect = submitAnswer.joined().replacingOccurrences(of: " ", with: "") == actualAnswer.contents.replacingOccurrences(of: " ", with: "")
         if isCorrect {
             animationView.animation = Animation.named("correct")
         } else {
@@ -154,9 +155,7 @@ class WordOrderingVC: UIViewController {
         }
         
         animationView.isHidden = false
-        animationView.play()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        animationView.play { _ in
             self.animationView.isHidden = true
             if isCorrect {
                 self.currentQuestionNumber += 1
