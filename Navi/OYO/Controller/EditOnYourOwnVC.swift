@@ -46,6 +46,7 @@ class EditOnYourOwnVC: AddOnYourOwnVC {
         verse.setValue(Int(endVerseTextField.text!) == nil ? nil : middleSymbolButton.currentTitle, forKey: "middleSymbol")
         verse.setValue(Int(endVerseTextField.text!), forKey: "endVerse")
         verse.setValue(categoryTextField.text, forKey: "head")
+        verse.setValue(titleTextField.text, forKey: "title")
         verse.setValue(contentTextView.text, forKey: "contents")
         
         switch DataBaseService.shared.save() {
